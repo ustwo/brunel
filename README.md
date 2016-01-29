@@ -6,6 +6,8 @@ This project is a demonstration of organisation for an app that runs on both iOS
 
 In the demo, the user can access live feeds of the current status of different lines across Transport for London's network.
 
+![App Screenshot](./Artwork/Screenshot/AllDevices-Dashboard.png)
+
 ## Dependencies
 
 - [Xcode 7.2](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12#)
