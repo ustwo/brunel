@@ -1,0 +1,944 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000A08741C4D0E0500461E52 /* TFLRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08731C4D0E0500461E52 /* TFLRestAPI.swift */; };
+		000A08751C4D0E0500461E52 /* TFLRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08731C4D0E0500461E52 /* TFLRestAPI.swift */; };
+		000A08771C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */; };
+		000A08781C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */; };
+		000A087A1C4D1D8600461E52 /* TFLDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08791C4D1D8600461E52 /* TFLDateFormatter.swift */; };
+		000A087B1C4D1D8600461E52 /* TFLDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08791C4D1D8600461E52 /* TFLDateFormatter.swift */; };
+		000A087D1C4D1E4700461E52 /* TFLLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A087C1C4D1E4700461E52 /* TFLLine.swift */; };
+		000A087E1C4D1E4700461E52 /* TFLLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A087C1C4D1E4700461E52 /* TFLLine.swift */; };
+		001591BB1C4E2EC000FF6095 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591BA1C4E2EC000FF6095 /* Constants.swift */; };
+		001591BC1C4E2EC000FF6095 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591BA1C4E2EC000FF6095 /* Constants.swift */; };
+		001591BE1C4E2FE100FF6095 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591BD1C4E2FE100FF6095 /* Strings.swift */; };
+		001591BF1C4E2FE100FF6095 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591BD1C4E2FE100FF6095 /* Strings.swift */; };
+		001591C21C4E311E00FF6095 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591C11C4E311E00FF6095 /* BaseViewController.swift */; };
+		001591C31C4E311E00FF6095 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591C11C4E311E00FF6095 /* BaseViewController.swift */; };
+		001591CA1C4E318100FF6095 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591C91C4E318100FF6095 /* BaseView.swift */; };
+		001591CB1C4E318100FF6095 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591C91C4E318100FF6095 /* BaseView.swift */; };
+		001591CD1C4E31B200FF6095 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591CC1C4E31B200FF6095 /* DetailView.swift */; };
+		001591CE1C4E31B200FF6095 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591CC1C4E31B200FF6095 /* DetailView.swift */; };
+		001591D01C4E31DC00FF6095 /* BaseStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591CF1C4E31DC00FF6095 /* BaseStackView.swift */; };
+		001591D11C4E31DC00FF6095 /* BaseStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001591CF1C4E31DC00FF6095 /* BaseStackView.swift */; };
+		001F5DA61C575F8E00E3C520 /* Moya-ErrorDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F5DA51C575F8E00E3C520 /* Moya-ErrorDescriptions.swift */; };
+		001F5DA71C575F8E00E3C520 /* Moya-ErrorDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F5DA51C575F8E00E3C520 /* Moya-ErrorDescriptions.swift */; };
+		0049BF281C4D096900603E23 /* TFLLineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049BF271C4D096900603E23 /* TFLLineAPI.swift */; };
+		0049BF291C4D096900603E23 /* TFLLineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049BF271C4D096900603E23 /* TFLLineAPI.swift */; };
+		0049BF2C1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049BF2B1C4D0D5500603E23 /* TFLLineStatus.swift */; };
+		0049BF2D1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049BF2B1C4D0D5500603E23 /* TFLLineStatus.swift */; };
+		005756381C4E1B88003706B6 /* TFLNationalRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005756371C4E1B88003706B6 /* TFLNationalRail.swift */; };
+		005756391C4E1B88003706B6 /* TFLNationalRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005756371C4E1B88003706B6 /* TFLNationalRail.swift */; };
+		006E72201C4E408000167EAB /* TFLLineDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E721F1C4E408000167EAB /* TFLLineDisruption.swift */; };
+		006E72211C4E408000167EAB /* TFLLineDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E721F1C4E408000167EAB /* TFLLineDisruption.swift */; };
+		006E72231C4E4BDC00167EAB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72221C4E4BDC00167EAB /* Settings.swift */; };
+		006E72241C4E4BDC00167EAB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72221C4E4BDC00167EAB /* Settings.swift */; };
+		006E72261C4E4ECF00167EAB /* LinesBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72251C4E4ECF00167EAB /* LinesBaseTableViewController.swift */; };
+		006E72271C4E4ECF00167EAB /* LinesBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72251C4E4ECF00167EAB /* LinesBaseTableViewController.swift */; };
+		006E72291C4E4FEB00167EAB /* RecentLinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72281C4E4FEB00167EAB /* RecentLinesTableViewController.swift */; };
+		006E722A1C4E4FEB00167EAB /* RecentLinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72281C4E4FEB00167EAB /* RecentLinesTableViewController.swift */; };
+		006E722C1C4E527600167EAB /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E722B1C4E527600167EAB /* ToolsTableViewController.swift */; };
+		006E722D1C4E527600167EAB /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E722B1C4E527600167EAB /* ToolsTableViewController.swift */; };
+		006E722F1C4E583700167EAB /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E722E1C4E583700167EAB /* DashboardTableViewController.swift */; };
+		006E72301C4E583700167EAB /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E722E1C4E583700167EAB /* DashboardTableViewController.swift */; };
+		0074BEAB1C4FE5070047733B /* TFLRestAPI-Line-GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEAA1C4FE5070047733B /* TFLRestAPI-Line-GET.swift */; };
+		0074BEAC1C4FE5070047733B /* TFLRestAPI-Line-GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEAA1C4FE5070047733B /* TFLRestAPI-Line-GET.swift */; };
+		0074BEAE1C4FE5420047733B /* TFLStopPointAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEAD1C4FE5420047733B /* TFLStopPointAPI.swift */; };
+		0074BEAF1C4FE5420047733B /* TFLStopPointAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEAD1C4FE5420047733B /* TFLStopPointAPI.swift */; };
+		0074BEB11C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB01C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift */; };
+		0074BEB21C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB01C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift */; };
+		0074BEB41C50C29A0047733B /* LineSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB31C50C29A0047733B /* LineSearchTableViewController.swift */; };
+		0074BEB51C50C29A0047733B /* LineSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB31C50C29A0047733B /* LineSearchTableViewController.swift */; };
+		0074BEB71C50CBC80047733B /* TFLLineSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB61C50CBC80047733B /* TFLLineSearch.swift */; };
+		0074BEB81C50CBC80047733B /* TFLLineSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB61C50CBC80047733B /* TFLLineSearch.swift */; };
+		0074BEBA1C50CCB20047733B /* TFLLineSearch-Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB91C50CCB20047733B /* TFLLineSearch-Cell.swift */; };
+		0074BEBB1C50CCB20047733B /* TFLLineSearch-Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074BEB91C50CCB20047733B /* TFLLineSearch-Cell.swift */; };
+		007ECD1C1C4D34EE001F520B /* TFLModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD1B1C4D34EE001F520B /* TFLModes.swift */; };
+		007ECD1D1C4D34EE001F520B /* TFLModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD1B1C4D34EE001F520B /* TFLModes.swift */; };
+		007ECD231C4D3E6C001F520B /* UIColor-Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD221C4D3E6C001F520B /* UIColor-Brightness.swift */; };
+		007ECD241C4D3E6C001F520B /* UIColor-Brightness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD221C4D3E6C001F520B /* UIColor-Brightness.swift */; };
+		007ECD261C4D3F81001F520B /* TFLUnderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD251C4D3F81001F520B /* TFLUnderground.swift */; };
+		007ECD271C4D3F81001F520B /* TFLUnderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD251C4D3F81001F520B /* TFLUnderground.swift */; };
+		008281061C4CFEB300186513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008281051C4CFEB300186513 /* Assets.xcassets */; };
+		009C2AED1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C2AEC1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift */; };
+		009D821E1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */; };
+		009D821F1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */; };
+		00A268E21C5218360061DEE5 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A268E11C5218360061DEE5 /* LabelView.swift */; };
+		00A268E31C5218360061DEE5 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A268E11C5218360061DEE5 /* LabelView.swift */; };
+		00C0E1531C4FA4F500B76BC3 /* SearchBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E1521C4FA4F500B76BC3 /* SearchBaseTableViewController.swift */; };
+		00C0E1541C4FA4F500B76BC3 /* SearchBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E1521C4FA4F500B76BC3 /* SearchBaseTableViewController.swift */; };
+		00C0E1561C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E1551C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift */; };
+		00C0E1571C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C0E1551C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift */; };
+		00C245DF1C4FCFB300F00620 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C245DE1C4FCFB300F00620 /* Accessibility.swift */; };
+		00C245E01C4FCFB300F00620 /* Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C245DE1C4FCFB300F00620 /* Accessibility.swift */; };
+		00D08F3F1C4E2939001876FD /* tflconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00D08F3E1C4E2939001876FD /* tflconfig.plist */; };
+		00D08F401C4E2939001876FD /* tflconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00D08F3E1C4E2939001876FD /* tflconfig.plist */; };
+		00D08F451C4E2BDD001876FD /* LineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F421C4E2BDD001876FD /* LineDetailViewController.swift */; };
+		00D08F461C4E2BDD001876FD /* LineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F421C4E2BDD001876FD /* LineDetailViewController.swift */; };
+		00D08F471C4E2BDD001876FD /* LinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F431C4E2BDD001876FD /* LinesTableViewController.swift */; };
+		00D08F481C4E2BDD001876FD /* LinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F431C4E2BDD001876FD /* LinesTableViewController.swift */; };
+		00D08F491C4E2BDD001876FD /* ModesToLinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F441C4E2BDD001876FD /* ModesToLinesTableViewController.swift */; };
+		00D08F4A1C4E2BDD001876FD /* ModesToLinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D08F441C4E2BDD001876FD /* ModesToLinesTableViewController.swift */; };
+		00DB0DE81C4CFED8006192A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DE84B11C4CF24F00B73551 /* AppDelegate.swift */; };
+		00DB6DD31C4F804F00603373 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB6DD21C4F804F00603373 /* BannerViewController.swift */; };
+		00DB6DD41C4F804F00603373 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB6DD21C4F804F00603373 /* BannerViewController.swift */; };
+		00DB6DD61C4F807F00603373 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB6DD51C4F807F00603373 /* BannerView.swift */; };
+		00DB6DD71C4F807F00603373 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB6DD51C4F807F00603373 /* BannerView.swift */; };
+		00DE84B41C4CF24F00B73551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DE84B11C4CF24F00B73551 /* AppDelegate.swift */; };
+		00DE84BA1C4CF27D00B73551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DE84B91C4CF27D00B73551 /* LaunchScreen.storyboard */; };
+		00DE84BE1C4CF28800B73551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00DE84BD1C4CF28800B73551 /* Assets.xcassets */; };
+		00E027EC1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027EB1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift */; };
+		00E027ED1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027EB1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift */; };
+		00E027EF1C4E79050008E5DC /* LineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027EE1C4E79050008E5DC /* LineDetailTableViewCell.swift */; };
+		00E027F01C4E79050008E5DC /* LineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027EE1C4E79050008E5DC /* LineDetailTableViewCell.swift */; };
+		00E027F21C4E908F0008E5DC /* ModesBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027F11C4E908F0008E5DC /* ModesBaseTableViewController.swift */; };
+		00E027F31C4E908F0008E5DC /* ModesBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027F11C4E908F0008E5DC /* ModesBaseTableViewController.swift */; };
+		00E027F51C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027F41C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift */; };
+		00E027F61C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027F41C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift */; };
+		00E027F81C4F799E0008E5DC /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027F71C4F799E0008E5DC /* ClockView.swift */; };
+		00E027F91C4F799E0008E5DC /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E027F71C4F799E0008E5DC /* ClockView.swift */; };
+		86F040F427072E7D5B9738CC /* Pods_Brunel_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A7EFB0E2B13CD34C8BD511 /* Pods_Brunel_tvOS.framework */; };
+		CA4A71006FB2970A44223B31 /* Pods_Brunel_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF93E4320182C4FD9CF4796 /* Pods_Brunel_iOS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		000A08731C4D0E0500461E52 /* TFLRestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLRestAPI.swift; sourceTree = "<group>"; };
+		000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineServiceType.swift; sourceTree = "<group>"; };
+		000A08791C4D1D8600461E52 /* TFLDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLDateFormatter.swift; sourceTree = "<group>"; };
+		000A087C1C4D1E4700461E52 /* TFLLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLine.swift; sourceTree = "<group>"; };
+		001591BA1C4E2EC000FF6095 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		001591BD1C4E2FE100FF6095 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		001591C11C4E311E00FF6095 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		001591C91C4E318100FF6095 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		001591CC1C4E31B200FF6095 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		001591CF1C4E31DC00FF6095 /* BaseStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStackView.swift; sourceTree = "<group>"; };
+		001F5DA51C575F8E00E3C520 /* Moya-ErrorDescriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Moya-ErrorDescriptions.swift"; sourceTree = "<group>"; };
+		0049BF271C4D096900603E23 /* TFLLineAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineAPI.swift; sourceTree = "<group>"; };
+		0049BF2B1C4D0D5500603E23 /* TFLLineStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineStatus.swift; sourceTree = "<group>"; };
+		005756371C4E1B88003706B6 /* TFLNationalRail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLNationalRail.swift; sourceTree = "<group>"; };
+		006E721F1C4E408000167EAB /* TFLLineDisruption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineDisruption.swift; sourceTree = "<group>"; };
+		006E72221C4E4BDC00167EAB /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		006E72251C4E4ECF00167EAB /* LinesBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesBaseTableViewController.swift; sourceTree = "<group>"; };
+		006E72281C4E4FEB00167EAB /* RecentLinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentLinesTableViewController.swift; sourceTree = "<group>"; };
+		006E722B1C4E527600167EAB /* ToolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
+		006E722E1C4E583700167EAB /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		0074BEAA1C4FE5070047733B /* TFLRestAPI-Line-GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TFLRestAPI-Line-GET.swift"; sourceTree = "<group>"; };
+		0074BEAD1C4FE5420047733B /* TFLStopPointAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLStopPointAPI.swift; sourceTree = "<group>"; };
+		0074BEB01C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TFLRestAPI-StopPoint-GET.swift"; sourceTree = "<group>"; };
+		0074BEB31C50C29A0047733B /* LineSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSearchTableViewController.swift; sourceTree = "<group>"; };
+		0074BEB61C50CBC80047733B /* TFLLineSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineSearch.swift; sourceTree = "<group>"; };
+		0074BEB91C50CCB20047733B /* TFLLineSearch-Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TFLLineSearch-Cell.swift"; sourceTree = "<group>"; };
+		007ECD1B1C4D34EE001F520B /* TFLModes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLModes.swift; sourceTree = "<group>"; };
+		007ECD221C4D3E6C001F520B /* UIColor-Brightness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Brightness.swift"; sourceTree = "<group>"; };
+		007ECD251C4D3F81001F520B /* TFLUnderground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLUnderground.swift; sourceTree = "<group>"; };
+		008280F31C4CFE6500186513 /* Brunel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brunel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		008281051C4CFEB300186513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		008281071C4CFEBC00186513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		009C2AEC1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSearchContainerTableViewController.swift; sourceTree = "<group>"; };
+		009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TFLLine-Cell.swift"; sourceTree = "<group>"; };
+		00A268E11C5218360061DEE5 /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		00C0E1521C4FA4F500B76BC3 /* SearchBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBaseTableViewController.swift; sourceTree = "<group>"; };
+		00C0E1551C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBaseResultsTableViewController.swift; sourceTree = "<group>"; };
+		00C245DE1C4FCFB300F00620 /* Accessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessibility.swift; sourceTree = "<group>"; };
+		00D08F3E1C4E2939001876FD /* tflconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tflconfig.plist; sourceTree = "<group>"; };
+		00D08F421C4E2BDD001876FD /* LineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDetailViewController.swift; sourceTree = "<group>"; };
+		00D08F431C4E2BDD001876FD /* LinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesTableViewController.swift; sourceTree = "<group>"; };
+		00D08F441C4E2BDD001876FD /* ModesToLinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesToLinesTableViewController.swift; sourceTree = "<group>"; };
+		00DB6DD21C4F804F00603373 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		00DB6DD51C4F807F00603373 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		00DE84B11C4CF24F00B73551 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00DE84B91C4CF27D00B73551 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00DE84BB1C4CF28200B73551 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00DE84BD1C4CF28800B73551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00E027EB1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesPickerBaseTableViewController.swift; sourceTree = "<group>"; };
+		00E027EE1C4E79050008E5DC /* LineDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineDetailTableViewCell.swift; sourceTree = "<group>"; };
+		00E027F11C4E908F0008E5DC /* ModesBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesBaseTableViewController.swift; sourceTree = "<group>"; };
+		00E027F41C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModesToDashboardTableViewController.swift; sourceTree = "<group>"; };
+		00E027F71C4F799E0008E5DC /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		00FED0901C4CF10C00756A37 /* Brunel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brunel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01A7EFB0E2B13CD34C8BD511 /* Pods_Brunel_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brunel_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B4321B3A8401F018B6E793 /* Pods-Brunel iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brunel iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brunel iOS/Pods-Brunel iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7BE80DD8A3EE047F6CD52AE7 /* Pods-Brunel tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brunel tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brunel tvOS/Pods-Brunel tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		8AF93E4320182C4FD9CF4796 /* Pods_Brunel_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brunel_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B483C3ADF7C7B3D290CCBB5C /* Pods-Brunel tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brunel tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brunel tvOS/Pods-Brunel tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0F06C94605BEFBDA1444D8 /* Pods-Brunel iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brunel iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brunel iOS/Pods-Brunel iOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		008280F01C4CFE6500186513 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F040F427072E7D5B9738CC /* Pods_Brunel_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FED08D1C4CF10C00756A37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA4A71006FB2970A44223B31 /* Pods_Brunel_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		001591B91C4E2E9500FF6095 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				00C245DE1C4FCFB300F00620 /* Accessibility.swift */,
+				001591BA1C4E2EC000FF6095 /* Constants.swift */,
+				001591BD1C4E2FE100FF6095 /* Strings.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		001591C01C4E30FF00FF6095 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				001591C11C4E311E00FF6095 /* BaseViewController.swift */,
+				006E72251C4E4ECF00167EAB /* LinesBaseTableViewController.swift */,
+				00E027EB1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift */,
+				00E027F11C4E908F0008E5DC /* ModesBaseTableViewController.swift */,
+				00C0E1521C4FA4F500B76BC3 /* SearchBaseTableViewController.swift */,
+				00C0E1551C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		001591C71C4E315100FF6095 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				001591C81C4E316700FF6095 /* Abstract */,
+				00DB6DD51C4F807F00603373 /* BannerView.swift */,
+				00E027F71C4F799E0008E5DC /* ClockView.swift */,
+				001591CC1C4E31B200FF6095 /* DetailView.swift */,
+				00A268E11C5218360061DEE5 /* LabelView.swift */,
+				00E027EE1C4E79050008E5DC /* LineDetailTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		001591C81C4E316700FF6095 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				001591C91C4E318100FF6095 /* BaseView.swift */,
+				001591CF1C4E31DC00FF6095 /* BaseStackView.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		0049BF261C4D093A00603E23 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0049BF271C4D096900603E23 /* TFLLineAPI.swift */,
+				000A08731C4D0E0500461E52 /* TFLRestAPI.swift */,
+				0074BEAA1C4FE5070047733B /* TFLRestAPI-Line-GET.swift */,
+				0074BEB01C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift */,
+				0074BEAD1C4FE5420047733B /* TFLStopPointAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0049BF2A1C4D0D2C00603E23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				006E72221C4E4BDC00167EAB /* Settings.swift */,
+				000A08791C4D1D8600461E52 /* TFLDateFormatter.swift */,
+				006E721F1C4E408000167EAB /* TFLLineDisruption.swift */,
+				000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */,
+				0049BF2B1C4D0D5500603E23 /* TFLLineStatus.swift */,
+				000A087C1C4D1E4700461E52 /* TFLLine.swift */,
+				0074BEB61C50CBC80047733B /* TFLLineSearch.swift */,
+				007ECD1B1C4D34EE001F520B /* TFLModes.swift */,
+				005756371C4E1B88003706B6 /* TFLNationalRail.swift */,
+				007ECD251C4D3F81001F520B /* TFLUnderground.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		007ECD211C4D3E0C001F520B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				001F5DA51C575F8E00E3C520 /* Moya-ErrorDescriptions.swift */,
+				007ECD221C4D3E6C001F520B /* UIColor-Brightness.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		008281021C4CFE7D00186513 /* Sources-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				008281031C4CFE9200186513 /* Resources */,
+				008281041C4CFE9700186513 /* Supporting Files */,
+			);
+			path = "Sources-tvOS";
+			sourceTree = "<group>";
+		};
+		008281031C4CFE9200186513 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				008281051C4CFEB300186513 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		008281041C4CFE9700186513 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				008281071C4CFEBC00186513 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		009C2AEB1C50E9B4005E36E6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				009C2AEC1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		009D821C1C4FDCAE00DB4007 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */,
+				0074BEB91C50CCB20047733B /* TFLLineSearch-Cell.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		00D08F3D1C4E2917001876FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00D08F3E1C4E2939001876FD /* tflconfig.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		00D08F411C4E2BAC001876FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				001591C01C4E30FF00FF6095 /* Abstract */,
+				00DB6DD21C4F804F00603373 /* BannerViewController.swift */,
+				006E722E1C4E583700167EAB /* DashboardTableViewController.swift */,
+				00D08F421C4E2BDD001876FD /* LineDetailViewController.swift */,
+				0074BEB31C50C29A0047733B /* LineSearchTableViewController.swift */,
+				00D08F431C4E2BDD001876FD /* LinesTableViewController.swift */,
+				00E027F41C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift */,
+				00D08F441C4E2BDD001876FD /* ModesToLinesTableViewController.swift */,
+				006E72281C4E4FEB00167EAB /* RecentLinesTableViewController.swift */,
+				006E722B1C4E527600167EAB /* ToolsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00DE84AF1C4CF23400B73551 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0049BF261C4D093A00603E23 /* API */,
+				001591B91C4E2E9500FF6095 /* Constant */,
+				00D08F411C4E2BAC001876FD /* Controller */,
+				007ECD211C4D3E0C001F520B /* Extensions */,
+				0049BF2A1C4D0D2C00603E23 /* Model */,
+				00D08F3D1C4E2917001876FD /* Resources */,
+				001591C71C4E315100FF6095 /* View */,
+				009D821C1C4FDCAE00DB4007 /* View Model */,
+				00DE84B11C4CF24F00B73551 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		00DE84B01C4CF23900B73551 /* Sources-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				009C2AEB1C50E9B4005E36E6 /* Classes */,
+				00DE84B71C4CF25300B73551 /* Resources */,
+				00DE84B81C4CF25900B73551 /* Supporting Files */,
+			);
+			path = "Sources-iOS";
+			sourceTree = "<group>";
+		};
+		00DE84B71C4CF25300B73551 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00DE84B91C4CF27D00B73551 /* LaunchScreen.storyboard */,
+				00DE84BD1C4CF28800B73551 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		00DE84B81C4CF25900B73551 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00DE84BB1C4CF28200B73551 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00FED0871C4CF10C00756A37 = {
+			isa = PBXGroup;
+			children = (
+				00DE84AF1C4CF23400B73551 /* Sources */,
+				00DE84B01C4CF23900B73551 /* Sources-iOS */,
+				008281021C4CFE7D00186513 /* Sources-tvOS */,
+				00FED0911C4CF10C00756A37 /* Products */,
+				45A1E58F9C75863FFB2A427F /* Pods */,
+				564DC9D1207592F3AB7B8462 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		00FED0911C4CF10C00756A37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00FED0901C4CF10C00756A37 /* Brunel.app */,
+				008280F31C4CFE6500186513 /* Brunel.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45A1E58F9C75863FFB2A427F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE0F06C94605BEFBDA1444D8 /* Pods-Brunel iOS.debug.xcconfig */,
+				48B4321B3A8401F018B6E793 /* Pods-Brunel iOS.release.xcconfig */,
+				B483C3ADF7C7B3D290CCBB5C /* Pods-Brunel tvOS.debug.xcconfig */,
+				7BE80DD8A3EE047F6CD52AE7 /* Pods-Brunel tvOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		564DC9D1207592F3AB7B8462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AF93E4320182C4FD9CF4796 /* Pods_Brunel_iOS.framework */,
+				01A7EFB0E2B13CD34C8BD511 /* Pods_Brunel_tvOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		008280F21C4CFE6500186513 /* Brunel tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 008280FF1C4CFE6600186513 /* Build configuration list for PBXNativeTarget "Brunel tvOS" */;
+			buildPhases = (
+				901D4B45F1EA19BDEAEF945C /* Check Pods Manifest.lock */,
+				008280EF1C4CFE6500186513 /* Sources */,
+				008280F01C4CFE6500186513 /* Frameworks */,
+				008280F11C4CFE6500186513 /* Resources */,
+				001F5DA21C5757F100E3C520 /* ShellScript */,
+				B9EBD1D4B7934481D4323394 /* Embed Pods Frameworks */,
+				272A4F4D00929962C50B37AE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brunel tvOS";
+			productName = "TFL Demo tvOS";
+			productReference = 008280F31C4CFE6500186513 /* Brunel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00FED08F1C4CF10C00756A37 /* Brunel iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00FED0A41C4CF10C00756A37 /* Build configuration list for PBXNativeTarget "Brunel iOS" */;
+			buildPhases = (
+				59BD87CA2992D3C4F07105D3 /* Check Pods Manifest.lock */,
+				00FED08C1C4CF10C00756A37 /* Sources */,
+				00FED08D1C4CF10C00756A37 /* Frameworks */,
+				00FED08E1C4CF10C00756A37 /* Resources */,
+				00ACDB751C52656800C210F1 /* ShellScript */,
+				13F9CA5BB0A752C60015E15E /* Embed Pods Frameworks */,
+				0A1DAF4C2AC8C032275FB2C7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brunel iOS";
+			productName = "TFL Demo";
+			productReference = 00FED0901C4CF10C00756A37 /* Brunel.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00FED0881C4CF10C00756A37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ustwo;
+				TargetAttributes = {
+					008280F21C4CFE6500186513 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					00FED08F1C4CF10C00756A37 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 00FED08B1C4CF10C00756A37 /* Build configuration list for PBXProject "Brunel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00FED0871C4CF10C00756A37;
+			productRefGroup = 00FED0911C4CF10C00756A37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00FED08F1C4CF10C00756A37 /* Brunel iOS */,
+				008280F21C4CFE6500186513 /* Brunel tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		008280F11C4CFE6500186513 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008281061C4CFEB300186513 /* Assets.xcassets in Resources */,
+				00D08F401C4E2939001876FD /* tflconfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FED08E1C4CF10C00756A37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D08F3F1C4E2939001876FD /* tflconfig.plist in Resources */,
+				00DE84BE1C4CF28800B73551 /* Assets.xcassets in Resources */,
+				00DE84BA1C4CF27D00B73551 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		001F5DA21C5757F100E3C520 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		00ACDB751C52656800C210F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		0A1DAF4C2AC8C032275FB2C7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel iOS/Pods-Brunel iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13F9CA5BB0A752C60015E15E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel iOS/Pods-Brunel iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		272A4F4D00929962C50B37AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel tvOS/Pods-Brunel tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59BD87CA2992D3C4F07105D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		901D4B45F1EA19BDEAEF945C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9EBD1D4B7934481D4323394 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel tvOS/Pods-Brunel tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		008280EF1C4CFE6500186513 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0049BF291C4D096900603E23 /* TFLLineAPI.swift in Sources */,
+				0074BEB21C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift in Sources */,
+				000A087B1C4D1D8600461E52 /* TFLDateFormatter.swift in Sources */,
+				006E722A1C4E4FEB00167EAB /* RecentLinesTableViewController.swift in Sources */,
+				0074BEB81C50CBC80047733B /* TFLLineSearch.swift in Sources */,
+				006E72271C4E4ECF00167EAB /* LinesBaseTableViewController.swift in Sources */,
+				001591D11C4E31DC00FF6095 /* BaseStackView.swift in Sources */,
+				000A087E1C4D1E4700461E52 /* TFLLine.swift in Sources */,
+				00E027F61C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift in Sources */,
+				0074BEB51C50C29A0047733B /* LineSearchTableViewController.swift in Sources */,
+				00D08F461C4E2BDD001876FD /* LineDetailViewController.swift in Sources */,
+				00DB6DD71C4F807F00603373 /* BannerView.swift in Sources */,
+				006E72301C4E583700167EAB /* DashboardTableViewController.swift in Sources */,
+				007ECD271C4D3F81001F520B /* TFLUnderground.swift in Sources */,
+				00DB6DD41C4F804F00603373 /* BannerViewController.swift in Sources */,
+				007ECD1D1C4D34EE001F520B /* TFLModes.swift in Sources */,
+				00E027F01C4E79050008E5DC /* LineDetailTableViewCell.swift in Sources */,
+				0049BF2D1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */,
+				0074BEBB1C50CCB20047733B /* TFLLineSearch-Cell.swift in Sources */,
+				00E027F91C4F799E0008E5DC /* ClockView.swift in Sources */,
+				001591C31C4E311E00FF6095 /* BaseViewController.swift in Sources */,
+				007ECD241C4D3E6C001F520B /* UIColor-Brightness.swift in Sources */,
+				00C0E1571C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift in Sources */,
+				00C0E1541C4FA4F500B76BC3 /* SearchBaseTableViewController.swift in Sources */,
+				00E027ED1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift in Sources */,
+				00D08F4A1C4E2BDD001876FD /* ModesToLinesTableViewController.swift in Sources */,
+				00DB0DE81C4CFED8006192A1 /* AppDelegate.swift in Sources */,
+				000A08781C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */,
+				001591BF1C4E2FE100FF6095 /* Strings.swift in Sources */,
+				00A268E31C5218360061DEE5 /* LabelView.swift in Sources */,
+				006E72211C4E408000167EAB /* TFLLineDisruption.swift in Sources */,
+				00E027F31C4E908F0008E5DC /* ModesBaseTableViewController.swift in Sources */,
+				00D08F481C4E2BDD001876FD /* LinesTableViewController.swift in Sources */,
+				009D821F1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */,
+				001F5DA71C575F8E00E3C520 /* Moya-ErrorDescriptions.swift in Sources */,
+				005756391C4E1B88003706B6 /* TFLNationalRail.swift in Sources */,
+				0074BEAC1C4FE5070047733B /* TFLRestAPI-Line-GET.swift in Sources */,
+				001591CB1C4E318100FF6095 /* BaseView.swift in Sources */,
+				001591CE1C4E31B200FF6095 /* DetailView.swift in Sources */,
+				001591BC1C4E2EC000FF6095 /* Constants.swift in Sources */,
+				006E72241C4E4BDC00167EAB /* Settings.swift in Sources */,
+				006E722D1C4E527600167EAB /* ToolsTableViewController.swift in Sources */,
+				00C245E01C4FCFB300F00620 /* Accessibility.swift in Sources */,
+				0074BEAF1C4FE5420047733B /* TFLStopPointAPI.swift in Sources */,
+				000A08751C4D0E0500461E52 /* TFLRestAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00FED08C1C4CF10C00756A37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0049BF281C4D096900603E23 /* TFLLineAPI.swift in Sources */,
+				0074BEB11C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift in Sources */,
+				000A087A1C4D1D8600461E52 /* TFLDateFormatter.swift in Sources */,
+				006E72291C4E4FEB00167EAB /* RecentLinesTableViewController.swift in Sources */,
+				0074BEB71C50CBC80047733B /* TFLLineSearch.swift in Sources */,
+				006E72261C4E4ECF00167EAB /* LinesBaseTableViewController.swift in Sources */,
+				001591D01C4E31DC00FF6095 /* BaseStackView.swift in Sources */,
+				009C2AED1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift in Sources */,
+				000A087D1C4D1E4700461E52 /* TFLLine.swift in Sources */,
+				00E027F51C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift in Sources */,
+				0074BEB41C50C29A0047733B /* LineSearchTableViewController.swift in Sources */,
+				00D08F451C4E2BDD001876FD /* LineDetailViewController.swift in Sources */,
+				00DB6DD61C4F807F00603373 /* BannerView.swift in Sources */,
+				006E722F1C4E583700167EAB /* DashboardTableViewController.swift in Sources */,
+				007ECD261C4D3F81001F520B /* TFLUnderground.swift in Sources */,
+				00DB6DD31C4F804F00603373 /* BannerViewController.swift in Sources */,
+				007ECD1C1C4D34EE001F520B /* TFLModes.swift in Sources */,
+				00E027EF1C4E79050008E5DC /* LineDetailTableViewCell.swift in Sources */,
+				0049BF2C1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */,
+				0074BEBA1C50CCB20047733B /* TFLLineSearch-Cell.swift in Sources */,
+				00E027F81C4F799E0008E5DC /* ClockView.swift in Sources */,
+				001591C21C4E311E00FF6095 /* BaseViewController.swift in Sources */,
+				007ECD231C4D3E6C001F520B /* UIColor-Brightness.swift in Sources */,
+				00C0E1561C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift in Sources */,
+				00C0E1531C4FA4F500B76BC3 /* SearchBaseTableViewController.swift in Sources */,
+				00E027EC1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift in Sources */,
+				00D08F491C4E2BDD001876FD /* ModesToLinesTableViewController.swift in Sources */,
+				00DE84B41C4CF24F00B73551 /* AppDelegate.swift in Sources */,
+				000A08771C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */,
+				00A268E21C5218360061DEE5 /* LabelView.swift in Sources */,
+				001591BE1C4E2FE100FF6095 /* Strings.swift in Sources */,
+				006E72201C4E408000167EAB /* TFLLineDisruption.swift in Sources */,
+				00E027F21C4E908F0008E5DC /* ModesBaseTableViewController.swift in Sources */,
+				00D08F471C4E2BDD001876FD /* LinesTableViewController.swift in Sources */,
+				009D821E1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */,
+				001F5DA61C575F8E00E3C520 /* Moya-ErrorDescriptions.swift in Sources */,
+				005756381C4E1B88003706B6 /* TFLNationalRail.swift in Sources */,
+				0074BEAB1C4FE5070047733B /* TFLRestAPI-Line-GET.swift in Sources */,
+				001591CA1C4E318100FF6095 /* BaseView.swift in Sources */,
+				001591CD1C4E31B200FF6095 /* DetailView.swift in Sources */,
+				001591BB1C4E2EC000FF6095 /* Constants.swift in Sources */,
+				006E72231C4E4BDC00167EAB /* Settings.swift in Sources */,
+				006E722C1C4E527600167EAB /* ToolsTableViewController.swift in Sources */,
+				00C245DF1C4FCFB300F00620 /* Accessibility.swift in Sources */,
+				0074BEAE1C4FE5420047733B /* TFLStopPointAPI.swift in Sources */,
+				000A08741C4D0E0500461E52 /* TFLRestAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		008281001C4CFE6600186513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B483C3ADF7C7B3D290CCBB5C /* Pods-Brunel tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources-tvOS/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
+				PRODUCT_NAME = Brunel;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		008281011C4CFE6600186513 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BE80DD8A3EE047F6CD52AE7 /* Pods-Brunel tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources-tvOS/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
+				PRODUCT_NAME = Brunel;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		00FED0A21C4CF10C00756A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00FED0A31C4CF10C00756A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00FED0A51C4CF10C00756A37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0F06C94605BEFBDA1444D8 /* Pods-Brunel iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources-iOS/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
+				PRODUCT_NAME = Brunel;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00FED0A61C4CF10C00756A37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48B4321B3A8401F018B6E793 /* Pods-Brunel iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources-iOS/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
+				PRODUCT_NAME = Brunel;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		008280FF1C4CFE6600186513 /* Build configuration list for PBXNativeTarget "Brunel tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				008281001C4CFE6600186513 /* Debug */,
+				008281011C4CFE6600186513 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00FED08B1C4CF10C00756A37 /* Build configuration list for PBXProject "Brunel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00FED0A21C4CF10C00756A37 /* Debug */,
+				00FED0A31C4CF10C00756A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00FED0A41C4CF10C00756A37 /* Build configuration list for PBXNativeTarget "Brunel iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00FED0A51C4CF10C00756A37 /* Debug */,
+				00FED0A61C4CF10C00756A37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00FED0881C4CF10C00756A37 /* Project object */;
+}
