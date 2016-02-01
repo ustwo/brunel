@@ -10,6 +10,7 @@ In the demo, the user can access live feeds of the current status of different l
 
 ## Dependencies
 
+- Ruby
 - [Xcode 7.2](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12#)
 - [CocoaPods 1.0.0.beta.2](https://github.com/CocoaPods/CocoaPods/releases/tag/1.0.0.beta.2)
 	- [Alamofire](https://github.com/Alamofire/Alamofire)
@@ -26,6 +27,8 @@ In the demo, the user can access live feeds of the current status of different l
 You should also then ensure you have all the required pods by running the following terminal command from the project folder:
 
 ```bash
+$ gem install bundler
+$ bundle install
 $ pod install
 ```
 
