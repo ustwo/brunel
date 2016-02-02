@@ -59,8 +59,9 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
         SVProgressHUD.show()
         WikipediaRestAPI.sharedInstance.getQueryTitle(title: lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
             if let wikiPage = wikiPage {
+                let wikiText = "Wikipedia:\n\n" + wikiPage
                 dispatch_async(dispatch_get_main_queue()) {
-                    self?.underlyingView.wikiLabel.text = wikiPage
+                    self?.underlyingView.wikiLabel.text = wikiText
                 }
             } else if let error = error {
                 print(error)
