@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00072D791C60C25500EAE747 /* DetailView-TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D771C60C25500EAE747 /* DetailView-TV.swift */; };
+		00072D7A1C60C25500EAE747 /* LineWikiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D781C60C25500EAE747 /* LineWikiView.swift */; };
+		00072D7D1C60C25C00EAE747 /* LineDetailViewController-TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D7B1C60C25C00EAE747 /* LineDetailViewController-TV.swift */; };
+		00072D7E1C60C25C00EAE747 /* LineWikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D7C1C60C25C00EAE747 /* LineWikiViewController.swift */; };
+		00072D811C60CE7B00EAE747 /* WikipediaSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D801C60CE7B00EAE747 /* WikipediaSearchable.swift */; };
+		00072D821C60CE7B00EAE747 /* WikipediaSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D801C60CE7B00EAE747 /* WikipediaSearchable.swift */; };
+		00072D851C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D841C60E91D00EAE747 /* LineSearchContainerTableViewController.swift */; };
+		00072D861C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D841C60E91D00EAE747 /* LineSearchContainerTableViewController.swift */; };
 		000A08741C4D0E0500461E52 /* TFLRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08731C4D0E0500461E52 /* TFLRestAPI.swift */; };
 		000A08751C4D0E0500461E52 /* TFLRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08731C4D0E0500461E52 /* TFLRestAPI.swift */; };
 		000A08771C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */; };
@@ -35,6 +43,12 @@
 		0049BF2D1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049BF2B1C4D0D5500603E23 /* TFLLineStatus.swift */; };
 		005756381C4E1B88003706B6 /* TFLNationalRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005756371C4E1B88003706B6 /* TFLNationalRail.swift */; };
 		005756391C4E1B88003706B6 /* TFLNationalRail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005756371C4E1B88003706B6 /* TFLNationalRail.swift */; };
+		006246A91C5BD6B3003F3913 /* WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006246A81C5BD6B3003F3913 /* WikipediaAPI.swift */; };
+		006246AA1C5BD6B3003F3913 /* WikipediaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006246A81C5BD6B3003F3913 /* WikipediaAPI.swift */; };
+		006246AC1C5F3E16003F3913 /* WikipediaRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006246AB1C5F3E16003F3913 /* WikipediaRestAPI.swift */; };
+		006246AD1C5F3E16003F3913 /* WikipediaRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006246AB1C5F3E16003F3913 /* WikipediaRestAPI.swift */; };
+		006246AF1C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006246AE1C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift */; };
+		006246B01C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006246AE1C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift */; };
 		006E72201C4E408000167EAB /* TFLLineDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E721F1C4E408000167EAB /* TFLLineDisruption.swift */; };
 		006E72211C4E408000167EAB /* TFLLineDisruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E721F1C4E408000167EAB /* TFLLineDisruption.swift */; };
 		006E72231C4E4BDC00167EAB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006E72221C4E4BDC00167EAB /* Settings.swift */; };
@@ -66,7 +80,6 @@
 		007ECD261C4D3F81001F520B /* TFLUnderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD251C4D3F81001F520B /* TFLUnderground.swift */; };
 		007ECD271C4D3F81001F520B /* TFLUnderground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007ECD251C4D3F81001F520B /* TFLUnderground.swift */; };
 		008281061C4CFEB300186513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008281051C4CFEB300186513 /* Assets.xcassets */; };
-		009C2AED1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C2AEC1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift */; };
 		009D821E1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */; };
 		009D821F1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */; };
 		00A268E21C5218360061DEE5 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A268E11C5218360061DEE5 /* LabelView.swift */; };
@@ -108,6 +121,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00072D771C60C25500EAE747 /* DetailView-TV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DetailView-TV.swift"; sourceTree = "<group>"; };
+		00072D781C60C25500EAE747 /* LineWikiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineWikiView.swift; sourceTree = "<group>"; };
+		00072D7B1C60C25C00EAE747 /* LineDetailViewController-TV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LineDetailViewController-TV.swift"; sourceTree = "<group>"; };
+		00072D7C1C60C25C00EAE747 /* LineWikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineWikiViewController.swift; sourceTree = "<group>"; };
+		00072D801C60CE7B00EAE747 /* WikipediaSearchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaSearchable.swift; sourceTree = "<group>"; };
+		00072D841C60E91D00EAE747 /* LineSearchContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSearchContainerTableViewController.swift; sourceTree = "<group>"; };
 		000A08731C4D0E0500461E52 /* TFLRestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLRestAPI.swift; sourceTree = "<group>"; };
 		000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineServiceType.swift; sourceTree = "<group>"; };
 		000A08791C4D1D8600461E52 /* TFLDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLDateFormatter.swift; sourceTree = "<group>"; };
@@ -122,6 +141,9 @@
 		0049BF271C4D096900603E23 /* TFLLineAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineAPI.swift; sourceTree = "<group>"; };
 		0049BF2B1C4D0D5500603E23 /* TFLLineStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineStatus.swift; sourceTree = "<group>"; };
 		005756371C4E1B88003706B6 /* TFLNationalRail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLNationalRail.swift; sourceTree = "<group>"; };
+		006246A81C5BD6B3003F3913 /* WikipediaAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaAPI.swift; sourceTree = "<group>"; };
+		006246AB1C5F3E16003F3913 /* WikipediaRestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikipediaRestAPI.swift; sourceTree = "<group>"; };
+		006246AE1C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WikipediaRestAPI-GET.swift"; sourceTree = "<group>"; };
 		006E721F1C4E408000167EAB /* TFLLineDisruption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFLLineDisruption.swift; sourceTree = "<group>"; };
 		006E72221C4E4BDC00167EAB /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		006E72251C4E4ECF00167EAB /* LinesBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesBaseTableViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +162,6 @@
 		008280F31C4CFE6500186513 /* Brunel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brunel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		008281051C4CFEB300186513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		008281071C4CFEBC00186513 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		009C2AEC1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineSearchContainerTableViewController.swift; sourceTree = "<group>"; };
 		009D821D1C4FDCFE00DB4007 /* TFLLine-Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TFLLine-Cell.swift"; sourceTree = "<group>"; };
 		00A268E11C5218360061DEE5 /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		00C0E1521C4FA4F500B76BC3 /* SearchBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBaseTableViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +211,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00072D751C60C22800EAE747 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00072D7B1C60C25C00EAE747 /* LineDetailViewController-TV.swift */,
+				00072D7C1C60C25C00EAE747 /* LineWikiViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		00072D761C60C22D00EAE747 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00072D771C60C25500EAE747 /* DetailView-TV.swift */,
+				00072D781C60C25500EAE747 /* LineWikiView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00072D7F1C60CE5E00EAE747 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				00072D801C60CE7B00EAE747 /* WikipediaSearchable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		00072D831C60E8FD00EAE747 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00072D841C60E91D00EAE747 /* LineSearchContainerTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		001591B91C4E2E9500FF6095 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +298,9 @@
 				0074BEAA1C4FE5070047733B /* TFLRestAPI-Line-GET.swift */,
 				0074BEB01C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift */,
 				0074BEAD1C4FE5420047733B /* TFLStopPointAPI.swift */,
+				006246A81C5BD6B3003F3913 /* WikipediaAPI.swift */,
+				006246AB1C5F3E16003F3913 /* WikipediaRestAPI.swift */,
+				006246AE1C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -264,6 +322,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		006246B11C5F4273003F3913 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				00072D751C60C22800EAE747 /* Controller */,
+				00072D761C60C22D00EAE747 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		007ECD211C4D3E0C001F520B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +343,7 @@
 		008281021C4CFE7D00186513 /* Sources-tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				006246B11C5F4273003F3913 /* Classes */,
 				008281031C4CFE9200186513 /* Resources */,
 				008281041C4CFE9700186513 /* Supporting Files */,
 			);
@@ -301,7 +369,7 @@
 		009C2AEB1C50E9B4005E36E6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				009C2AEC1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift */,
+				00072D831C60E8FD00EAE747 /* Controller */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -348,6 +416,7 @@
 				00D08F411C4E2BAC001876FD /* Controller */,
 				007ECD211C4D3E0C001F520B /* Extensions */,
 				0049BF2A1C4D0D2C00603E23 /* Model */,
+				00072D7F1C60CE5E00EAE747 /* Protocol */,
 				00D08F3D1C4E2917001876FD /* Resources */,
 				001591C71C4E315100FF6095 /* View */,
 				009D821C1C4FDCAE00DB4007 /* View Model */,
@@ -662,12 +731,15 @@
 				000A087E1C4D1E4700461E52 /* TFLLine.swift in Sources */,
 				00E027F61C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift in Sources */,
 				0074BEB51C50C29A0047733B /* LineSearchTableViewController.swift in Sources */,
+				00072D7E1C60C25C00EAE747 /* LineWikiViewController.swift in Sources */,
 				00D08F461C4E2BDD001876FD /* LineDetailViewController.swift in Sources */,
 				00DB6DD71C4F807F00603373 /* BannerView.swift in Sources */,
 				006E72301C4E583700167EAB /* DashboardTableViewController.swift in Sources */,
 				007ECD271C4D3F81001F520B /* TFLUnderground.swift in Sources */,
+				00072D861C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */,
 				00DB6DD41C4F804F00603373 /* BannerViewController.swift in Sources */,
 				007ECD1D1C4D34EE001F520B /* TFLModes.swift in Sources */,
+				00072D7D1C60C25C00EAE747 /* LineDetailViewController-TV.swift in Sources */,
 				00E027F01C4E79050008E5DC /* LineDetailTableViewCell.swift in Sources */,
 				0049BF2D1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */,
 				0074BEBB1C50CCB20047733B /* TFLLineSearch-Cell.swift in Sources */,
@@ -675,6 +747,7 @@
 				001591C31C4E311E00FF6095 /* BaseViewController.swift in Sources */,
 				007ECD241C4D3E6C001F520B /* UIColor-Brightness.swift in Sources */,
 				00C0E1571C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift in Sources */,
+				00072D821C60CE7B00EAE747 /* WikipediaSearchable.swift in Sources */,
 				00C0E1541C4FA4F500B76BC3 /* SearchBaseTableViewController.swift in Sources */,
 				00E027ED1C4E78570008E5DC /* LinesPickerBaseTableViewController.swift in Sources */,
 				00D08F4A1C4E2BDD001876FD /* ModesToLinesTableViewController.swift in Sources */,
@@ -684,19 +757,24 @@
 				00A268E31C5218360061DEE5 /* LabelView.swift in Sources */,
 				006E72211C4E408000167EAB /* TFLLineDisruption.swift in Sources */,
 				00E027F31C4E908F0008E5DC /* ModesBaseTableViewController.swift in Sources */,
+				006246AA1C5BD6B3003F3913 /* WikipediaAPI.swift in Sources */,
+				006246B01C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift in Sources */,
 				00D08F481C4E2BDD001876FD /* LinesTableViewController.swift in Sources */,
 				009D821F1C4FDCFE00DB4007 /* TFLLine-Cell.swift in Sources */,
 				001F5DA71C575F8E00E3C520 /* Moya-ErrorDescriptions.swift in Sources */,
 				005756391C4E1B88003706B6 /* TFLNationalRail.swift in Sources */,
 				0074BEAC1C4FE5070047733B /* TFLRestAPI-Line-GET.swift in Sources */,
 				001591CB1C4E318100FF6095 /* BaseView.swift in Sources */,
+				00072D7A1C60C25500EAE747 /* LineWikiView.swift in Sources */,
 				001591CE1C4E31B200FF6095 /* DetailView.swift in Sources */,
 				001591BC1C4E2EC000FF6095 /* Constants.swift in Sources */,
 				006E72241C4E4BDC00167EAB /* Settings.swift in Sources */,
+				006246AD1C5F3E16003F3913 /* WikipediaRestAPI.swift in Sources */,
 				006E722D1C4E527600167EAB /* ToolsTableViewController.swift in Sources */,
 				00C245E01C4FCFB300F00620 /* Accessibility.swift in Sources */,
 				0074BEAF1C4FE5420047733B /* TFLStopPointAPI.swift in Sources */,
 				000A08751C4D0E0500461E52 /* TFLRestAPI.swift in Sources */,
+				00072D791C60C25500EAE747 /* DetailView-TV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,13 +783,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0049BF281C4D096900603E23 /* TFLLineAPI.swift in Sources */,
+				00072D811C60CE7B00EAE747 /* WikipediaSearchable.swift in Sources */,
 				0074BEB11C4FE61D0047733B /* TFLRestAPI-StopPoint-GET.swift in Sources */,
+				00072D851C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */,
 				000A087A1C4D1D8600461E52 /* TFLDateFormatter.swift in Sources */,
 				006E72291C4E4FEB00167EAB /* RecentLinesTableViewController.swift in Sources */,
 				0074BEB71C50CBC80047733B /* TFLLineSearch.swift in Sources */,
 				006E72261C4E4ECF00167EAB /* LinesBaseTableViewController.swift in Sources */,
 				001591D01C4E31DC00FF6095 /* BaseStackView.swift in Sources */,
-				009C2AED1C50E9C6005E36E6 /* LineSearchContainerTableViewController.swift in Sources */,
 				000A087D1C4D1E4700461E52 /* TFLLine.swift in Sources */,
 				00E027F51C4E90ED0008E5DC /* ModesToDashboardTableViewController.swift in Sources */,
 				0074BEB41C50C29A0047733B /* LineSearchTableViewController.swift in Sources */,
@@ -724,7 +803,9 @@
 				00E027EF1C4E79050008E5DC /* LineDetailTableViewCell.swift in Sources */,
 				0049BF2C1C4D0D5500603E23 /* TFLLineStatus.swift in Sources */,
 				0074BEBA1C50CCB20047733B /* TFLLineSearch-Cell.swift in Sources */,
+				006246A91C5BD6B3003F3913 /* WikipediaAPI.swift in Sources */,
 				00E027F81C4F799E0008E5DC /* ClockView.swift in Sources */,
+				006246AF1C5F3FB5003F3913 /* WikipediaRestAPI-GET.swift in Sources */,
 				001591C21C4E311E00FF6095 /* BaseViewController.swift in Sources */,
 				007ECD231C4D3E6C001F520B /* UIColor-Brightness.swift in Sources */,
 				00C0E1561C4FAA4600B76BC3 /* SearchBaseResultsTableViewController.swift in Sources */,
@@ -735,6 +816,7 @@
 				000A08771C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */,
 				00A268E21C5218360061DEE5 /* LabelView.swift in Sources */,
 				001591BE1C4E2FE100FF6095 /* Strings.swift in Sources */,
+				006246AC1C5F3E16003F3913 /* WikipediaRestAPI.swift in Sources */,
 				006E72201C4E408000167EAB /* TFLLineDisruption.swift in Sources */,
 				00E027F21C4E908F0008E5DC /* ModesBaseTableViewController.swift in Sources */,
 				00D08F471C4E2BDD001876FD /* LinesTableViewController.swift in Sources */,

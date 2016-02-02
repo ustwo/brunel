@@ -11,11 +11,9 @@ import Foundation
 
 extension TFLRestAPI {
     
-    func getLineStatus(modes: [TFLModes], completion: ([TFLLine]?, TFLRestAPIError?) -> Void) {
+    func getLineStatus(modes: [TFLModes], completion: ([TFLLine]?, RestAPIError?) -> Void) {
         tfl(lineProvider, target: .ModeStatus(modes: modes, detail: true), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
-                
-                //print(resultJSON.rawString()!)
                 
                 var lines = [TFLLine]()
                 guard let jsonArray = resultJSON.array else {
@@ -44,11 +42,9 @@ extension TFLRestAPI {
         })
     }
     
-    func getLineSearch(query: String, completion: ([TFLLineSearch]?, TFLRestAPIError?) -> Void) {
+    func getLineSearch(query: String, completion: ([TFLLineSearch]?, RestAPIError?) -> Void) {
         tfl(lineProvider, target: .Search(query: query), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
-                
-                //print(resultJSON.rawString()!)
                 
                 var lines = [TFLLineSearch]()
                 guard let jsonArray = resultJSON["searchMatches"].array else {
@@ -58,13 +54,6 @@ extension TFLRestAPI {
                 
                 
                 for jsonItem in jsonArray {
-                    /*
-                    guard let line = TFLLineSearch(jsonObject: jsonItem) else {
-                        completion(nil, .InvalidJSON(localizedDescription: "Bad JSON to initialize `TFLLineSearch`."))
-                        return
-                    }
-                    */
-                    
                     if let line = TFLLineSearch(jsonObject: jsonItem) {
                         lines.append(line)
                     }
@@ -81,11 +70,9 @@ extension TFLRestAPI {
         })
     }
     
-    func getLineStatus(lines: [String], completion: ([TFLLine]?, TFLRestAPIError?) -> Void) {
+    func getLineStatus(lines: [String], completion: ([TFLLine]?, RestAPIError?) -> Void) {
         tfl(lineProvider, target: .Status(lines: lines, detail: true), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
-                
-                //print(resultJSON.rawString()!)
                 
                 var lines = [TFLLine]()
                 guard let jsonArray = resultJSON.array else {
