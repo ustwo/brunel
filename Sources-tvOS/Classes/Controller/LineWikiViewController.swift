@@ -11,6 +11,7 @@ import UIKit
 import SVProgressHUD
 
 
+/// Displays the introduction to the Wikipedia page with details for a given `TFLLine`.
 final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     
