@@ -75,6 +75,7 @@ Extensions are provided on the `TFLLine` and `TFLLineSearch` model objects to pr
 
 - **24362789**: Creating a `UISplitViewController` fully programmatically has layout issues when using a `UINavigationController` on both primary and secondary views. The view on the secondary side extends under an *opaque* `UINavigationBar` until the screen is rotated.
 - [**24363372**](http://openradar.appspot.com/24363732): When you focus on a `UIBarButtonItem` that is an icon, even a system provided one such as Compose, the white icon disappears into the white background of the button. This is in contrast to text based `UIBarButtonItem` where the text changes colour to black on focus.
+- [**24454686**](https://openradar.appspot.com/24454686): A subclass of a generic superclass does not respond to a selector that points to a function that exists in an extension of the subclass. This prevents using a target-action pattern with functions in the extension.
 
 ## License
 

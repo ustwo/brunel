@@ -12,7 +12,7 @@ import Moya
 import SwiftyJSON
 
 
-enum TFLRestAPIError: ErrorType {
+enum RestAPIError: ErrorType {
     case GenericError(localizedDescription: String)
     case InvalidJSON(localizedDescription: String)
     case UnknownError
@@ -81,7 +81,7 @@ struct TFLRestAPI {
      - parameter target:     Endpoint from which to request data.
      - parameter completion: Completion handler that returns either a valid JSON object or an error based on the response.
      */
-    internal func tfl<T: TargetType>(provider: MoyaProvider<T>, target: T, completion: (JSON?, TFLRestAPIError?) -> Void) {
+    internal func tfl<T: TargetType>(provider: MoyaProvider<T>, target: T, completion: (JSON?, RestAPIError?) -> Void) {
         provider.request(target, completion: { result in
             switch result {
             case let .Success(response):

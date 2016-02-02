@@ -10,7 +10,7 @@ import UIKit
 
 
 /// Represents a line on the London Underground.
-enum TFLUnderground {
+enum TFLUnderground: WikipediaSearchable {
     case Bakerloo, Central, Circle, District, Hammersmith, Jubilee, Metropolitan, Northern, Piccadilly, Victoria, Waterloo
     
     static let allValues = [Bakerloo, Central, Circle, District, Hammersmith, Jubilee, Metropolitan, Northern, Piccadilly, Victoria, Waterloo]
@@ -66,6 +66,33 @@ enum TFLUnderground {
             return "Victoria"
         case .Waterloo:
             return "Waterloo & City"
+        }
+    }
+    
+    var wikipediaPageName: String {
+        switch self {
+        case .Bakerloo:
+            return "Bakerloo_line"
+        case .Central:
+            return "Central_line"
+        case .Circle:
+            return "Circle_line_(London_Underground)"
+        case .District:
+            return "District_line"
+        case .Hammersmith:
+            return "Hammersmith_&_City_line"
+        case .Jubilee:
+            return "Jubilee_line"
+        case .Metropolitan:
+            return "Metropolitan_line"
+        case .Northern:
+            return "Northern_line"
+        case .Piccadilly:
+            return "Piccadilly_line"
+        case .Victoria:
+            return "Victoria_line"
+        case .Waterloo:
+            return "Waterloo_&_City_line"
         }
     }
 }

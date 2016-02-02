@@ -62,6 +62,10 @@ final class LineDetailViewController: BaseViewController<DetailView> {
             navigationController?.navigationBar.barTintColor = detail.color
             navigationController?.navigationBar.tintColor = tintColor
             navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : tintColor, NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)]
+            
+            #if os(tvOS)
+                setupTV()
+            #endif
         }
     }
     
@@ -87,5 +91,22 @@ final class LineDetailViewController: BaseViewController<DetailView> {
         
         Settings.sharedInstance.recentLines = recentLines
     }
+    
+    
+    // MARK: - Control Actions
+    
+    #if os(tvOS)
+        func aboutButtonPressed(sender: UIButton) {
+            guard let line = detailItem,
+                lineWikiDetail = lineWikipediaDetail() else {
+                    return
+            }
+            
+            let viewController = LineWikiViewController(line: line, lineWikiDetail: lineWikiDetail)
+            viewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+            
+            showViewController(viewController, sender: nil)
+        }
+    #endif
 
 }

@@ -14,6 +14,11 @@ import Foundation
  */
 struct Strings {
     
+    struct Buttons {
+        static let About        = NSLocalizedString("About", comment: "")
+        static let Back         = NSLocalizedString("Back", comment: "")
+    }
+    
     struct Placeholders {
         static let SearchLines  = NSLocalizedString("Search lines", comment: "")
     }
