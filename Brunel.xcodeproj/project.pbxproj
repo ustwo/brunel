@@ -14,7 +14,6 @@
 		00072D811C60CE7B00EAE747 /* WikipediaSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D801C60CE7B00EAE747 /* WikipediaSearchable.swift */; };
 		00072D821C60CE7B00EAE747 /* WikipediaSearchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D801C60CE7B00EAE747 /* WikipediaSearchable.swift */; };
 		00072D851C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D841C60E91D00EAE747 /* LineSearchContainerTableViewController.swift */; };
-		00072D861C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00072D841C60E91D00EAE747 /* LineSearchContainerTableViewController.swift */; };
 		000A08741C4D0E0500461E52 /* TFLRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08731C4D0E0500461E52 /* TFLRestAPI.swift */; };
 		000A08751C4D0E0500461E52 /* TFLRestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08731C4D0E0500461E52 /* TFLRestAPI.swift */; };
 		000A08771C4D1CE000461E52 /* TFLLineServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A08761C4D1CE000461E52 /* TFLLineServiceType.swift */; };
@@ -736,7 +735,6 @@
 				00DB6DD71C4F807F00603373 /* BannerView.swift in Sources */,
 				006E72301C4E583700167EAB /* DashboardTableViewController.swift in Sources */,
 				007ECD271C4D3F81001F520B /* TFLUnderground.swift in Sources */,
-				00072D861C60E91D00EAE747 /* LineSearchContainerTableViewController.swift in Sources */,
 				00DB6DD41C4F804F00603373 /* BannerViewController.swift in Sources */,
 				007ECD1D1C4D34EE001F520B /* TFLModes.swift in Sources */,
 				00072D7D1C60C25C00EAE747 /* LineDetailViewController-TV.swift in Sources */,
