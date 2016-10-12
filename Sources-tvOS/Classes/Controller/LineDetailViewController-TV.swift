@@ -20,7 +20,7 @@ extension LineDetailViewController {
                 return
         }
         
-        aboutButton.addTarget(self, action: Selector("aboutButtonPressed:"), forControlEvents: .PrimaryActionTriggered)
+        aboutButton.addTarget(self, action: #selector(LineDetailViewController.aboutButtonPressed(_:)), forControlEvents: .PrimaryActionTriggered)
     }
     
     
