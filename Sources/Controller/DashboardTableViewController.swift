@@ -38,7 +38,7 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        scrollingTimer = NSTimer.scheduledTimerWithTimeInterval(Constants.Animation.Scrolling, target: self, selector: Selector("scrollingTimerFired:"), userInfo: nil, repeats: true)
+        scrollingTimer = NSTimer.scheduledTimerWithTimeInterval(Constants.Animation.Scrolling, target: self, selector: #selector(DashboardTableViewController.scrollingTimerFired(_:)), userInfo: nil, repeats: true)
         
         super.viewWillAppear(animated)
     }

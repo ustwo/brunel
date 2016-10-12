@@ -112,5 +112,5 @@ struct TFLRestAPI {
  - returns: URL string for endpoint.
  */
 func url(route: TargetType) -> String {
-    return route.baseURL.URLByAppendingPathComponent(route.path).absoluteString
+    return route.baseURL.URLByAppendingPathComponent(route.path)!.absoluteString!
 }

@@ -66,6 +66,10 @@ extension TFLLineAPI: TargetType {
         return emptyStringData
     }
     
+    var multipartBody: [MultipartFormData]? {
+        return nil
+    }
+    
     // MARK: - Convenience
     
     private func csvFromArray(value: [String]) -> String {

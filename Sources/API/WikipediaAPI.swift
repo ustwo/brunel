@@ -50,4 +50,8 @@ extension WikipediaAPI: TargetType {
         return emptyStringData
     }
     
+    var multipartBody: [MultipartFormData]? {
+        return nil
+    }
+    
 }

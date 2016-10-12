@@ -499,13 +499,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 008280FF1C4CFE6600186513 /* Build configuration list for PBXNativeTarget "Brunel tvOS" */;
 			buildPhases = (
-				901D4B45F1EA19BDEAEF945C /* Check Pods Manifest.lock */,
+				901D4B45F1EA19BDEAEF945C /* [CP] Check Pods Manifest.lock */,
 				008280EF1C4CFE6500186513 /* Sources */,
 				008280F01C4CFE6500186513 /* Frameworks */,
 				008280F11C4CFE6500186513 /* Resources */,
 				001F5DA21C5757F100E3C520 /* ShellScript */,
-				B9EBD1D4B7934481D4323394 /* Embed Pods Frameworks */,
-				272A4F4D00929962C50B37AE /* Copy Pods Resources */,
+				B9EBD1D4B7934481D4323394 /* [CP] Embed Pods Frameworks */,
+				272A4F4D00929962C50B37AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,13 +520,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00FED0A41C4CF10C00756A37 /* Build configuration list for PBXNativeTarget "Brunel iOS" */;
 			buildPhases = (
-				59BD87CA2992D3C4F07105D3 /* Check Pods Manifest.lock */,
+				59BD87CA2992D3C4F07105D3 /* [CP] Check Pods Manifest.lock */,
 				00FED08C1C4CF10C00756A37 /* Sources */,
 				00FED08D1C4CF10C00756A37 /* Frameworks */,
 				00FED08E1C4CF10C00756A37 /* Resources */,
 				00ACDB751C52656800C210F1 /* ShellScript */,
-				13F9CA5BB0A752C60015E15E /* Embed Pods Frameworks */,
-				0A1DAF4C2AC8C032275FB2C7 /* Copy Pods Resources */,
+				13F9CA5BB0A752C60015E15E /* [CP] Embed Pods Frameworks */,
+				0A1DAF4C2AC8C032275FB2C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -544,7 +544,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ustwo;
 				TargetAttributes = {
 					008280F21C4CFE6500186513 = {
@@ -552,6 +552,7 @@
 					};
 					00FED08F1C4CF10C00756A37 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -623,14 +624,14 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		0A1DAF4C2AC8C032275FB2C7 /* Copy Pods Resources */ = {
+		0A1DAF4C2AC8C032275FB2C7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,14 +639,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel iOS/Pods-Brunel iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		13F9CA5BB0A752C60015E15E /* Embed Pods Frameworks */ = {
+		13F9CA5BB0A752C60015E15E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,14 +654,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel iOS/Pods-Brunel iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		272A4F4D00929962C50B37AE /* Copy Pods Resources */ = {
+		272A4F4D00929962C50B37AE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,44 +669,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brunel tvOS/Pods-Brunel tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		59BD87CA2992D3C4F07105D3 /* Check Pods Manifest.lock */ = {
+		59BD87CA2992D3C4F07105D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		901D4B45F1EA19BDEAEF945C /* Check Pods Manifest.lock */ = {
+		901D4B45F1EA19BDEAEF945C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B9EBD1D4B7934481D4323394 /* Embed Pods Frameworks */ = {
+		B9EBD1D4B7934481D4323394 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,6 +841,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B483C3ADF7C7B3D290CCBB5C /* Pods-Brunel tvOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources-tvOS/Supporting Files/Info.plist";
@@ -847,6 +849,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
 				PRODUCT_NAME = Brunel;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -856,6 +859,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7BE80DD8A3EE047F6CD52AE7 /* Pods-Brunel tvOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources-tvOS/Supporting Files/Info.plist";
@@ -863,6 +867,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
 				PRODUCT_NAME = Brunel;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
@@ -881,8 +886,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -927,8 +934,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -948,6 +957,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -957,6 +967,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE0F06C94605BEFBDA1444D8 /* Pods-Brunel iOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
@@ -968,6 +979,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
 				PRODUCT_NAME = Brunel;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -975,6 +987,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48B4321B3A8401F018B6E793 /* Pods-Brunel iOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
@@ -985,6 +998,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
 				PRODUCT_NAME = Brunel;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

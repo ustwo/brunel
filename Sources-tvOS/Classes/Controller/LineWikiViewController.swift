@@ -44,7 +44,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     override func setupView() {
         super.setupView()
         
-        underlyingView.backButton.addTarget(self, action: Selector("backButtonPressed:"), forControlEvents: .PrimaryActionTriggered)
+        underlyingView.backButton.addTarget(self, action: #selector(LineWikiViewController.backButtonPressed(_:)), forControlEvents: .PrimaryActionTriggered)
     }
     
     override func viewWillDisappear(animated: Bool) {

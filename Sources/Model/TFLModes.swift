@@ -21,7 +21,7 @@ enum TFLModes: String, CustomStringConvertible {
     case Tram           = "tram"
     case Underground    = "tube"
     
-    static let allValues = [Bus, CableCar, DLR, NationalRail, Overground, River, TFLRail, Tram,  Underground]
+    static let allValues = [Bus, CableCar, DLR, NationalRail, Overground, River, TFLRail, Tram, Underground]
     
     var description: String {
         switch self {
