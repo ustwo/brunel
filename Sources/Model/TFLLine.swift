@@ -17,12 +17,12 @@ import SwiftyJSON
 struct TFLLine {
     
     let color: UIColor
-    let created: NSDate
+    let created: NSDate?
     let identifier: String
     let lineStatuses: [TFLLineStatus]
     let mode: TFLModes
     let modeName: String
-    let modified: NSDate
+    let modified: NSDate?
     let name: String
     let serviceTypes: [TFLLineServiceType]
     
@@ -40,23 +40,20 @@ struct TFLLine {
         guard let jsonIdentifier = jsonObject[JSONKeys.identifier].string,
             jsonModeName = jsonObject[JSONKeys.modeName].string,
             jsonMode = TFLModes(rawValue: jsonModeName),
-            jsonCreatedString = jsonObject[JSONKeys.created].string,
-            jsonCreated = TFLDateFormatter.sharedInstance.dateFromString(jsonCreatedString),
             jsonLineStatuses = jsonObject[JSONKeys.lineStatuses].array,
-            jsonModifiedString = jsonObject[JSONKeys.created].string,
-            jsonModified = TFLDateFormatter.sharedInstance.dateFromString(jsonModifiedString),
             jsonName = jsonObject[JSONKeys.name].string,
             jsonServiceTypes = jsonObject[JSONKeys.serviceTypes].array else {
                 
                 return nil
         }
         
-        created = jsonCreated
         identifier = jsonIdentifier
         mode = jsonMode
         modeName = jsonModeName
-        modified = jsonModified
         name = jsonName
+        
+        created = TFLLine.dateFromJSON(jsonObject, key: JSONKeys.created)
+        modified = TFLLine.dateFromJSON(jsonObject, key: JSONKeys.modified)
         
         var lineStatusesArray = [TFLLineStatus]()
         for jsonLineStatus in jsonLineStatuses {
@@ -94,6 +91,14 @@ struct TFLLine {
             color = mode.color
         }
         
+    }
+    
+    private static func dateFromJSON(jsonObject: JSON, key: String) -> NSDate? {
+        guard let jsonDateString = jsonObject[key].string else {
+            return nil
+        }
+        
+        return TFLDateFormatter.sharedInstance.dateFromString(jsonDateString)
     }
     
 }

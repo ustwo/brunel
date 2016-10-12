@@ -2,7 +2,7 @@
 
 [![Twitter](https://img.shields.io/badge/twitter-@ustwo-blue.svg?style=flat)](http://twitter.com/ustwo)
 
-This project is a demonstration of organisation for an app that runs on both iOS and tvOS platforms using a unified code base. It is built using Swift 2.1 by iOS developers at [ustwo](https://ustwo.com/).
+This project is a demonstration of organisation for an app that runs on both iOS and tvOS platforms using a unified code base. It is built using Swift 2.3 by iOS developers at [ustwo](https://ustwo.com/).
 
 In the demo, the user can access live feeds of the current status of different lines across Transport for London's network.
 
@@ -11,7 +11,7 @@ In the demo, the user can access live feeds of the current status of different l
 ## Dependencies
 
 - Ruby
-- [Xcode 7.2](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12#)
+- [Xcode 8.0](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12#)
 - [CocoaPods 1.1.0.rc.3](https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0.rc.3)
 	- [Alamofire](https://github.com/Alamofire/Alamofire)
 	- [Moya](https://github.com/Moya/Moya)

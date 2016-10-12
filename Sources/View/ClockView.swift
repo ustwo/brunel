@@ -17,7 +17,7 @@ final class ClockLabel: UILabel {
     var on: Bool = false {
         didSet {
             if on {
-                updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateClock:"), userInfo: nil, repeats: true)
+                updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ClockLabel.updateClock(_:)), userInfo: nil, repeats: true)
             } else {
                 updateTimer?.invalidate()
             }
