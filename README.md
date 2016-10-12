@@ -12,7 +12,7 @@ In the demo, the user can access live feeds of the current status of different l
 
 - Ruby
 - [Xcode 7.2](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12#)
-- [CocoaPods 1.0.0.beta.2](https://github.com/CocoaPods/CocoaPods/releases/tag/1.0.0.beta.2)
+- [CocoaPods 1.1.0.rc.3](https://github.com/CocoaPods/CocoaPods/releases/tag/1.1.0.rc.3)
 	- [Alamofire](https://github.com/Alamofire/Alamofire)
 	- [Moya](https://github.com/Moya/Moya)
 	- [Result](https://github.com/antitypical/Result)
