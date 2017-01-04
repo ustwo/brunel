@@ -103,7 +103,7 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
             
             searchController.dimsBackgroundDuringPresentation = false
         #else
-            let searchButton = UIBarButtonItem(title: "Search", style: .Plain, target: self, action: #selector(SearchTableViewController.searchButtonPressed(_:)))
+            let searchButton = UIBarButtonItem(title: "Search", style: .plain, target: self, action: #selector(SearchTableViewController.searchButtonPressed(_:)))
             searchButton.accessibilityIdentifier = AccessibilityIdentifiers.Buttons.SearchButton
             
             navigationItem.rightBarButtonItem = searchButton

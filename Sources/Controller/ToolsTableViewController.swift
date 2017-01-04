@@ -127,7 +127,7 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
             
             // Present the search controller from the root view controller.
             guard let rootViewController = view.window?.rootViewController else { fatalError("Unable to get root view controller.") }
-            rootViewController.presentViewController(searchController, animated: true, completion: nil)
+            rootViewController.present(searchController, animated: true, completion: nil)
         #endif
     }
     

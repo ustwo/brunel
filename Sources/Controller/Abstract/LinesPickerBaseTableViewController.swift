@@ -30,7 +30,7 @@ class LinesPickerBaseTableViewController: LinesBaseTableViewController {
         
         #if os(tvOS)
             if tableView != self.tableView {
-                dismissViewControllerAnimated(true, completion: nil)
+                dismiss(animated: true, completion: nil)
             }
         #endif
         

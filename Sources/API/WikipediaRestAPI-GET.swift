@@ -11,7 +11,7 @@ import Foundation
 
 extension WikipediaRestAPI {
     
-    func getQueryTitle(title: String, completion: @escaping (String?, RestAPIError?) -> Void) {
+    func getQueryTitle(_ title: String, completion: @escaping (String?, RestAPIError?) -> Void) {
         wikipedia(provider, target: .QueryTitle(title: title), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 guard let pagesDictionary = resultJSON["query"]["pages"].dictionary else {

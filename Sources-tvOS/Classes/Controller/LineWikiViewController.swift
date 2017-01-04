@@ -17,8 +17,8 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     // MARK: - Properties
     
-    private let line: TFLLine
-    private var lineWikiDetail: WikipediaSearchable
+    fileprivate let line: TFLLine
+    fileprivate var lineWikiDetail: WikipediaSearchable
     
     
     // MARK: - Initializers
@@ -28,6 +28,10 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
         self.lineWikiDetail = lineWikiDetail
         
         super.init()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -44,10 +48,10 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     override func setupView() {
         super.setupView()
         
-        underlyingView.backButton.addTarget(self, action: #selector(LineWikiViewController.backButtonPressed(_:)), forControlEvents: .PrimaryActionTriggered)
+        underlyingView.backButton.addTarget(self, action: #selector(LineWikiViewController.backButtonPressed(_:)), for: .primaryActionTriggered)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         SVProgressHUD.dismiss()
@@ -56,12 +60,12 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     // MARK: - Fetch Data
     
-    private func fetchWiki() {
+    fileprivate func fetchWiki() {
         SVProgressHUD.show()
         WikipediaRestAPI.sharedInstance.getQueryTitle(title: lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
             if let wikiPage = wikiPage {
                 let wikiText = "Wikipedia:\n\n" + wikiPage
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.asynchronously(DispatchQueue.main) {
                     self?.underlyingView.wikiLabel.text = wikiText
                 }
             } else if let error = error {
@@ -70,7 +74,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
                 print("Unknown Error")
             }
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.asynchronously(DispatchQueue.main) {
                 SVProgressHUD.dismiss()
             }
         }
@@ -79,8 +83,8 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     // MARK: - Control Actions
     
-    func backButtonPressed(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
+    func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
 }

@@ -96,16 +96,16 @@ final class LineDetailViewController: BaseViewController<DetailView> {
     // MARK: - Control Actions
     
     #if os(tvOS)
-        func aboutButtonPressed(sender: UIButton) {
+        func aboutButtonPressed(_ sender: UIButton) {
             guard let line = detailItem,
                 let lineWikiDetail = lineWikipediaDetail() else {
                     return
             }
             
             let viewController = LineWikiViewController(line: line, lineWikiDetail: lineWikiDetail)
-            viewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+            viewController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
             
-            showViewController(viewController, sender: nil)
+            show(viewController, sender: nil)
         }
     #endif
 

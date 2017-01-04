@@ -230,7 +230,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
             }
         }
         
-        modes.sort { $0.description < $1.description }
+        modes.sorted { $0.description < $1.description }
     }
     
     fileprivate func updateSearchArray() {

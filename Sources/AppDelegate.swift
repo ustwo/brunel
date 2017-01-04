@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if os(iOS)
             detailController.navigationItem.leftItemsSupplementBackButton = true
         #else
-            viewController.displayModeButtonItem().tintColor = UIColor.blackColor()
+            viewController.displayModeButtonItem.tintColor = UIColor.black
         #endif
         
         let rootNavigationController = UINavigationController(rootViewController: rootController)
