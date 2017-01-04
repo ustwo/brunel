@@ -62,10 +62,10 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     fileprivate func fetchWiki() {
         SVProgressHUD.show()
-        WikipediaRestAPI.sharedInstance.getQueryTitle(title: lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
+        WikipediaRestAPI.sharedInstance.getQueryTitle(lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
             if let wikiPage = wikiPage {
                 let wikiText = "Wikipedia:\n\n" + wikiPage
-                DispatchQueue.main.asynchronously(DispatchQueue.main) {
+                DispatchQueue.main.async {
                     self?.underlyingView.wikiLabel.text = wikiText
                 }
             } else if let error = error {
@@ -74,7 +74,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
                 print("Unknown Error")
             }
             
-            DispatchQueue.main.asynchronously(DispatchQueue.main) {
+            DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
             }
         }
@@ -84,7 +84,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     // MARK: - Control Actions
     
     func backButtonPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        let _ = navigationController?.popViewController(animated: true)
     }
     
 }
