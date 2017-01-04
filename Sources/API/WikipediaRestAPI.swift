@@ -37,7 +37,7 @@ struct WikipediaRestAPI {
      */
     static func WikipediaEndpointClosure<T: TargetType>() -> ((T) -> Endpoint<T>) {
         return { (target: T) -> Endpoint<T> in
-            var newParameters = [String : Any]()
+            var newParameters = [String: Any]()
             
             newParameters["format"] = "json"
             

@@ -49,7 +49,7 @@ final class LineDetailTableViewCell: UITableViewCell {
         statusSection.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["statusSection" : statusSection]
+        let views = ["statusSection": statusSection]
         let metrics = Constants.Layout.Metrics
         
         // Vertical Constraints
@@ -96,7 +96,7 @@ final class LineDetailStatusSectionView: BaseView {
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["lineLabel" : lineLabel, "statusLabel" : statusLabel]
+        let views = ["lineLabel": lineLabel, "statusLabel": statusLabel]
         var metrics = Constants.Layout.Metrics
         metrics["statusLabelWidth"] = 100.0
         

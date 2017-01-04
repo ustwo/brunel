@@ -38,7 +38,7 @@ final class LabelView: BaseView {
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["textLabel" : textLabel]
+        let views = ["textLabel": textLabel]
         let metrics = Constants.Layout.Metrics
         
         // Vertical Constraints

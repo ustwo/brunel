@@ -76,7 +76,7 @@ struct Settings {
     static func registerSettings() {
         let defaults = UserDefaults.standard
         
-        defaults.register(defaults: [SettingsKeys.RecentLines : [String]()])
+        defaults.register(defaults: [SettingsKeys.RecentLines: [String]()])
     }
     
 }

@@ -57,7 +57,7 @@ struct TFLRestAPI {
      */
     static func TFLEndpointClosure<T: TargetType>(_ appID: String, appKey: String) -> ((T) -> Endpoint<T>) {
         return { (target: T) -> Endpoint<T> in
-            var newParameters = [String : Any]()
+            var newParameters = [String: Any]()
             
             newParameters["app_id"] = appID
             newParameters["app_key"] = appKey

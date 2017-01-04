@@ -66,7 +66,7 @@ final class DashboardTableViewController: LinesBaseTableViewController {
                 
                 navigationController?.navigationBar.barTintColor = firstMode.color
                 navigationController?.navigationBar.tintColor = tintColor
-                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : tintColor, NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
+                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: tintColor, NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
             }
             
             loadingData = true

@@ -60,9 +60,9 @@ extension TFLLineAPI: TargetType {
     var parameters: [String: Any]? {
         switch self {
         case let .modeStatus(_, detail):
-            return ["detail" : encodeBool(detail)]
+            return ["detail": encodeBool(detail)]
         case let .status(_, detail):
-            return ["detail" : encodeBool(detail)]
+            return ["detail": encodeBool(detail)]
         case .search:
             return nil
         }

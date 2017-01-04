@@ -137,7 +137,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
             if let lines = lines, !lines.isEmpty {
                 completion(true, lines[0])
             } else {
-                print(error)
+                print("Error: \(error)")
                 completion(false, nil)
             }
             self?.loadingData = false

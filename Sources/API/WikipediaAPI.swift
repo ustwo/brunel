@@ -45,11 +45,11 @@ extension WikipediaAPI: TargetType {
     var parameters: [String: Any]? {
         switch self {
         case let .queryTitle(title):
-            return ["action" : "query",
-                "prop" : "extracts",
-                "exintro" : "",
-                "explaintext" : "",
-                "titles" : title]
+            return ["action": "query",
+                "prop": "extracts",
+                "exintro": "",
+                "explaintext": "",
+                "titles": title]
         }
     }
     

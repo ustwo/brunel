@@ -71,7 +71,7 @@ final class ClockBannerView: BaseView {
         clock.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["clock" : clock]
+        let views = ["clock": clock]
         let metrics = Constants.Layout.Metrics
         
         // Vertical Constraints

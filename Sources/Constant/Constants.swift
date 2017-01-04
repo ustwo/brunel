@@ -26,7 +26,7 @@ struct Constants {
         static let DefaultMargin: CGFloat   = 20.0
         static let HalfMargin: CGFloat      = DefaultMargin / 2.0
         
-        static let Metrics = ["DefaultMargin" : DefaultMargin, "HalfMargin" : HalfMargin]
+        static let Metrics = ["DefaultMargin": DefaultMargin, "HalfMargin": HalfMargin]
     }
     
     struct Settings {

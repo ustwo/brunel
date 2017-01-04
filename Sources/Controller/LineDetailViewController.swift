@@ -61,7 +61,7 @@ final class LineDetailViewController: BaseViewController<DetailView> {
             
             navigationController?.navigationBar.barTintColor = detail.color
             navigationController?.navigationBar.tintColor = tintColor
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : tintColor, NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
+            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: tintColor, NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
             
             #if os(tvOS)
                 setupTV()

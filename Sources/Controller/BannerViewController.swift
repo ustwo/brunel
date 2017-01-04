@@ -47,7 +47,7 @@ final class BannerViewController: BaseViewController<BannerView> {
         
         title = embeddedViewController.title
         
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -42,7 +42,7 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
         
         navigationController?.navigationBar.barTintColor = Constants.Colors.BlueColor
         navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
     }
     
     
