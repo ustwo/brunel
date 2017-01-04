@@ -15,16 +15,16 @@ final class ModesToDashboardTableViewController: ModesBaseTableViewController {
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = itemForIndexPath(indexPath)
         
         let controller = BannerViewController(embeddedViewController: DashboardTableViewController(modes: [item]))
         let navigationViewController = UINavigationController(rootViewController: controller)
-        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
         
         #if os(iOS)
             // While this is already set via `UINavigationBar.appearance()` in the `AppDelegate.setupTheme()`, there is currenty a bug in UIKit on iOS that causes the transparency not to be set in time from the appearance proxy. Radar: 24362789
-            navigationViewController.navigationBar.translucent = false
+            navigationViewController.navigationBar.isTranslucent = false
             
             controller.navigationItem.leftItemsSupplementBackButton = true
         #endif

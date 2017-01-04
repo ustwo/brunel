@@ -38,8 +38,8 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
         searchController.searchBar.accessibilityIdentifier = AccessibilityIdentifiers.Lines.SearchBar
     }
     
-    override func viewWillAppear(animated: Bool) {
-        clearsSelectionOnViewWillAppear = splitViewController?.collapsed ?? false
+    override func viewWillAppear(_ animated: Bool) {
+        clearsSelectionOnViewWillAppear = splitViewController?.isCollapsed ?? false
         
         super.viewWillAppear(animated)
     }
@@ -47,11 +47,11 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
     
     // MARK: - UITableViewDatasource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return modes?.count ?? 0
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let mode = modes?[section] else { return 0 }
         
         let array: [TFLLine]
@@ -64,11 +64,11 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
         return array.filter { $0.mode == mode }.count
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return modes?[section].description
     }
     
-    override func itemForIndexPath(tableView: UITableView, indexPath: NSIndexPath) -> TFLLine? {
+    override func itemForIndexPath(_ tableView: UITableView, indexPath: IndexPath) -> TFLLine? {
         guard let mode = modes?[indexPath.section] else { return nil }
         
         let array: [TFLLine]
@@ -84,22 +84,22 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
         
-        cell?.textLabel?.textColor = UIColor.blackColor()
+        cell?.textLabel?.textColor = UIColor.black
         
         return indexPath
     }
     
-    override func tableView(tableView: UITableView, willDeselectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
         guard let line = itemForIndexPath(tableView, indexPath: indexPath) else { return indexPath }
         
         if line.color.isLight() {
-            cell?.textLabel?.textColor = UIColor.blackColor()
+            cell?.textLabel?.textColor = UIColor.black
         } else {
-            cell?.textLabel?.textColor = UIColor.whiteColor()
+            cell?.textLabel?.textColor = UIColor.white
         }
         
         return indexPath

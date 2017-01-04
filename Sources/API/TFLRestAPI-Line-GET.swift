@@ -11,7 +11,7 @@ import Foundation
 
 extension TFLRestAPI {
     
-    func getLineStatus(modes: [TFLModes], completion: ([TFLLine]?, RestAPIError?) -> Void) {
+    func getLineStatus(_ modes: [TFLModes], completion: @escaping ([TFLLine]?, RestAPIError?) -> Void) {
         tfl(lineProvider, target: .ModeStatus(modes: modes, detail: true), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 
@@ -42,7 +42,7 @@ extension TFLRestAPI {
         })
     }
     
-    func getLineSearch(query: String, completion: ([TFLLineSearch]?, RestAPIError?) -> Void) {
+    func getLineSearch(_ query: String, completion: @escaping ([TFLLineSearch]?, RestAPIError?) -> Void) {
         tfl(lineProvider, target: .Search(query: query), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 
@@ -70,7 +70,7 @@ extension TFLRestAPI {
         })
     }
     
-    func getLineStatus(lines: [String], completion: ([TFLLine]?, RestAPIError?) -> Void) {
+    func getLineStatus(_ lines: [String], completion: @escaping ([TFLLine]?, RestAPIError?) -> Void) {
         tfl(lineProvider, target: .Status(lines: lines, detail: true), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 

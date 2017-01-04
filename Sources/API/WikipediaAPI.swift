@@ -12,41 +12,41 @@ import Moya
 
 
 enum WikipediaAPI {
-    case QueryTitle(title: String)
+    case queryTitle(title: String)
 }
 
 
 extension WikipediaAPI: TargetType {
     
-    var baseURL: NSURL { return NSURL(string: "https://en.wikipedia.org/w/api.php")! }
+    var baseURL: URL { return URL(string: "https://en.wikipedia.org/w/api.php")! }
     
     var path: String {
         switch self {
-        case .QueryTitle:
+        case .queryTitle:
             return ""
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .QueryTitle:
+        case .queryTitle:
             return .GET
         }
     }
     
     var parameters: [String: AnyObject]? {
         switch self {
-        case let .QueryTitle(title):
-            return ["action" : "query",
-                "prop" : "extracts",
-                "exintro" : "",
-                "explaintext" : "",
-                "titles" : title]
+        case let .queryTitle(title):
+            return ["action" : "query" as AnyObject,
+                "prop" : "extracts" as AnyObject,
+                "exintro" : "" as AnyObject,
+                "explaintext" : "" as AnyObject,
+                "titles" : title as AnyObject]
         }
     }
     
-    var sampleData: NSData {
-        let emptyStringData = "".dataUsingEncoding(NSUTF8StringEncoding)!
+    var sampleData: Data {
+        let emptyStringData = "".data(using: String.Encoding.utf8)!
         return emptyStringData
     }
     

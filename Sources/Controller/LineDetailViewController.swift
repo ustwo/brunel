@@ -30,10 +30,10 @@ final class LineDetailViewController: BaseViewController<DetailView> {
         
         title = Strings.Titles.Status
         
-        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.isTranslucent = false
         
         if navigationItem.leftBarButtonItem == nil {
-            navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+            navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         }
     }
     
@@ -47,21 +47,21 @@ final class LineDetailViewController: BaseViewController<DetailView> {
             underlyingView.statusLabel.text = detail.lineStatuses.first?.severityDescription
             
             if let disruption = detail.lineStatuses.first?.disruption,
-                additionalInfo = disruption.additionalInfo {
+                let additionalInfo = disruption.additionalInfo {
                     underlyingView.disruptionLabel.text = additionalInfo
-                    underlyingView.disruptionLabel.hidden = false
+                    underlyingView.disruptionLabel.isHidden = false
             }
             
             let tintColor: UIColor
             if detail.color.isLight() {
-                tintColor = UIColor.blackColor()
+                tintColor = UIColor.black
             } else {
-                tintColor = UIColor.whiteColor()
+                tintColor = UIColor.white
             }
             
             navigationController?.navigationBar.barTintColor = detail.color
             navigationController?.navigationBar.tintColor = tintColor
-            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : tintColor, NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)]
+            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : tintColor, NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
             
             #if os(tvOS)
                 setupTV()
@@ -79,11 +79,11 @@ final class LineDetailViewController: BaseViewController<DetailView> {
         
         var recentLines = Settings.sharedInstance.recentLines
         
-        if let index = recentLines.indexOf(identifier) {
-            recentLines.removeAtIndex(index)
-            recentLines.insert(identifier, atIndex: 0)
+        if let index = recentLines.index(of: identifier) {
+            recentLines.remove(at: index)
+            recentLines.insert(identifier, at: 0)
         } else {
-            recentLines.insert(identifier, atIndex: 0)
+            recentLines.insert(identifier, at: 0)
             if recentLines.count > Constants.Settings.MaxRecentLines {
                 recentLines.removeLast()
             }
@@ -98,7 +98,7 @@ final class LineDetailViewController: BaseViewController<DetailView> {
     #if os(tvOS)
         func aboutButtonPressed(sender: UIButton) {
             guard let line = detailItem,
-                lineWikiDetail = lineWikipediaDetail() else {
+                let lineWikiDetail = lineWikipediaDetail() else {
                     return
             }
             

@@ -11,21 +11,21 @@ import UIKit
 
 extension TFLLine: SearchableTableItem {
     
-    func configureTableViewCell(cell: UITableViewCell) {
+    func configureTableViewCell(_ cell: UITableViewCell) {
         if let lineCell = cell as? LineDetailTableViewCell {
             lineCell.statusSection.lineLabel.textLabel.text = name
             
             lineCell.statusSection.lineLabel.backgroundColor = color
             
             if color.isLight() {
-                lineCell.statusSection.lineLabel.textLabel.textColor = UIColor.blackColor()
+                lineCell.statusSection.lineLabel.textLabel.textColor = UIColor.black
             } else {
-                lineCell.statusSection.lineLabel.textLabel.textColor = UIColor.whiteColor()
+                lineCell.statusSection.lineLabel.textLabel.textColor = UIColor.white
             }
             
             var statusText = ""
-            var statusTextColor = UIColor.blackColor()
-            var statusBackgroundColor = UIColor.whiteColor()
+            var statusTextColor = UIColor.black
+            var statusBackgroundColor = UIColor.white
             if !lineStatuses.isEmpty {
                 var statusTextResult = ""
                 var usedStatuses = [String]()
@@ -36,8 +36,8 @@ extension TFLLine: SearchableTableItem {
                         
                     } else {
                         if lineStatus.severity != 10 {
-                            statusTextColor = UIColor.whiteColor()
-                            statusBackgroundColor = UIColor.purpleColor()
+                            statusTextColor = UIColor.white
+                            statusBackgroundColor = UIColor.purple
                         }
                     }
                     
@@ -51,7 +51,7 @@ extension TFLLine: SearchableTableItem {
             lineCell.statusSection.statusLabel.textLabel.textColor = statusTextColor
             lineCell.statusSection.statusLabel.backgroundColor = statusBackgroundColor
             
-            lineCell.selectionStyle = .None
+            lineCell.selectionStyle = .none
             
             lineCell.accessibilityIdentifier = AccessibilityIdentifiers.Lines.LineDetailCellPrefix + "_\(name)"
         } else {
@@ -60,9 +60,9 @@ extension TFLLine: SearchableTableItem {
             cell.contentView.backgroundColor = color
             
             if color.isLight() {
-                cell.textLabel?.textColor = UIColor.blackColor()
+                cell.textLabel?.textColor = UIColor.black
             } else {
-                cell.textLabel?.textColor = UIColor.whiteColor()
+                cell.textLabel?.textColor = UIColor.white
             }
             
             cell.accessibilityIdentifier = AccessibilityIdentifiers.Lines.LineCellPrefix + "_\(name)"

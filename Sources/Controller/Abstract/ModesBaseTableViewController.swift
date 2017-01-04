@@ -19,7 +19,7 @@ class ModesBaseTableViewController: UITableViewController {
     
     let modes = TFLModes.allValues
     
-    private let reuseIdentifier = "Cell"
+    fileprivate let reuseIdentifier = "Cell"
     
     
     // MARK: - View Lifecycle
@@ -27,7 +27,7 @@ class ModesBaseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -37,8 +37,8 @@ class ModesBaseTableViewController: UITableViewController {
         title = Strings.Titles.Modes
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+    override func viewWillAppear(_ animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         
         super.viewWillAppear(animated)
     }
@@ -46,12 +46,12 @@ class ModesBaseTableViewController: UITableViewController {
     
     // MARK: - UITableViewDatasource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return modes.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
         let mode = itemForIndexPath(indexPath)
         
@@ -64,9 +64,9 @@ class ModesBaseTableViewController: UITableViewController {
         cell.contentView.backgroundColor = cellColor
         
         if cellColor.isLight() {
-            cell.textLabel?.textColor = UIColor.blackColor()
+            cell.textLabel?.textColor = UIColor.black
         } else {
-            cell.textLabel?.textColor = UIColor.whiteColor()
+            cell.textLabel?.textColor = UIColor.white
         }
         
         cell.accessibilityIdentifier = AccessibilityIdentifiers.Modes.ModeCellPrefix + "_\(mode.description)"
@@ -74,29 +74,29 @@ class ModesBaseTableViewController: UITableViewController {
         return cell
     }
     
-    func itemForIndexPath(indexPath: NSIndexPath) -> TFLModes {
+    func itemForIndexPath(_ indexPath: IndexPath) -> TFLModes {
         return modes[indexPath.row]
     }
     
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
         
-        cell?.textLabel?.textColor = UIColor.blackColor()
+        cell?.textLabel?.textColor = UIColor.black
         
         return indexPath
     }
     
-    override func tableView(tableView: UITableView, willDeselectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
         let item = itemForIndexPath(indexPath)
         
         if item.color.isLight() {
-            cell?.textLabel?.textColor = UIColor.blackColor()
+            cell?.textLabel?.textColor = UIColor.black
         } else {
-            cell?.textLabel?.textColor = UIColor.whiteColor()
+            cell?.textLabel?.textColor = UIColor.white
         }
         
         return indexPath

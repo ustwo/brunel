@@ -13,7 +13,7 @@ import SVProgressHUD
 
 protocol SearchableTableItem {
     
-    func configureTableViewCell(cell: UITableViewCell)
+    func configureTableViewCell(_ cell: UITableViewCell)
     func searchableStrings() -> [String]
     
 }
@@ -48,17 +48,17 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     var resultsTableController: SearchBaseResultsTableViewController<T>?
     
     /// Restoration state for UISearchController
-    private var restoredState = SearchControllerRestorableState()
+    fileprivate var restoredState = SearchControllerRestorableState()
     
     var loadingData = false {
         didSet {
             if loadingData {
                 items = [T]()
-                searchController.active = false
-                navigationItem.rightBarButtonItem?.enabled = false
+                searchController.isActive = false
+                navigationItem.rightBarButtonItem?.isEnabled = false
                 SVProgressHUD.show()
             } else {
-                navigationItem.rightBarButtonItem?.enabled = true
+                navigationItem.rightBarButtonItem?.isEnabled = true
                 SVProgressHUD.dismiss()
             }
             
@@ -74,7 +74,11 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     init(cellType: AnyClass) {
         self.cellType = cellType
         
-        super.init(style: .Plain)
+        super.init(style: .plain)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -107,17 +111,17 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
         
         definesPresentationContext = true
         
-        tableView.registerClass(cellType, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(cellType, forCellReuseIdentifier: reuseIdentifier)
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // Restore the searchController's active state.
         if restoredState.wasActive {
-            searchController.active = restoredState.wasActive
+            searchController.isActive = restoredState.wasActive
             restoredState.wasActive = false
             
             if restoredState.wasFirstResponder {
@@ -127,7 +131,7 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
         }
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         SVProgressHUD.dismiss()
@@ -136,22 +140,22 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     
     // MARK: - Setup
     
-    func setSearchBarPlaceholder(placeholder: String) {
+    func setSearchBarPlaceholder(_ placeholder: String) {
         searchController.searchBar.placeholder = placeholder
     }
     
     
     // MARK: UISearchBarDelegate
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
     
     // MARK: - UISearchResultsUpdating
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        resultsTableController?.searchArray.removeAll(keepCapacity: false)
+    func updateSearchResults(for searchController: UISearchController) {
+        resultsTableController?.searchArray.removeAll(keepingCapacity: false)
         
         guard let searchText = searchController.searchBar.text else {
             return
@@ -161,7 +165,7 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
             let searchableStrings = $0.searchableStrings()
             
             for searchableString in searchableStrings {
-                if searchableString.uppercaseString.rangeOfString(searchText.uppercaseString) != nil {
+                if searchableString.uppercased().range(of: searchText.uppercased()) != nil {
                     return true
                 }
             }
@@ -175,20 +179,20 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     // MARK: - UISearchControllerDelegate
     
     #if os(iOS)
-        func willPresentSearchController(searchController: UISearchController) {
-            navigationController?.navigationBar.translucent = true
+        func willPresentSearchController(_ searchController: UISearchController) {
+            navigationController?.navigationBar.isTranslucent = true
         }
     
-        func willDismissSearchController(searchController: UISearchController) {
-            navigationController?.navigationBar.translucent = false
+        func willDismissSearchController(_ searchController: UISearchController) {
+            navigationController?.navigationBar.isTranslucent = false
         }
     #endif
     
     
     // MARK: - UITableViewDatasource
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
         if let item = itemForIndexPath(tableView, indexPath: indexPath) {
             item.configureTableViewCell(cell)
@@ -200,16 +204,16 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     
     // MARK: - Control Actions
     
-    func searchButtonPressed(sender: UIBarButtonItem) {
+    func searchButtonPressed(_ sender: UIBarButtonItem) {
         // Present the search controller from the root view controller.
         guard let rootViewController = view.window?.rootViewController else { fatalError("Unable to get root view controller.") }
-        rootViewController.presentViewController(searchController, animated: true, completion: nil)
+        rootViewController.present(searchController, animated: true, completion: nil)
     }
     
     
     // MARK: - Convenience
     
-    func itemForIndexPath(tableView: UITableView, indexPath: NSIndexPath) -> T? {
+    func itemForIndexPath(_ tableView: UITableView, indexPath: IndexPath) -> T? {
         if tableView == self.tableView {
             return items[indexPath.row]
         } else {
@@ -220,29 +224,29 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     
     // MARK: - UIStateRestoration
     
-    override func encodeRestorableStateWithCoder(coder: NSCoder) {
-        super.encodeRestorableStateWithCoder(coder)
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
         
         // Encode the view state so it can be restored later.
         
         // Encode the title.
-        coder.encodeObject(navigationItem.title!, forKey:SearchRestorationKeys.ViewControllerTitle.rawValue)
+        coder.encode(navigationItem.title!, forKey:SearchRestorationKeys.ViewControllerTitle.rawValue)
         
         // Encode the search controller's active state.
-        coder.encodeBool(searchController.active, forKey:SearchRestorationKeys.SearchControllerIsActive.rawValue)
+        coder.encode(searchController.isActive, forKey:SearchRestorationKeys.SearchControllerIsActive.rawValue)
         
         // Encode the first responser status.
-        coder.encodeBool(searchController.searchBar.isFirstResponder(), forKey:SearchRestorationKeys.SearchBarIsFirstResponder.rawValue)
+        coder.encode(searchController.searchBar.isFirstResponder, forKey:SearchRestorationKeys.SearchBarIsFirstResponder.rawValue)
         
         // Encode the search bar text.
-        coder.encodeObject(searchController.searchBar.text, forKey:SearchRestorationKeys.SearchBarText.rawValue)
+        coder.encode(searchController.searchBar.text, forKey:SearchRestorationKeys.SearchBarText.rawValue)
     }
     
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
-        super.decodeRestorableStateWithCoder(coder)
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
         
         // Restore the title.
-        guard let decodedTitle = coder.decodeObjectForKey(SearchRestorationKeys.ViewControllerTitle.rawValue) as? String else {
+        guard let decodedTitle = coder.decodeObject(forKey: SearchRestorationKeys.ViewControllerTitle.rawValue) as? String else {
             fatalError("A title did not exist. In your app, handle this gracefully.")
         }
         title = decodedTitle
@@ -251,16 +255,16 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
         // We can't make the searchController active here since it's not part of the view
         // hierarchy yet, instead we do it in viewWillAppear.
         //
-        restoredState.wasActive = coder.decodeBoolForKey(SearchRestorationKeys.SearchControllerIsActive.rawValue)
+        restoredState.wasActive = coder.decodeBool(forKey: SearchRestorationKeys.SearchControllerIsActive.rawValue)
         
         // Restore the first responder status:
         // Like above, we can't make the searchController first responder here since it's not part of the view
         // hierarchy yet, instead we do it in viewWillAppear.
         //
-        restoredState.wasFirstResponder = coder.decodeBoolForKey(SearchRestorationKeys.SearchBarIsFirstResponder.rawValue)
+        restoredState.wasFirstResponder = coder.decodeBool(forKey: SearchRestorationKeys.SearchBarIsFirstResponder.rawValue)
         
         // Restore the text in the search field.
-        searchController.searchBar.text = coder.decodeObjectForKey(SearchRestorationKeys.SearchBarText.rawValue) as? String
+        searchController.searchBar.text = coder.decodeObject(forKey: SearchRestorationKeys.SearchBarText.rawValue) as? String
     }
     
 }

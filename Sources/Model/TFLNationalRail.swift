@@ -11,116 +11,116 @@ import UIKit
 
 /// Represents a Network Rail line.
 enum TFLNationalRail {
-    case ArrivaWales, C2C, Chiltern, CrossCounty, EastMidlands, FirstGreatWestern, FirstHull, FirstTransPennine, Gatwick, GrandCentral, GreaterAnglia, GreatNorthern, HeathrowConnect, HeathrowExpress, Island, LondonMidland, Merseyrail, Northern, ScotRail, Southeastern, Southern, SouthWest, Thameslink, Virgin, VirginEastCoast
+    case arrivaWales, c2C, chiltern, crossCounty, eastMidlands, firstGreatWestern, firstHull, firstTransPennine, gatwick, grandCentral, greaterAnglia, greatNorthern, heathrowConnect, heathrowExpress, island, londonMidland, merseyrail, northern, scotRail, southeastern, southern, southWest, thameslink, virgin, virginEastCoast
     
-    static let allValues = [ArrivaWales, C2C, Chiltern, CrossCounty, EastMidlands, FirstGreatWestern, FirstHull, FirstTransPennine, Gatwick, GrandCentral, GreaterAnglia, GreatNorthern, HeathrowConnect, HeathrowExpress, Island, LondonMidland, Merseyrail, Northern, ScotRail, Southeastern, Southern, SouthWest, Thameslink, Virgin, VirginEastCoast]
+    static let allValues = [arrivaWales, c2C, chiltern, crossCounty, eastMidlands, firstGreatWestern, firstHull, firstTransPennine, gatwick, grandCentral, greaterAnglia, greatNorthern, heathrowConnect, heathrowExpress, island, londonMidland, merseyrail, northern, scotRail, southeastern, southern, southWest, thameslink, virgin, virginEastCoast]
     
     var color: UIColor {
         switch self {
-        case .ArrivaWales:
+        case .arrivaWales:
             return UIColor(red: 48.0 / 255.0, green: 197.0 / 255.0, blue: 184.0 / 255.0, alpha: 1.0)
-        case .C2C:
+        case .c2C:
             return UIColor(red: 180.0 / 255.0, green: 0.0, blue: 124.0 / 255.0, alpha: 1.0)
-        case .Chiltern:
+        case .chiltern:
             return UIColor(red: 0.0, green: 191.0 / 255.0, blue: 1.0, alpha: 1.0)
-        case .CrossCounty:
+        case .crossCounty:
             return UIColor(red: 102.0 / 255.0, green: 15.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0)
-        case .EastMidlands:
+        case .eastMidlands:
             return UIColor(red: 255.0 / 255.0, green: 165.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
-        case .FirstGreatWestern:
+        case .firstGreatWestern:
             return UIColor(red: 10.0 / 255.0, green: 73.0 / 255.0, blue: 62.0 / 255.0, alpha: 1.0)
-        case .FirstHull:
+        case .firstHull:
             return UIColor(red: 222.0 / 255.0, green: 0.0, blue: 92.0 / 255.0, alpha: 1.0)
-        case .FirstTransPennine:
+        case .firstTransPennine:
             return UIColor(red: 1.0 / 255.0, green: 3.0 / 255.0, blue: 133.0 / 255.0, alpha: 1.0)
-        case .Gatwick:
+        case .gatwick:
             return UIColor(red: 242.0 / 255.0, green: 0.0, blue: 23.0 / 255.0, alpha: 1.0)
-        case .GrandCentral:
+        case .grandCentral:
             return UIColor(red: 44.0 / 255.0, green: 56.0 / 255.0, blue: 56.0 / 255.0, alpha: 1.0)
-        case .GreaterAnglia:
+        case .greaterAnglia:
             return UIColor(red: 215.0 / 255.0, green: 4.0 / 255.0, blue: 40.0 / 255.0, alpha: 1.0)
-        case .GreatNorthern:
+        case .greatNorthern:
             return UIColor(red: 0.0, green: 168.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
-        case .HeathrowConnect:
+        case .heathrowConnect:
             return UIColor(red: 247.0 / 255.0, green: 143.0 / 255.0, blue: 30.0 / 255.0, alpha: 1.0)
-        case .HeathrowExpress:
+        case .heathrowExpress:
             return UIColor(red: 83.0 / 255.0, green: 46.0 / 255.0, blue: 99.0 / 255.0, alpha: 1.0)
-        case .Island:
+        case .island:
             return UIColor(red: 30.0 / 255.0, green: 144.0 / 255.0, blue: 1.0, alpha: 1.0)
-        case .LondonMidland:
+        case .londonMidland:
             return UIColor(red: 118.0 / 255.0, green: 180.0 / 255.0, blue: 31.0 / 255.0, alpha: 1.0)
-        case .Merseyrail:
+        case .merseyrail:
             return UIColor(red: 1.0, green: 242.0 / 255.0, blue: 0.0, alpha: 1.0)
-        case .Northern:
+        case .northern:
             return UIColor(red: 139.0 / 255.0, green: 0.0, blue: 1.0, alpha: 1.0)
-        case .ScotRail:
+        case .scotRail:
             return UIColor(red: 0.0, green: 128.0 / 255.0, blue: 0.0, alpha: 1.0)
-        case .Southeastern:
+        case .southeastern:
             return UIColor(red: 0.0, green: 175.0 / 255.0, blue: 232.0 / 255.0, alpha: 1.0)
-        case .Southern:
+        case .southern:
             return UIColor(red: 140.0 / 255.0, green: 198.0 / 255.0, blue: 62.0 / 255.0, alpha: 1.0)
-        case .SouthWest:
+        case .southWest:
             return UIColor(red: 238.0 / 255.0, green: 28.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0)
-        case .Thameslink:
+        case .thameslink:
             return UIColor(red: 232.0 / 255.0, green: 74.0 / 255.0, blue: 186.0 / 255.0, alpha: 1.0)
-        case .Virgin:
+        case .virgin:
             return UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        case .VirginEastCoast:
+        case .virginEastCoast:
             return UIColor(red: 215.0 / 255.0, green: 14.0 / 255.0, blue: 53.0 / 255.0, alpha: 1.0)
         }
     }
     
     var description: String {
         switch self {
-        case .ArrivaWales:
+        case .arrivaWales:
             return "Arriva Trains Wales"
-        case .C2C:
+        case .c2C:
             return "c2c"
-        case .Chiltern:
+        case .chiltern:
             return "Chiltern Railways"
-        case .CrossCounty:
+        case .crossCounty:
             return "Cross Country"
-        case .EastMidlands:
+        case .eastMidlands:
             return "East Midlands Trains"
-        case .FirstGreatWestern:
+        case .firstGreatWestern:
             return "First Great Western"
-        case .FirstHull:
+        case .firstHull:
             return "First Hull Trains"
-        case .FirstTransPennine:
+        case .firstTransPennine:
             return "First TransPennine Express"
-        case .Gatwick:
+        case .gatwick:
             return "Gatwick Express"
-        case .GrandCentral:
+        case .grandCentral:
             return "Grand Central"
-        case .GreaterAnglia:
+        case .greaterAnglia:
             return "Greater Anglia"
-        case .GreatNorthern:
+        case .greatNorthern:
             return "Great Northern"
-        case .HeathrowConnect:
+        case .heathrowConnect:
             return "Heathrow Connect"
-        case .HeathrowExpress:
+        case .heathrowExpress:
             return "Heathrow Express"
-        case .Island:
+        case .island:
             return "Island Line"
-        case .LondonMidland:
+        case .londonMidland:
             return "London Midland"
-        case .Merseyrail:
+        case .merseyrail:
             return "Merseyrail"
-        case .Northern:
+        case .northern:
             return "Northern Rail"
-        case .ScotRail:
+        case .scotRail:
             return "ScotRail"
-        case .Southeastern:
+        case .southeastern:
             return "Southeastern"
-        case .Southern:
+        case .southern:
             return "Southern"
-        case .SouthWest:
+        case .southWest:
             return "South West Trains"
-        case .Thameslink:
+        case .thameslink:
             return "Thameslink"
-        case .Virgin:
+        case .virgin:
             return "Virgin Trains"
-        case .VirginEastCoast:
+        case .virginEastCoast:
             return "Virgin Trains East Coast"
         }
     }

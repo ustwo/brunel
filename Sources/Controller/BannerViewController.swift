@@ -16,9 +16,9 @@ final class BannerViewController: BaseViewController<BannerView> {
     // MARK: - Properties
     
     /// View to embed above the banner.
-    private let embeddedView: UIView
+    fileprivate let embeddedView: UIView
     
-    private let embeddedViewController: UIViewController
+    fileprivate let embeddedViewController: UIViewController
     
     
     // MARK: - Initializers
@@ -38,21 +38,21 @@ final class BannerViewController: BaseViewController<BannerView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        underlyingView.stackView.insertArrangedSubview(embeddedView, atIndex: 0)
-        embeddedViewController.didMoveToParentViewController(self)
+        underlyingView.stackView.insertArrangedSubview(embeddedView, at: 0)
+        embeddedViewController.didMove(toParentViewController: self)
         
         title = embeddedViewController.title
         
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         underlyingView.banner.clock.on = true
         
         super.viewWillAppear(animated)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
          underlyingView.banner.clock.on = false
         
         super.viewWillDisappear(animated)

@@ -18,7 +18,7 @@ extension UIColor {
     - returns: Whether or not the color is light.
     */
     func isLight() -> Bool {
-        let components = CGColorGetComponents(self.CGColor)
+        let components = self.cgColor.components
         let numerator = (components[0] * 299) + (components[1] * 587) + (components[2] * 114)
         let brightness = numerator / 1000
         

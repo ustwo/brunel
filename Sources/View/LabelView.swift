@@ -22,8 +22,8 @@ final class LabelView: BaseView {
     override func setup() {
         super.setup()
         
-        textLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        textLabel.lineBreakMode = .ByWordWrapping
+        textLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        textLabel.lineBreakMode = .byWordWrapping
         textLabel.numberOfLines = 0
         addSubview(textLabel)
     }
@@ -42,10 +42,10 @@ final class LabelView: BaseView {
         let metrics = Constants.Layout.Metrics
         
         // Vertical Constraints
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-HalfMargin-[textLabel]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-HalfMargin-[textLabel]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
         
         // Horizontal Constraints
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-HalfMargin-[textLabel]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-HalfMargin-[textLabel]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
     }
     
     

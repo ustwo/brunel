@@ -17,16 +17,16 @@ import SwiftyJSON
 struct TFLLine {
     
     let color: UIColor
-    let created: NSDate?
+    let created: Date?
     let identifier: String
     let lineStatuses: [TFLLineStatus]
     let mode: TFLModes
     let modeName: String
-    let modified: NSDate?
+    let modified: Date?
     let name: String
     let serviceTypes: [TFLLineServiceType]
     
-    private struct JSONKeys {
+    fileprivate struct JSONKeys {
         static let identifier = "id"
         static let modeName = "modeName"
         static let created = "created"
@@ -38,11 +38,11 @@ struct TFLLine {
     
     init?(jsonObject: JSON) {
         guard let jsonIdentifier = jsonObject[JSONKeys.identifier].string,
-            jsonModeName = jsonObject[JSONKeys.modeName].string,
-            jsonMode = TFLModes(rawValue: jsonModeName),
-            jsonLineStatuses = jsonObject[JSONKeys.lineStatuses].array,
-            jsonName = jsonObject[JSONKeys.name].string,
-            jsonServiceTypes = jsonObject[JSONKeys.serviceTypes].array else {
+            let jsonModeName = jsonObject[JSONKeys.modeName].string,
+            let jsonMode = TFLModes(rawValue: jsonModeName),
+            let jsonLineStatuses = jsonObject[JSONKeys.lineStatuses].array,
+            let jsonName = jsonObject[JSONKeys.name].string,
+            let jsonServiceTypes = jsonObject[JSONKeys.serviceTypes].array else {
                 
                 return nil
         }
@@ -93,7 +93,7 @@ struct TFLLine {
         
     }
     
-    private static func dateFromJSON(jsonObject: JSON, key: String) -> NSDate? {
+    fileprivate static func dateFromJSON(_ jsonObject: JSON, key: String) -> Date? {
         guard let jsonDateString = jsonObject[key].string else {
             return nil
         }

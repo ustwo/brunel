@@ -552,7 +552,7 @@
 					};
 					00FED08F1C4CF10C00756A37 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -979,7 +979,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
 				PRODUCT_NAME = Brunel;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -998,7 +998,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ustwo.Brunel;
 				PRODUCT_NAME = Brunel;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

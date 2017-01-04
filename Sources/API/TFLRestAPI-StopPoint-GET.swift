@@ -11,7 +11,7 @@ import Foundation
 
 extension TFLRestAPI {
     
-    func getStopPointList(modes: [TFLModes], completion: ([TFLLine]?, RestAPIError?) -> Void) {
+    func getStopPointList(_ modes: [TFLModes], completion: @escaping ([TFLLine]?, RestAPIError?) -> Void) {
         tfl(stopPointProvider, target: .StopPointList(modes: modes), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 

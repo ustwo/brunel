@@ -14,7 +14,7 @@ import Foundation
  */
 struct TFLDateFormatter {
     
-    private let dateFormatter = NSDateFormatter()
+    fileprivate let dateFormatter = DateFormatter()
     
     static let sharedInstance = TFLDateFormatter()
     
@@ -22,8 +22,8 @@ struct TFLDateFormatter {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
     }
     
-    func dateFromString(text: String) -> NSDate? {
-        return dateFormatter.dateFromString(text)
+    func dateFromString(_ text: String) -> Date? {
+        return dateFormatter.date(from: text)
     }
     
 }

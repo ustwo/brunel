@@ -12,10 +12,10 @@ import Moya
 import SwiftyJSON
 
 
-enum RestAPIError: ErrorType {
-    case GenericError(localizedDescription: String)
-    case InvalidJSON(localizedDescription: String)
-    case UnknownError
+enum RestAPIError: Error {
+    case genericError(localizedDescription: String)
+    case invalidJSON(localizedDescription: String)
+    case unknownError
 }
 
 
@@ -36,10 +36,10 @@ struct TFLRestAPI {
      Initializes a new `TFLRestAPI`.
      */
     init() {
-        guard let configFilePath = NSBundle.mainBundle().pathForResource("tflconfig", ofType: "plist"),
-            configDictionary = NSDictionary(contentsOfFile: configFilePath) as? [String : AnyObject],
-            appID = configDictionary["AppID"] as? String,
-            appKey = configDictionary["AppKey"] as? String else {
+        guard let configFilePath = Bundle.main.path(forResource: "tflconfig", ofType: "plist"),
+            let configDictionary = NSDictionary(contentsOfFile: configFilePath) as? [String : AnyObject],
+            let appID = configDictionary["AppID"] as? String,
+            let appKey = configDictionary["AppKey"] as? String else {
                 fatalError("Cannot find `tflconfig.plist` file.")
         }
         
@@ -55,7 +55,7 @@ struct TFLRestAPI {
      
      - returns: An endpoint closure for use with the TfL API.
      */
-    static func TFLEndpointClosure<T: TargetType>(appID: String, appKey: String) -> (T -> Endpoint<T>) {
+    static func TFLEndpointClosure<T: TargetType>(_ appID: String, appKey: String) -> ((T) -> Endpoint<T>) {
         return { (target: T) -> Endpoint<T> in
             var newParameters = [String : AnyObject]()
             
@@ -81,7 +81,7 @@ struct TFLRestAPI {
      - parameter target:     Endpoint from which to request data.
      - parameter completion: Completion handler that returns either a valid JSON object or an error based on the response.
      */
-    internal func tfl<T: TargetType>(provider: MoyaProvider<T>, target: T, completion: (JSON?, RestAPIError?) -> Void) {
+    internal func tfl<T: TargetType>(_ provider: MoyaProvider<T>, target: T, completion: (JSON?, RestAPIError?) -> Void) {
         provider.request(target, completion: { result in
             switch result {
             case let .Success(response):
@@ -111,6 +111,6 @@ struct TFLRestAPI {
  
  - returns: URL string for endpoint.
  */
-func url(route: TargetType) -> String {
+func url(_ route: TargetType) -> String {
     return route.baseURL.URLByAppendingPathComponent(route.path)!.absoluteString!
 }

@@ -22,7 +22,7 @@ struct TFLLineSearch {
     let modeName: String
     let name: String
     
-    private struct JSONKeys {
+    fileprivate struct JSONKeys {
         static let identifier = "lineId"
         static let modeName = "mode"
         static let name = "lineName"
@@ -30,9 +30,9 @@ struct TFLLineSearch {
     
     init?(jsonObject: JSON) {
         guard let jsonIdentifier = jsonObject[JSONKeys.identifier].string,
-            jsonModeName = jsonObject[JSONKeys.modeName].string,
-            jsonMode = TFLModes(rawValue: jsonModeName),
-            jsonName = jsonObject[JSONKeys.name].string else {
+            let jsonModeName = jsonObject[JSONKeys.modeName].string,
+            let jsonMode = TFLModes(rawValue: jsonModeName),
+            let jsonName = jsonObject[JSONKeys.name].string else {
                 
                 return nil
         }

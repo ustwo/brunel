@@ -22,19 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - UIApplicationDelegate
     
-    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Settings.registerSettings()
         
         return true
     }
     
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let viewController = UISplitViewController()
         
         let rootController = ToolsTableViewController()
         let detailController = BannerViewController(embeddedViewController: DashboardTableViewController(modes: [TFLModes.Underground]))
-        detailController.navigationItem.leftBarButtonItem = viewController.displayModeButtonItem()
+        detailController.navigationItem.leftBarButtonItem = viewController.displayModeButtonItem
         
         #if os(iOS)
             detailController.navigationItem.leftItemsSupplementBackButton = true
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         viewController.viewControllers = [rootNavigationController, detailNavigationController]
         
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
@@ -62,13 +62,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
     Sets up the default appearance for views.
     */
-    private func setupTheme() {
-        SVProgressHUD.setDefaultStyle(.Dark)
+    fileprivate func setupTheme() {
+        SVProgressHUD.setDefaultStyle(.dark)
         
         UINavigationBar.appearance().barTintColor = Constants.Colors.BlueColor
-        UINavigationBar.appearance().opaque = true
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().isOpaque = true
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().isTranslucent = false
     }
     
 }

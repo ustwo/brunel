@@ -35,7 +35,7 @@ struct WikipediaRestAPI {
      
      - returns: An endpoint closure for use with the Wikipedia API.
      */
-    static func WikipediaEndpointClosure<T: TargetType>() -> (T -> Endpoint<T>) {
+    static func WikipediaEndpointClosure<T: TargetType>() -> ((T) -> Endpoint<T>) {
         return { (target: T) -> Endpoint<T> in
             var newParameters = [String : AnyObject]()
             
@@ -60,7 +60,7 @@ struct WikipediaRestAPI {
      - parameter target:     Endpoint from which to request data.
      - parameter completion: Completion handler that returns either a valid JSON object or an error based on the response.
      */
-    internal func wikipedia<T: TargetType>(provider: MoyaProvider<T>, target: T, completion: (JSON?, RestAPIError?) -> Void) {
+    internal func wikipedia<T: TargetType>(_ provider: MoyaProvider<T>, target: T, completion: (JSON?, RestAPIError?) -> Void) {
         provider.request(target, completion: { result in
             switch result {
             case let .Success(response):

@@ -36,7 +36,7 @@ final class RecentLinesTableViewController: LinesPickerBaseTableViewController {
         fetchLines()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         SVProgressHUD.dismiss()
         
         super.viewWillDisappear(animated)
@@ -45,17 +45,17 @@ final class RecentLinesTableViewController: LinesPickerBaseTableViewController {
     
     // MARK: - Fetch Data
     
-    private func fetchLines() {
+    fileprivate func fetchLines() {
         let recentLines = Settings.sharedInstance.recentLines
         
         if recentLines.isEmpty {
             let emptyLabel = UILabel()
             
-            emptyLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle3)
-            emptyLabel.lineBreakMode = .ByWordWrapping
+            emptyLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title3)
+            emptyLabel.lineBreakMode = .byWordWrapping
             emptyLabel.numberOfLines = 0
             emptyLabel.text = "No Recent Lines"
-            emptyLabel.textAlignment = .Center
+            emptyLabel.textAlignment = .center
             
             tableView.backgroundView = emptyLabel
         } else {
@@ -68,7 +68,7 @@ final class RecentLinesTableViewController: LinesPickerBaseTableViewController {
                     var modeSet = Set<TFLModes>()
                     let recentModes = lines.map { $0.mode }
                     modeSet = modeSet.union(recentModes)
-                    self?.modes = Array(modeSet).sort { $0.description < $1.description }
+                    self?.modes = Array(modeSet).sorted { $0.description < $1.description }
                     
                     self?.items = lines
                 } else if let error = error {

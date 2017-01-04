@@ -20,7 +20,7 @@ struct Settings {
     /**
     *  `NSUserDefaults` keys for settings.
     */
-    private struct SettingsKeys {
+    fileprivate struct SettingsKeys {
         static let RecentLines  = "RecentLines"
     }
     
@@ -43,9 +43,9 @@ struct Settings {
     // MARK: - Initializers
     
     init() {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if let lines = defaults.arrayForKey(SettingsKeys.RecentLines) as? [String] {
+        if let lines = defaults.array(forKey: SettingsKeys.RecentLines) as? [String] {
             recentLines = lines
         } else {
             recentLines = [String]()
@@ -58,13 +58,13 @@ struct Settings {
     /**
     Save the settings into `NSUserDefaults`.
     */
-    private func saveSettings() {
-        let defaults = NSUserDefaults.standardUserDefaults()
+    fileprivate func saveSettings() {
+        let defaults = UserDefaults.standard
         
-        defaults.setObject(recentLines, forKey: SettingsKeys.RecentLines)
+        defaults.set(recentLines, forKey: SettingsKeys.RecentLines)
         defaults.synchronize()
         
-        NSNotificationCenter.defaultCenter().postNotificationName(Settings.SettingsChangedNotification, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Settings.SettingsChangedNotification), object: nil)
     }
     
     
@@ -74,9 +74,9 @@ struct Settings {
     Register the default `Settings` settings.
     */
     static func registerSettings() {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        defaults.registerDefaults([SettingsKeys.RecentLines : [String]()])
+        defaults.register(defaults: [SettingsKeys.RecentLines : [String]()])
     }
     
 }
