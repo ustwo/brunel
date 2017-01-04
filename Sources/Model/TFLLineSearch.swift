@@ -22,7 +22,7 @@ struct TFLLineSearch {
     let modeName: String
     let name: String
     
-    fileprivate struct JSONKeys {
+    private struct JSONKeys {
         static let identifier = "lineId"
         static let modeName = "mode"
         static let name = "lineName"

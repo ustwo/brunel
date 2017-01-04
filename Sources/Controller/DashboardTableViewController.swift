@@ -17,9 +17,9 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     
     // MARK: - Properties
     
-    fileprivate var scrollingTimer: Timer?
-    fileprivate var topIndex: IndexPath?
-    fileprivate var shownLastIndex = false
+    private var scrollingTimer: Timer?
+    private var topIndex: IndexPath?
+    private var shownLastIndex = false
     
     
     // MARK: - View Lifecycle
@@ -52,7 +52,7 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     
     // MARK: - Fetch Data
     
-    fileprivate func fetchLines() {
+    private func fetchLines() {
         if let modes = modes {
             if let firstMode = modes.first {
                 title = firstMode.description + " " + Strings.Titles.Dashboard
@@ -124,7 +124,7 @@ final class DashboardTableViewController: LinesBaseTableViewController {
         tableView.scrollToRow(at: newTopIndex, at: .top, animated: true)
     }
     
-    fileprivate func allIndexPaths() -> [IndexPath] {
+    private func allIndexPaths() -> [IndexPath] {
         var result = [IndexPath]()
         
         for sectionIndex in 0 ..< tableView.numberOfSections {

@@ -16,10 +16,10 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
     // MARK: - Properties
     
     /// Reuse identifier for the table cells.
-    fileprivate let reuseIdentifier = "ActionCell"
+    private let reuseIdentifier = "ActionCell"
     
     /// Actions that can be taken. Each action is displayed as a cell in the table.
-    fileprivate enum Actions: Int {
+    private enum Actions: Int {
         case recent
         case lines
         case dashboard
@@ -111,7 +111,7 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
         }
     }
     
-    fileprivate func presentSearch() {
+    private func presentSearch() {
         #if os(iOS)
             let newViewController = LineSearchContainerTableViewController()
             

@@ -26,7 +26,7 @@ struct TFLLine {
     let name: String
     let serviceTypes: [TFLLineServiceType]
     
-    fileprivate struct JSONKeys {
+    private struct JSONKeys {
         static let identifier = "id"
         static let modeName = "modeName"
         static let created = "created"
@@ -93,7 +93,7 @@ struct TFLLine {
         
     }
     
-    fileprivate static func dateFromJSON(_ jsonObject: JSON, key: String) -> Date? {
+    private static func dateFromJSON(_ jsonObject: JSON, key: String) -> Date? {
         guard let jsonDateString = jsonObject[key].string else {
             return nil
         }

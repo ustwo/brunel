@@ -16,9 +16,9 @@ final class BannerViewController: BaseViewController<BannerView> {
     // MARK: - Properties
     
     /// View to embed above the banner.
-    fileprivate let embeddedView: UIView
+    private let embeddedView: UIView
     
-    fileprivate let embeddedViewController: UIViewController
+    private let embeddedViewController: UIViewController
     
     
     // MARK: - Initializers

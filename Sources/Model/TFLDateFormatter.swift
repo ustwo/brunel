@@ -14,7 +14,7 @@ import Foundation
  */
 struct TFLDateFormatter {
     
-    fileprivate let dateFormatter = DateFormatter()
+    private let dateFormatter = DateFormatter()
     
     static let sharedInstance = TFLDateFormatter()
     

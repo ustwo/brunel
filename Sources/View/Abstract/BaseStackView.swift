@@ -23,10 +23,10 @@ class BaseStackView: BaseView {
         }
     }
     
-    fileprivate var topConstraint: NSLayoutConstraint?
-    fileprivate var leftConstraint: NSLayoutConstraint?
-    fileprivate var bottomConstraint: NSLayoutConstraint?
-    fileprivate var rightConstraint: NSLayoutConstraint?
+    private var topConstraint: NSLayoutConstraint?
+    private var leftConstraint: NSLayoutConstraint?
+    private var bottomConstraint: NSLayoutConstraint?
+    private var rightConstraint: NSLayoutConstraint?
     
     
     // MARK: - Setup

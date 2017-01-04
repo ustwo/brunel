@@ -15,7 +15,7 @@ class SearchBaseResultsTableViewController<T: SearchableTableItem>: UITableViewC
     
     // MARK: - Properties
     
-    fileprivate let reuseIdentifier: String
+    private let reuseIdentifier: String
     
     var searchArray = [T]() {
         didSet {

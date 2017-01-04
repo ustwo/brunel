@@ -26,7 +26,7 @@ final class LinesTableViewController: LinesPickerBaseTableViewController {
     
     // MARK: - Fetch Data
     
-    fileprivate func fetchLines() {
+    private func fetchLines() {
         if let modes = modes {
             
             loadingData = true

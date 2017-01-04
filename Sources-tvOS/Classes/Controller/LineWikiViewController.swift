@@ -17,8 +17,8 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     // MARK: - Properties
     
-    fileprivate let line: TFLLine
-    fileprivate var lineWikiDetail: WikipediaSearchable
+    private let line: TFLLine
+    private var lineWikiDetail: WikipediaSearchable
     
     
     // MARK: - Initializers
@@ -60,7 +60,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     // MARK: - Fetch Data
     
-    fileprivate func fetchWiki() {
+    private func fetchWiki() {
         SVProgressHUD.show()
         WikipediaRestAPI.sharedInstance.getQueryTitle(lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
             if let wikiPage = wikiPage {

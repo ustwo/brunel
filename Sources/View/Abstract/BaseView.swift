@@ -13,7 +13,7 @@ import UIKit
  */
 @objc open class BaseView: UIView {
     
-    open fileprivate(set) var isSetup: Bool = false
+    open private(set) var isSetup: Bool = false
     
     
     // MARK: - Initialisers

@@ -19,7 +19,7 @@ class ModesBaseTableViewController: UITableViewController {
     
     let modes = TFLModes.allValues
     
-    fileprivate let reuseIdentifier = "Cell"
+    private let reuseIdentifier = "Cell"
     
     
     // MARK: - View Lifecycle

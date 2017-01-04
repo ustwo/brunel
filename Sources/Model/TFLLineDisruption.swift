@@ -22,7 +22,7 @@ struct TFLLineDisruption {
     let closureText: String?
     let created: Date?
     
-    fileprivate struct JSONKeys {
+    private struct JSONKeys {
         static let additionalInfo = "additionalInfo"
         static let category = "category"
         static let categoryDescription = "categoryDescription"

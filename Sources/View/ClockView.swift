@@ -24,7 +24,7 @@ final class ClockLabel: UILabel {
         }
     }
     
-    fileprivate var updateTimer: Timer?
+    private var updateTimer: Timer?
     
     
     // MARK: - Initializers

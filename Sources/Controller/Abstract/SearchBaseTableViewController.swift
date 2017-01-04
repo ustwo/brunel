@@ -48,7 +48,7 @@ class SearchTableViewController<T: SearchableTableItem>: UITableViewController, 
     var resultsTableController: SearchBaseResultsTableViewController<T>?
     
     /// Restoration state for UISearchController
-    fileprivate var restoredState = SearchControllerRestorableState()
+    private var restoredState = SearchControllerRestorableState()
     
     var loadingData = false {
         didSet {

@@ -19,7 +19,7 @@ struct TFLLineServiceType {
     let name: String
     let uri: String
     
-    fileprivate struct JSONKeys {
+    private struct JSONKeys {
         static let name = "name"
         static let uri = "uri"
     }

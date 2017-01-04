@@ -22,7 +22,7 @@ struct TFLLineStatus {
     let severity: Int
     let severityDescription: String
     
-    fileprivate struct JSONKeys {
+    private struct JSONKeys {
         static let created = "created"
         static let disruption = "disruption"
         static let identifier = "id"

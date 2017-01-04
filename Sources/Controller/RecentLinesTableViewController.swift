@@ -45,7 +45,7 @@ final class RecentLinesTableViewController: LinesPickerBaseTableViewController {
     
     // MARK: - Fetch Data
     
-    fileprivate func fetchLines() {
+    private func fetchLines() {
         let recentLines = Settings.sharedInstance.recentLines
         
         if recentLines.isEmpty {

@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
     Sets up the default appearance for views.
     */
-    fileprivate func setupTheme() {
+    private func setupTheme() {
         SVProgressHUD.setDefaultStyle(.dark)
         
         UINavigationBar.appearance().barTintColor = Constants.Colors.BlueColor

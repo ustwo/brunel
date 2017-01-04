@@ -68,14 +68,14 @@ extension TFLStopPointAPI: TargetType {
     
     // MARK: - Convenience
     
-    fileprivate func csvFromArray(_ value: [String]) -> String {
+    private func csvFromArray(_ value: [String]) -> String {
         var result = value.reduce("", { $0 + "," + $1})
         result = String(result.characters.dropFirst())
         
         return result
     }
     
-    fileprivate func encodeBool(_ value: Bool) -> String {
+    private func encodeBool(_ value: Bool) -> String {
         return value ? "True" : "False"
     }
     

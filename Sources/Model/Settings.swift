@@ -20,7 +20,7 @@ struct Settings {
     /**
     *  `NSUserDefaults` keys for settings.
     */
-    fileprivate struct SettingsKeys {
+    private struct SettingsKeys {
         static let RecentLines  = "RecentLines"
     }
     
@@ -58,7 +58,7 @@ struct Settings {
     /**
     Save the settings into `NSUserDefaults`.
     */
-    fileprivate func saveSettings() {
+    private func saveSettings() {
         let defaults = UserDefaults.standard
         
         defaults.set(recentLines, forKey: SettingsKeys.RecentLines)

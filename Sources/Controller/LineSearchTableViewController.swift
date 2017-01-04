@@ -24,20 +24,20 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     // MARK: - Properties
     
-    fileprivate let reuseIdentifier = "SearchableCell"
+    private let reuseIdentifier = "SearchableCell"
     
-    fileprivate var items = [TFLLineSearch]() {
+    private var items = [TFLLineSearch]() {
         didSet {
             updateModes()
             updateSearchArray()
         }
     }
     
-    fileprivate var searchArray = [TFLLineSearch]()
+    private var searchArray = [TFLLineSearch]()
     
-    fileprivate var modes = [TFLModes]()
+    private var modes = [TFLModes]()
     
-    fileprivate var loadingData = false {
+    private var loadingData = false {
         didSet {
             if loadingData {
                 navigationItem.rightBarButtonItem?.isEnabled = false
@@ -51,7 +51,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
         }
     }
     
-    fileprivate var filterString = "" {
+    private var filterString = "" {
         didSet {
             guard filterString != oldValue else { return }
             
@@ -221,7 +221,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     // MARK: - Convenience
     
-    fileprivate func updateModes() {
+    private func updateModes() {
         modes.removeAll()
         
         for item in items {
@@ -233,7 +233,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
         modes.sort { $0.description < $1.description }
     }
     
-    fileprivate func updateSearchArray() {
+    private func updateSearchArray() {
         if filterString.isEmpty {
             searchArray.removeAll()
         } else {
