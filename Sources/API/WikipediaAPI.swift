@@ -30,18 +30,26 @@ extension WikipediaAPI: TargetType {
     var method: Moya.Method {
         switch self {
         case .queryTitle:
-            return .GET
+            return .get
         }
     }
     
-    var parameters: [String: AnyObject]? {
+    var multipartBody: [MultipartFormData]? {
+        return nil
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var parameters: [String: Any]? {
         switch self {
         case let .queryTitle(title):
-            return ["action" : "query" as AnyObject,
-                "prop" : "extracts" as AnyObject,
-                "exintro" : "" as AnyObject,
-                "explaintext" : "" as AnyObject,
-                "titles" : title as AnyObject]
+            return ["action" : "query",
+                "prop" : "extracts",
+                "exintro" : "",
+                "explaintext" : "",
+                "titles" : title]
         }
     }
     
@@ -50,8 +58,8 @@ extension WikipediaAPI: TargetType {
         return emptyStringData
     }
     
-    var multipartBody: [MultipartFormData]? {
-        return nil
+    var task: Task {
+        return .request
     }
     
 }

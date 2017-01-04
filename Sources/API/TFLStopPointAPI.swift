@@ -22,6 +22,7 @@ enum TFLStopPointAPI {
 
 
 extension TFLStopPointAPI: TargetType {
+
     
     var baseURL: URL { return URL(string: "https://api.tfl.gov.uk")! }
     
@@ -36,11 +37,19 @@ extension TFLStopPointAPI: TargetType {
     var method: Moya.Method {
         switch self {
         case .stopPointList:
-            return .GET
+            return .get
         }
     }
     
-    var parameters: [String: AnyObject]? {
+    var multipartBody: [MultipartFormData]? {
+        return nil
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var parameters: [String: Any]? {
         switch self {
         case .stopPointList:
             return nil
@@ -52,9 +61,10 @@ extension TFLStopPointAPI: TargetType {
         return emptyStringData
     }
     
-    var multipartBody: [MultipartFormData]? {
-        return nil
+    var task: Task {
+        return .request
     }
+    
     
     // MARK: - Convenience
     

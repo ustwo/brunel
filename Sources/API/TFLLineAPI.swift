@@ -45,17 +45,24 @@ extension TFLLineAPI: TargetType {
     var method: Moya.Method {
         switch self {
         case .modeStatus, .search, .status:
-            return .GET
+            return .get
         }
     }
     
-    var parameters: [String: AnyObject]? {
+    var multipartBody: [MultipartFormData]? {
+        return nil
+    }
+    
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var parameters: [String: Any]? {
         switch self {
         case let .modeStatus(_, detail):
-            return ["detail" : encodeBool(detail) as AnyObject]
+            return ["detail" : encodeBool(detail)]
         case let .status(_, detail):
-            return ["detail" : encodeBool(detail) as AnyObject]
-            
+            return ["detail" : encodeBool(detail)]
         case .search:
             return nil
         }
@@ -66,9 +73,10 @@ extension TFLLineAPI: TargetType {
         return emptyStringData
     }
     
-    var multipartBody: [MultipartFormData]? {
-        return nil
+    var task: Task {
+        return .request
     }
+    
     
     // MARK: - Convenience
     

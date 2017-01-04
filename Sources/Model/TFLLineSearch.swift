@@ -43,13 +43,13 @@ struct TFLLineSearch {
         name = jsonName
         
         if mode == .Underground,
-            let undergroundIndex = TFLUnderground.allValues.indexOf({ $0.description.uppercaseString == jsonName.uppercaseString }) {
+            let undergroundIndex = TFLUnderground.allValues.index(where: { $0.description.uppercased() == jsonName.uppercased() }) {
                 
                 let undergroundLine = TFLUnderground.allValues[undergroundIndex]
                 
                 color = undergroundLine.color
         } else if mode == .NationalRail,
-            let railIndex = TFLNationalRail.allValues.indexOf({ $0.description.uppercaseString == jsonName.uppercaseString }) {
+            let railIndex = TFLNationalRail.allValues.index(where: { $0.description.uppercased() == jsonName.uppercased() }) {
                 
                 let railLine = TFLNationalRail.allValues[railIndex]
                 
