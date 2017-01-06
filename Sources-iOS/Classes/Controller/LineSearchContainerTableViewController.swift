@@ -25,13 +25,13 @@ final class LineSearchContainerTableViewController: UIViewController, LineSearch
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         
         searchController = UISearchController(searchResultsController: searchResultsController)
         searchController.searchResultsUpdater = searchResultsController
         searchController.hidesNavigationBarDuringPresentation = false
         
-        searchController.searchBar.searchBarStyle = .Minimal
+        searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.placeholder = Strings.Placeholders.SearchLines
         
         navigationItem.titleView = searchController.searchBar
@@ -44,12 +44,12 @@ final class LineSearchContainerTableViewController: UIViewController, LineSearch
     
     // MARK: - LineSearchTableViewControllerDelegate
     
-    func lineSearch(lineSearch: LineSearchTableViewController, didSelectLine line: TFLLine) {
+    func lineSearch(_ lineSearch: LineSearchTableViewController, didSelectLine line: TFLLine) {
         let newViewController = LineDetailViewController()
         let navigationViewController = UINavigationController(rootViewController: newViewController)
         newViewController.detailItem = line
         
-        newViewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        newViewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         newViewController.navigationItem.leftItemsSupplementBackButton = true
         
         showDetailViewController(navigationViewController, sender: nil)

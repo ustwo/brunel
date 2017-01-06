@@ -17,8 +17,8 @@ extension DetailView {
             return nil
         }
         
-        let aboutButton = UIButton(type: .System)
-        aboutButton.setTitle(Strings.Buttons.About, forState: .Normal)
+        let aboutButton = UIButton(type: .system)
+        aboutButton.setTitle(Strings.Buttons.About, for: UIControlState())
         stackView.addArrangedSubview(aboutButton)
         
         return aboutButton

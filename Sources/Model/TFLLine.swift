@@ -17,12 +17,12 @@ import SwiftyJSON
 struct TFLLine {
     
     let color: UIColor
-    let created: NSDate?
+    let created: Date?
     let identifier: String
     let lineStatuses: [TFLLineStatus]
     let mode: TFLModes
     let modeName: String
-    let modified: NSDate?
+    let modified: Date?
     let name: String
     let serviceTypes: [TFLLineServiceType]
     
@@ -38,11 +38,11 @@ struct TFLLine {
     
     init?(jsonObject: JSON) {
         guard let jsonIdentifier = jsonObject[JSONKeys.identifier].string,
-            jsonModeName = jsonObject[JSONKeys.modeName].string,
-            jsonMode = TFLModes(rawValue: jsonModeName),
-            jsonLineStatuses = jsonObject[JSONKeys.lineStatuses].array,
-            jsonName = jsonObject[JSONKeys.name].string,
-            jsonServiceTypes = jsonObject[JSONKeys.serviceTypes].array else {
+            let jsonModeName = jsonObject[JSONKeys.modeName].string,
+            let jsonMode = TFLModes(rawValue: jsonModeName),
+            let jsonLineStatuses = jsonObject[JSONKeys.lineStatuses].array,
+            let jsonName = jsonObject[JSONKeys.name].string,
+            let jsonServiceTypes = jsonObject[JSONKeys.serviceTypes].array else {
                 
                 return nil
         }
@@ -63,7 +63,7 @@ struct TFLLine {
             }
             lineStatusesArray.append(lineStatus)
         }
-        lineStatuses = lineStatusesArray.sort { $0.severity > $1.severity }
+        lineStatuses = lineStatusesArray.sorted { $0.severity > $1.severity }
         
         var serviceTypesArray = [TFLLineServiceType]()
         for jsonServiceType in jsonServiceTypes {
@@ -76,13 +76,13 @@ struct TFLLine {
         serviceTypes = serviceTypesArray
         
         if mode == .Underground,
-            let undergroundIndex = TFLUnderground.allValues.indexOf({ $0.description.uppercaseString == jsonName.uppercaseString }) {
+            let undergroundIndex = TFLUnderground.allValues.index(where: { $0.description.uppercased() == jsonName.uppercased() }) {
                 
                 let undergroundLine = TFLUnderground.allValues[undergroundIndex]
                 
                 color = undergroundLine.color
         } else if mode == .NationalRail,
-            let railIndex = TFLNationalRail.allValues.indexOf({ $0.description.uppercaseString == jsonName.uppercaseString }) {
+            let railIndex = TFLNationalRail.allValues.index(where: { $0.description.uppercased() == jsonName.uppercased() }) {
                 
                 let railLine = TFLNationalRail.allValues[railIndex]
                 
@@ -93,7 +93,7 @@ struct TFLLine {
         
     }
     
-    private static func dateFromJSON(jsonObject: JSON, key: String) -> NSDate? {
+    private static func dateFromJSON(_ jsonObject: JSON, key: String) -> Date? {
         guard let jsonDateString = jsonObject[key].string else {
             return nil
         }

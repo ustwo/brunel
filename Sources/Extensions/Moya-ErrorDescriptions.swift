@@ -11,21 +11,21 @@ import Foundation
 import Moya
 
 
-extension Moya.Error: CustomStringConvertible {
+extension MoyaError: CustomStringConvertible {
     
     public var description: String {
         switch self {
-        case .Data:
-            return "Data Error"
-        case .ImageMapping:
+        case .imageMapping:
             return "Image Mapping Error"
-        case .JSONMapping:
+        case .jsonMapping:
             return "JSON Mapping Error"
-        case .StatusCode:
+        case .requestMapping:
+            return "Request Error"
+        case .statusCode:
             return "Status Code Error"
-        case .StringMapping:
+        case .stringMapping:
             return "String Mapping Error"
-        case .Underlying:
+        case .underlying:
             let nsError = self as NSError
             return nsError.localizedDescription
         }

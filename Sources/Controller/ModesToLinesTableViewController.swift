@@ -15,11 +15,11 @@ final class ModesToLinesTableViewController: ModesBaseTableViewController {
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = itemForIndexPath(indexPath)
         
         let controller = LinesTableViewController(modes: [item])
-        showViewController(controller, sender: nil)
+        show(controller, sender: nil)
     }
 
 

@@ -15,11 +15,11 @@ class LinesPickerBaseTableViewController: LinesBaseTableViewController {
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let line = itemForIndexPath(tableView, indexPath: indexPath)
         let controller = LineDetailViewController()
         
-        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+        controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
         #if os(iOS)
             controller.navigationItem.leftItemsSupplementBackButton = true
         #endif
@@ -30,7 +30,7 @@ class LinesPickerBaseTableViewController: LinesBaseTableViewController {
         
         #if os(tvOS)
             if tableView != self.tableView {
-                dismissViewControllerAnimated(true, completion: nil)
+                dismiss(animated: true, completion: nil)
             }
         #endif
         

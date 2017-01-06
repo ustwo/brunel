@@ -20,12 +20,12 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
     
     /// Actions that can be taken. Each action is displayed as a cell in the table.
     private enum Actions: Int {
-        case Recent
-        case Lines
-        case Dashboard
-        case Search
+        case recent
+        case lines
+        case dashboard
+        case search
         
-        static let allValues = [Recent, Lines, Dashboard, Search]
+        static let allValues = [recent, lines, dashboard, search]
     }
     
     
@@ -34,45 +34,45 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.estimatedRowHeight = Constants.Sizes.EstimatedCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
         title = Strings.Titles.Tools
         
         navigationController?.navigationBar.barTintColor = Constants.Colors.BlueColor
-        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor(), NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)]
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
     }
     
     
     // MARK: - UITableViewDataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Actions.allValues.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         var text: String?
         
         if let selectedAction = Actions(rawValue: indexPath.row) {
             switch selectedAction {
-            case .Dashboard:
+            case .dashboard:
                 text = Strings.Titles.Dashboard
-            case .Lines:
+            case .lines:
                 text = Strings.Titles.Lines
-            case .Recent:
+            case .recent:
                 text = Strings.Titles.Recent
-            case .Search:
+            case .search:
                 text = Strings.Titles.Search
             }
         }
@@ -83,31 +83,31 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
         
         cell.textLabel?.text = myText
         cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = .ByWordWrapping
+        cell.textLabel?.lineBreakMode = .byWordWrapping
     }
     
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var newViewController: UIViewController?
         
         if let selectedAction = Actions(rawValue: indexPath.row) {
             switch selectedAction {
-            case .Dashboard:
+            case .dashboard:
                 newViewController = ModesToDashboardTableViewController()
-            case .Lines:
+            case .lines:
                 newViewController = ModesToLinesTableViewController()
-            case .Recent:
+            case .recent:
                 newViewController = RecentLinesTableViewController()
-            case .Search:
+            case .search:
                 presentSearch()
                 return
             }
         }
         
         if let newViewController = newViewController {
-            showViewController(newViewController, sender: nil)
+            show(newViewController, sender: nil)
         }
     }
     
@@ -115,7 +115,7 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
         #if os(iOS)
             let newViewController = LineSearchContainerTableViewController()
             
-            showViewController(newViewController, sender: nil)
+            show(newViewController, sender: nil)
         #else
             let newViewController = LineSearchTableViewController()
             newViewController.lineSearchDelegate = self
@@ -127,23 +127,23 @@ final class ToolsTableViewController: UITableViewController, LineSearchTableView
             
             // Present the search controller from the root view controller.
             guard let rootViewController = view.window?.rootViewController else { fatalError("Unable to get root view controller.") }
-            rootViewController.presentViewController(searchController, animated: true, completion: nil)
+            rootViewController.present(searchController, animated: true, completion: nil)
         #endif
     }
     
     
     // MARK: - LineSearchTableViewControllerDelegate
     
-    func lineSearch(lineSearch: LineSearchTableViewController, didSelectLine line: TFLLine) {
+    func lineSearch(_ lineSearch: LineSearchTableViewController, didSelectLine line: TFLLine) {
         let newViewController = LineDetailViewController()
         let navigationViewController = UINavigationController(rootViewController: newViewController)
         newViewController.detailItem = line
         
-        newViewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        newViewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         
         showDetailViewController(navigationViewController, sender: nil)
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 }

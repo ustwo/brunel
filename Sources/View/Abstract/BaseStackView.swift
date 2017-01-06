@@ -14,7 +14,7 @@ class BaseStackView: BaseView {
     
     let stackView = UIStackView()
     
-    var contentInsets: UIEdgeInsets = UIEdgeInsetsZero {
+    var contentInsets: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {
             topConstraint?.constant = contentInsets.top
             leftConstraint?.constant = contentInsets.left
@@ -34,8 +34,8 @@ class BaseStackView: BaseView {
     override func setup() {
         super.setup()
         
-        stackView.axis = .Vertical
-        stackView.distribution = .EqualSpacing
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
         stackView.spacing = Constants.Layout.HalfMargin
         
         addSubview(stackView)
@@ -51,10 +51,10 @@ class BaseStackView: BaseView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         // Constraints
-        let aTopConstraint = NSLayoutConstraint(item: stackView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let aLeftConstraint = NSLayoutConstraint(item: stackView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1.0, constant: 0.0)
-        let aBottomConstraint = NSLayoutConstraint(item: stackView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
-        let aRightConstraint = NSLayoutConstraint(item: stackView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1.0, constant: 0.0)
+        let aTopConstraint = NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let aLeftConstraint = NSLayoutConstraint(item: stackView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0.0)
+        let aBottomConstraint = NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        let aRightConstraint = NSLayoutConstraint(item: stackView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0.0)
         
         addConstraints([aTopConstraint, aLeftConstraint, aBottomConstraint, aRightConstraint])
         

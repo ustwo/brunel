@@ -11,20 +11,20 @@ import Foundation
 
 extension TFLRestAPI {
     
-    func getLineStatus(modes: [TFLModes], completion: ([TFLLine]?, RestAPIError?) -> Void) {
-        tfl(lineProvider, target: .ModeStatus(modes: modes, detail: true), completion: { resultJSON, error in
+    func getLineStatus(_ modes: [TFLModes], completion: @escaping ([TFLLine]?, RestAPIError?) -> Void) {
+        tfl(lineProvider, target: .modeStatus(modes: modes, detail: true), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 
                 var lines = [TFLLine]()
                 guard let jsonArray = resultJSON.array else {
-                    completion(nil, .InvalidJSON(localizedDescription: "Expected array."))
+                    completion(nil, .invalidJSON(localizedDescription: "Expected array."))
                     return
                 }
                 
                 
                 for jsonItem in jsonArray {
                     guard let line = TFLLine(jsonObject: jsonItem) else {
-                        completion(nil, .InvalidJSON(localizedDescription: "Bad JSON to initialize `TFLLine`."))
+                        completion(nil, .invalidJSON(localizedDescription: "Bad JSON to initialize `TFLLine`."))
                         return
                     }
                     
@@ -36,19 +36,19 @@ extension TFLRestAPI {
                 completion(nil, error)
                 return
             } else {
-                completion(nil, .UnknownError)
+                completion(nil, .unknownError)
                 return
             }
         })
     }
     
-    func getLineSearch(query: String, completion: ([TFLLineSearch]?, RestAPIError?) -> Void) {
-        tfl(lineProvider, target: .Search(query: query), completion: { resultJSON, error in
+    func getLineSearch(_ query: String, completion: @escaping ([TFLLineSearch]?, RestAPIError?) -> Void) {
+        tfl(lineProvider, target: .search(query: query), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 
                 var lines = [TFLLineSearch]()
                 guard let jsonArray = resultJSON["searchMatches"].array else {
-                    completion(nil, .InvalidJSON(localizedDescription: "Expected array."))
+                    completion(nil, .invalidJSON(localizedDescription: "Expected array."))
                     return
                 }
                 
@@ -64,26 +64,26 @@ extension TFLRestAPI {
                 completion(nil, error)
                 return
             } else {
-                completion(nil, .UnknownError)
+                completion(nil, .unknownError)
                 return
             }
         })
     }
     
-    func getLineStatus(lines: [String], completion: ([TFLLine]?, RestAPIError?) -> Void) {
-        tfl(lineProvider, target: .Status(lines: lines, detail: true), completion: { resultJSON, error in
+    func getLineStatus(_ lines: [String], completion: @escaping ([TFLLine]?, RestAPIError?) -> Void) {
+        tfl(lineProvider, target: .status(lines: lines, detail: true), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 
                 var lines = [TFLLine]()
                 guard let jsonArray = resultJSON.array else {
-                    completion(nil, .InvalidJSON(localizedDescription: "Expected array."))
+                    completion(nil, .invalidJSON(localizedDescription: "Expected array."))
                     return
                 }
                 
                 
                 for jsonItem in jsonArray {
                     guard let line = TFLLine(jsonObject: jsonItem) else {
-                        completion(nil, .InvalidJSON(localizedDescription: "Bad JSON to initialize `TFLLine`."))
+                        completion(nil, .invalidJSON(localizedDescription: "Bad JSON to initialize `TFLLine`."))
                         return
                     }
                     
@@ -95,7 +95,7 @@ extension TFLRestAPI {
                 completion(nil, error)
                 return
             } else {
-                completion(nil, .UnknownError)
+                completion(nil, .unknownError)
                 return
             }
         })

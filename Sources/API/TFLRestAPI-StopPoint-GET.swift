@@ -11,22 +11,22 @@ import Foundation
 
 extension TFLRestAPI {
     
-    func getStopPointList(modes: [TFLModes], completion: ([TFLLine]?, RestAPIError?) -> Void) {
-        tfl(stopPointProvider, target: .StopPointList(modes: modes), completion: { resultJSON, error in
+    func getStopPointList(_ modes: [TFLModes], completion: @escaping ([TFLLine]?, RestAPIError?) -> Void) {
+        tfl(stopPointProvider, target: .stopPointList(modes: modes), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 
                 print(resultJSON.rawString()!)
                 
                 var lines = [TFLLine]()
                 guard let jsonArray = resultJSON.array else {
-                    completion(nil, .InvalidJSON(localizedDescription: "Expected array."))
+                    completion(nil, .invalidJSON(localizedDescription: "Expected array."))
                     return
                 }
                 
                 
                 for jsonItem in jsonArray {
                     guard let line = TFLLine(jsonObject: jsonItem) else {
-                        completion(nil, .InvalidJSON(localizedDescription: "Bad JSON to initialize `TFLLine`."))
+                        completion(nil, .invalidJSON(localizedDescription: "Bad JSON to initialize `TFLLine`."))
                         return
                     }
                     
@@ -38,7 +38,7 @@ extension TFLRestAPI {
                 completion(nil, error)
                 return
             } else {
-                completion(nil, .UnknownError)
+                completion(nil, .unknownError)
                 return
             }
         })

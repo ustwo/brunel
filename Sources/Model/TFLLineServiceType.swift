@@ -26,7 +26,7 @@ struct TFLLineServiceType {
     
     init?(jsonObject: JSON) {
         guard let jsonName = jsonObject[JSONKeys.name].string,
-            jsonURI = jsonObject[JSONKeys.uri].string else {
+            let jsonURI = jsonObject[JSONKeys.uri].string else {
                 
                 return nil
         }

@@ -35,9 +35,9 @@ struct WikipediaRestAPI {
      
      - returns: An endpoint closure for use with the Wikipedia API.
      */
-    static func WikipediaEndpointClosure<T: TargetType>() -> (T -> Endpoint<T>) {
+    static func WikipediaEndpointClosure<T: TargetType>() -> ((T) -> Endpoint<T>) {
         return { (target: T) -> Endpoint<T> in
-            var newParameters = [String : AnyObject]()
+            var newParameters = [String: Any]()
             
             newParameters["format"] = "json"
             
@@ -47,7 +47,7 @@ struct WikipediaRestAPI {
                 }
             }
             
-            let endpoint: Endpoint<T> = Endpoint<T>(URL: url(target), sampleResponseClosure: {.NetworkResponse(200, target.sampleData)}, method: target.method, parameters: newParameters, parameterEncoding: .URL, httpHeaderFields: nil)
+            let endpoint: Endpoint<T> = Endpoint<T>(url: url(target), sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, parameters: newParameters, parameterEncoding: URLEncoding.default, httpHeaderFields: nil)
             
             return endpoint
         }
@@ -60,21 +60,21 @@ struct WikipediaRestAPI {
      - parameter target:     Endpoint from which to request data.
      - parameter completion: Completion handler that returns either a valid JSON object or an error based on the response.
      */
-    internal func wikipedia<T: TargetType>(provider: MoyaProvider<T>, target: T, completion: (JSON?, RestAPIError?) -> Void) {
+    internal func wikipedia<T: TargetType>(_ provider: MoyaProvider<T>, target: T, completion: @escaping (JSON?, RestAPIError?) -> Void) {
         provider.request(target, completion: { result in
             switch result {
-            case let .Success(response):
+            case let .success(response):
                 do {
                     let jsonObj = try response.mapJSON()
                     let resultJSON = JSON(jsonObj)
                     
                     completion(resultJSON, nil)
                 } catch let error as NSError {
-                    completion(nil, .GenericError(localizedDescription: error.localizedDescription))
+                    completion(nil, .genericError(localizedDescription: error.localizedDescription))
                     return
                 }
-            case let .Failure(error):
-                completion(nil, .GenericError(localizedDescription: error.description))
+            case let .failure(error):
+                completion(nil, .genericError(localizedDescription: error.description))
                 return
             }
         })

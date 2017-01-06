@@ -17,8 +17,8 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     
     // MARK: - Properties
     
-    private var scrollingTimer: NSTimer?
-    private var topIndex: NSIndexPath?
+    private var scrollingTimer: Timer?
+    private var topIndex: IndexPath?
     private var shownLastIndex = false
     
     
@@ -27,9 +27,9 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(LineDetailTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(LineDetailTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
-        tableView.userInteractionEnabled = false
+        tableView.isUserInteractionEnabled = false
         tableView.tableHeaderView = nil
         
         title = Strings.Titles.Dashboard
@@ -37,13 +37,13 @@ final class DashboardTableViewController: LinesBaseTableViewController {
         fetchLines()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        scrollingTimer = NSTimer.scheduledTimerWithTimeInterval(Constants.Animation.Scrolling, target: self, selector: #selector(DashboardTableViewController.scrollingTimerFired(_:)), userInfo: nil, repeats: true)
+    override func viewWillAppear(_ animated: Bool) {
+        scrollingTimer = Timer.scheduledTimer(timeInterval: Constants.Animation.Scrolling, target: self, selector: #selector(DashboardTableViewController.scrollingTimerFired(_:)), userInfo: nil, repeats: true)
         
         super.viewWillAppear(animated)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         scrollingTimer?.invalidate()
         
         super.viewWillDisappear(animated)
@@ -59,14 +59,14 @@ final class DashboardTableViewController: LinesBaseTableViewController {
                 
                 let tintColor: UIColor
                 if firstMode.color.isLight() {
-                    tintColor = UIColor.blackColor()
+                    tintColor = UIColor.black
                 } else {
-                    tintColor = UIColor.whiteColor()
+                    tintColor = UIColor.white
                 }
                 
                 navigationController?.navigationBar.barTintColor = firstMode.color
                 navigationController?.navigationBar.tintColor = tintColor
-                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : tintColor, NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)]
+                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: tintColor, NSFontAttributeName: UIFont.preferredFont(forTextStyle: UIFontTextStyle.title2)]
             }
             
             loadingData = true
@@ -87,26 +87,26 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     
     // MARK: - UITableViewDatasource
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return nil
     }
     
     
     // MARK: - Scrolling
     
-    func scrollingTimerFired(timer: NSTimer) {
+    func scrollingTimerFired(_ timer: Timer) {
         let allIndices = allIndexPaths()
         
         guard !allIndices.isEmpty else { return }
         
-        var newTopIndex: NSIndexPath
+        var newTopIndex: IndexPath
         if let topIndex = topIndex,
-            var index = allIndices.indexOf(topIndex) {
+            var index = allIndices.index(of: topIndex) {
                 index += 1
                 if index >= allIndices.count {
                     index = 0
                 } else if let lastIndex = allIndices.last,
-                    visibleRows = tableView.indexPathsForVisibleRows where visibleRows.contains(lastIndex) {
+                    let visibleRows = tableView.indexPathsForVisibleRows, visibleRows.contains(lastIndex) {
                         if shownLastIndex {
                             index = 0
                         } else {
@@ -121,15 +121,15 @@ final class DashboardTableViewController: LinesBaseTableViewController {
         
         topIndex = newTopIndex
         
-        tableView.scrollToRowAtIndexPath(newTopIndex, atScrollPosition: .Top, animated: true)
+        tableView.scrollToRow(at: newTopIndex, at: .top, animated: true)
     }
     
-    private func allIndexPaths() -> [NSIndexPath] {
-        var result = [NSIndexPath]()
+    private func allIndexPaths() -> [IndexPath] {
+        var result = [IndexPath]()
         
         for sectionIndex in 0 ..< tableView.numberOfSections {
-            for rowIndex in 0 ..< tableView.numberOfRowsInSection(sectionIndex) {
-                result.append(NSIndexPath(forRow: rowIndex, inSection: sectionIndex))
+            for rowIndex in 0 ..< tableView.numberOfRows(inSection: sectionIndex) {
+                result.append(IndexPath(row: rowIndex, section: sectionIndex))
             }
         }
         

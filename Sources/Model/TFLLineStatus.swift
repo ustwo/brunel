@@ -16,7 +16,7 @@ import SwiftyJSON
  */
 struct TFLLineStatus {
     
-    let created: NSDate?
+    let created: Date?
     let disruption: TFLLineDisruption?
     let identifier: Int
     let severity: Int
@@ -32,8 +32,8 @@ struct TFLLineStatus {
     
     init?(jsonObject: JSON) {
         guard let jsonIdentifier = jsonObject[JSONKeys.identifier].int,
-            jsonSeverity = jsonObject[JSONKeys.severity].int,
-            jsonSeverityDescription = jsonObject[JSONKeys.severityDescription].string else {
+            let jsonSeverity = jsonObject[JSONKeys.severity].int,
+            let jsonSeverityDescription = jsonObject[JSONKeys.severityDescription].string else {
                 
             return nil
         }
@@ -44,7 +44,7 @@ struct TFLLineStatus {
         severityDescription = jsonSeverityDescription
         
         if let jsonCreatedString = jsonObject[JSONKeys.created].string,
-            jsonCreated = TFLDateFormatter.sharedInstance.dateFromString(jsonCreatedString) {
+            let jsonCreated = TFLDateFormatter.sharedInstance.dateFromString(jsonCreatedString) {
                 created = jsonCreated
         } else {
             created = nil

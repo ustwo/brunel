@@ -24,26 +24,26 @@ final class DetailView: BaseStackView {
     override func setup() {
         super.setup()
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
-        nameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
-        nameLabel.textAlignment = .Center
+        nameLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title1)
+        nameLabel.textAlignment = .center
         stackView.addArrangedSubview(nameLabel)
         
-        statusLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle3)
-        statusLabel.textAlignment = .Center
+        statusLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title3)
+        statusLabel.textAlignment = .center
         stackView.addArrangedSubview(statusLabel)
         
-        disruptionLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle3)
-        disruptionLabel.hidden = true
-        disruptionLabel.lineBreakMode = .ByWordWrapping
+        disruptionLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title3)
+        disruptionLabel.isHidden = true
+        disruptionLabel.lineBreakMode = .byWordWrapping
         disruptionLabel.numberOfLines = 0
-        disruptionLabel.textAlignment = .Center
+        disruptionLabel.textAlignment = .center
         stackView.addArrangedSubview(disruptionLabel)
         
         let bufferView = UIView()
-        bufferView.setContentCompressionResistancePriority(UILayoutPriorityDefaultLow, forAxis: .Vertical)
-        bufferView.setContentHuggingPriority(UILayoutPriorityDefaultLow, forAxis: .Vertical)
+        bufferView.setContentCompressionResistancePriority(UILayoutPriorityDefaultLow, for: .vertical)
+        bufferView.setContentHuggingPriority(UILayoutPriorityDefaultLow, for: .vertical)
         stackView.addArrangedSubview(bufferView)
     }
     

@@ -11,18 +11,18 @@ import Foundation
 
 extension WikipediaRestAPI {
     
-    func getQueryTitle(title title: String, completion: (String?, RestAPIError?) -> Void) {
-        wikipedia(provider, target: .QueryTitle(title: title), completion: { resultJSON, error in
+    func getQueryTitle(_ title: String, completion: @escaping (String?, RestAPIError?) -> Void) {
+        wikipedia(provider, target: .queryTitle(title: title), completion: { resultJSON, error in
             if let resultJSON = resultJSON {
                 guard let pagesDictionary = resultJSON["query"]["pages"].dictionary else {
-                    completion(nil, .InvalidJSON(localizedDescription: "Expected `pages` dictionary."))
+                    completion(nil, .invalidJSON(localizedDescription: "Expected `pages` dictionary."))
                     return
                 }
                 
                 let firstKey = Array(pagesDictionary.keys)[0]
                 
                 guard let extract = pagesDictionary[firstKey]?["extract"].string else {
-                    completion(nil, .InvalidJSON(localizedDescription: "Expected `extract`."))
+                    completion(nil, .invalidJSON(localizedDescription: "Expected `extract`."))
                     return
                 }
                 
@@ -31,7 +31,7 @@ extension WikipediaRestAPI {
                 completion(nil, error)
                 return
             } else {
-                completion(nil, .UnknownError)
+                completion(nil, .unknownError)
                 return
             }
         })

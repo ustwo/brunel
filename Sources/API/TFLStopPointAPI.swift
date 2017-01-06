@@ -17,17 +17,18 @@ import Moya
  - StopPointList: Lists all stop points for an array of transport modes.
  */
 enum TFLStopPointAPI {
-    case StopPointList(modes: [TFLModes])
+    case stopPointList(modes: [TFLModes])
 }
 
 
 extension TFLStopPointAPI: TargetType {
+
     
-    var baseURL: NSURL { return NSURL(string: "https://api.tfl.gov.uk")! }
+    var baseURL: URL { return URL(string: "https://api.tfl.gov.uk")! }
     
     var path: String {
         switch self {
-        case let .StopPointList(modes):
+        case let .stopPointList(modes):
             let result = csvFromArray(modes.map { $0.rawValue })
             return "/stoppoint/mode/\(result)"
         }
@@ -35,37 +36,46 @@ extension TFLStopPointAPI: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .StopPointList:
-            return .GET
+        case .stopPointList:
+            return .get
         }
-    }
-    
-    var parameters: [String: AnyObject]? {
-        switch self {
-        case .StopPointList:
-            return nil
-        }
-    }
-    
-    var sampleData: NSData {
-        let emptyStringData = "".dataUsingEncoding(NSUTF8StringEncoding)!
-        return emptyStringData
     }
     
     var multipartBody: [MultipartFormData]? {
         return nil
     }
     
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var parameters: [String: Any]? {
+        switch self {
+        case .stopPointList:
+            return nil
+        }
+    }
+    
+    var sampleData: Data {
+        let emptyStringData = "".data(using: String.Encoding.utf8)!
+        return emptyStringData
+    }
+    
+    var task: Task {
+        return .request
+    }
+    
+    
     // MARK: - Convenience
     
-    private func csvFromArray(value: [String]) -> String {
-        var result = value.reduce("", combine: { $0 + "," + $1})
+    private func csvFromArray(_ value: [String]) -> String {
+        var result = value.reduce("", { $0 + "," + $1})
         result = String(result.characters.dropFirst())
         
         return result
     }
     
-    private func encodeBool(value: Bool) -> String {
+    private func encodeBool(_ value: Bool) -> String {
         return value ? "True" : "False"
     }
     

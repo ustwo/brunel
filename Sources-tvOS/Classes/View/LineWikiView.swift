@@ -16,7 +16,7 @@ final class LineWikiView: BaseStackView {
     
     let wikiLabel = UILabel()
     
-    let backButton = UIButton(type: .System)
+    let backButton = UIButton(type: .system)
     
     
     // MARK: - Setup
@@ -24,14 +24,14 @@ final class LineWikiView: BaseStackView {
     override func setup() {
         super.setup()
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
-        wikiLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        wikiLabel.lineBreakMode = .ByWordWrapping
+        wikiLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        wikiLabel.lineBreakMode = .byWordWrapping
         wikiLabel.numberOfLines = 0
         stackView.addArrangedSubview(wikiLabel)
         
-        backButton.setTitle(Strings.Buttons.Back, forState: .Normal)
+        backButton.setTitle(Strings.Buttons.Back, for: UIControlState())
         stackView.addArrangedSubview(backButton)
     }
     

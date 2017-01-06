@@ -13,7 +13,7 @@ import SVProgressHUD
 
 protocol LineSearchTableViewControllerDelegate: class {
     
-    func lineSearch(lineSearch: LineSearchTableViewController, didSelectLine line: TFLLine)
+    func lineSearch(_ lineSearch: LineSearchTableViewController, didSelectLine line: TFLLine)
     
 }
 
@@ -40,10 +40,10 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     private var loadingData = false {
         didSet {
             if loadingData {
-                navigationItem.rightBarButtonItem?.enabled = false
+                navigationItem.rightBarButtonItem?.isEnabled = false
                 SVProgressHUD.show()
             } else {
-                navigationItem.rightBarButtonItem?.enabled = true
+                navigationItem.rightBarButtonItem?.isEnabled = true
                 SVProgressHUD.dismiss()
             }
             
@@ -65,7 +65,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
                     let searchableStrings = $0.searchableStrings()
                     
                     for searchableString in searchableStrings {
-                        if searchableString.uppercaseString.rangeOfString(filterString.uppercaseString) != nil {
+                        if searchableString.uppercased().range(of: filterString.uppercased()) != nil {
                             return true
                         }
                     }
@@ -84,7 +84,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     // MARK: - Initializer
     
     init() {
-        super.init(style: .Plain)
+        super.init(style: .plain)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -99,7 +99,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
         
         title = Strings.Titles.Search
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -107,7 +107,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     // MARK: - Fetch Data
     
-    func fetchLines(query: String) {
+    func fetchLines(_ query: String) {
         guard !query.isEmpty else {
             items.removeAll()
             return
@@ -126,7 +126,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
         }
     }
     
-    func fetchLine(lineID: String, completion: (Bool, TFLLine?) -> Void) {
+    func fetchLine(_ lineID: String, completion: @escaping (Bool, TFLLine?) -> Void) {
         guard !lineID.isEmpty else {
             completion(false, nil)
             return
@@ -134,10 +134,10 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
         
         loadingData = true
         TFLRestAPI.sharedInstance.getLineStatus([lineID]) { [weak self] lines, error in
-            if let lines = lines where !lines.isEmpty {
+            if let lines = lines, !lines.isEmpty {
                 completion(true, lines[0])
             } else {
-                print(error)
+                print("Error: \(error)")
                 completion(false, nil)
             }
             self?.loadingData = false
@@ -147,29 +147,29 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     // MARK: - UISearchResultsUpdating
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    func updateSearchResults(for searchController: UISearchController) {
         filterString = searchController.searchBar.text ?? ""
     }
     
     
     // MARK: - UITableViewDataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return modes.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let mode = modes[section]
         
         return searchArray.filter { $0.mode == mode }.count
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return modes[section].description
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
         if let item = itemForIndexPath(indexPath) {
             item.configureTableViewCell(cell)
@@ -178,7 +178,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
         return cell
     }
     
-    func itemForIndexPath(indexPath: NSIndexPath) -> TFLLineSearch? {
+    func itemForIndexPath(_ indexPath: IndexPath) -> TFLLineSearch? {
         let mode = modes[indexPath.section]
         
         return searchArray.filter { $0.mode == mode }[indexPath.row]
@@ -187,32 +187,32 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     // MARK: - UITableViewDelegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let item = itemForIndexPath(indexPath) else { return }
         
         fetchLine(item.identifier) { [weak self] success, line in
-            if success, let line = line, strongSelf = self {
+            if success, let line = line, let strongSelf = self {
                 strongSelf.lineSearchDelegate?.lineSearch(strongSelf, didSelectLine: line)
             }
         }
     }
     
-    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
         
-        cell?.textLabel?.textColor = UIColor.blackColor()
+        cell?.textLabel?.textColor = UIColor.black
         
         return indexPath
     }
     
-    override func tableView(tableView: UITableView, willDeselectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        let cell = tableView.cellForRow(at: indexPath)
         guard let item = itemForIndexPath(indexPath) else { return indexPath }
         
         if item.color.isLight() {
-            cell?.textLabel?.textColor = UIColor.blackColor()
+            cell?.textLabel?.textColor = UIColor.black
         } else {
-            cell?.textLabel?.textColor = UIColor.whiteColor()
+            cell?.textLabel?.textColor = UIColor.white
         }
         
         return indexPath
@@ -230,7 +230,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
             }
         }
         
-        modes.sortInPlace { $0.description < $1.description }
+        modes.sort { $0.description < $1.description }
     }
     
     private func updateSearchArray() {
@@ -241,7 +241,7 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
                 let searchableStrings = $0.searchableStrings()
                 
                 for searchableString in searchableStrings {
-                    if searchableString.uppercaseString.rangeOfString(filterString.uppercaseString) != nil {
+                    if searchableString.uppercased().range(of: filterString.uppercased()) != nil {
                         return true
                     }
                 }

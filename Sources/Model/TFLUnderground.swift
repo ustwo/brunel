@@ -11,87 +11,87 @@ import UIKit
 
 /// Represents a line on the London Underground.
 enum TFLUnderground: WikipediaSearchable {
-    case Bakerloo, Central, Circle, District, Hammersmith, Jubilee, Metropolitan, Northern, Piccadilly, Victoria, Waterloo
+    case bakerloo, central, circle, district, hammersmith, jubilee, metropolitan, northern, piccadilly, victoria, waterloo
     
-    static let allValues = [Bakerloo, Central, Circle, District, Hammersmith, Jubilee, Metropolitan, Northern, Piccadilly, Victoria, Waterloo]
+    static let allValues = [bakerloo, central, circle, district, hammersmith, jubilee, metropolitan, northern, piccadilly, victoria, waterloo]
     
     var color: UIColor {
         switch self {
-        case .Bakerloo:
+        case .bakerloo:
             return UIColor(red: 137.0 / 255.0, green: 78.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
-        case .Central:
+        case .central:
             return UIColor(red: 220.0 / 255.0, green: 36.0 / 255.0, blue: 31.0 / 255.0, alpha: 1.0)
-        case .Circle:
+        case .circle:
             return UIColor(red: 255.0 / 255.0, green: 206.0 / 255.0, blue: 0.0, alpha: 1.0)
-        case .District:
+        case .district:
             return UIColor(red: 0.0, green: 114.0 / 255.0, blue: 41.0 / 255.0, alpha: 1.0)
-        case .Hammersmith:
+        case .hammersmith:
             return UIColor(red: 215.0 / 255.0, green: 153.0 / 255.0, blue: 175.0 / 255.0, alpha: 1.0)
-        case .Jubilee:
+        case .jubilee:
             return UIColor(red: 134.0 / 255.0, green: 143.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
-        case .Metropolitan:
+        case .metropolitan:
             return UIColor(red: 117.0 / 255.0, green: 16.0 / 255.0, blue: 86.0 / 255.0, alpha: 1.0)
-        case .Northern:
+        case .northern:
             return UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        case .Piccadilly:
+        case .piccadilly:
             return UIColor(red: 0.0, green: 25.0 / 255.0, blue: 168.0 / 255.0, alpha: 1.0)
-        case .Victoria:
+        case .victoria:
             return UIColor(red:0.0, green: 116.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
-        case .Waterloo:
+        case .waterloo:
             return UIColor(red: 118.0 / 255.0, green: 208.0 / 255.0, blue: 189.0 / 255.0, alpha: 1.0)
         }
     }
     
     var description: String {
         switch self {
-        case .Bakerloo:
+        case .bakerloo:
             return "Bakerloo"
-        case .Central:
+        case .central:
             return "Central"
-        case .Circle:
+        case .circle:
             return "Circle"
-        case .District:
+        case .district:
             return "District"
-        case .Hammersmith:
+        case .hammersmith:
             return "Hammersmith & City"
-        case .Jubilee:
+        case .jubilee:
             return "Jubilee"
-        case .Metropolitan:
+        case .metropolitan:
             return "Metropolitan"
-        case .Northern:
+        case .northern:
             return "Northern"
-        case .Piccadilly:
+        case .piccadilly:
             return "Piccadilly"
-        case .Victoria:
+        case .victoria:
             return "Victoria"
-        case .Waterloo:
+        case .waterloo:
             return "Waterloo & City"
         }
     }
     
     var wikipediaPageName: String {
         switch self {
-        case .Bakerloo:
+        case .bakerloo:
             return "Bakerloo_line"
-        case .Central:
+        case .central:
             return "Central_line"
-        case .Circle:
+        case .circle:
             return "Circle_line_(London_Underground)"
-        case .District:
+        case .district:
             return "District_line"
-        case .Hammersmith:
+        case .hammersmith:
             return "Hammersmith_&_City_line"
-        case .Jubilee:
+        case .jubilee:
             return "Jubilee_line"
-        case .Metropolitan:
+        case .metropolitan:
             return "Metropolitan_line"
-        case .Northern:
+        case .northern:
             return "Northern_line"
-        case .Piccadilly:
+        case .piccadilly:
             return "Piccadilly_line"
-        case .Victoria:
+        case .victoria:
             return "Victoria_line"
-        case .Waterloo:
+        case .waterloo:
             return "Waterloo_&_City_line"
         }
     }

@@ -17,14 +17,14 @@ final class ClockLabel: UILabel {
     var on: Bool = false {
         didSet {
             if on {
-                updateTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ClockLabel.updateClock(_:)), userInfo: nil, repeats: true)
+                updateTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ClockLabel.updateClock(_:)), userInfo: nil, repeats: true)
             } else {
                 updateTimer?.invalidate()
             }
         }
     }
     
-    private var updateTimer: NSTimer?
+    private var updateTimer: Timer?
     
     
     // MARK: - Initializers
@@ -43,9 +43,9 @@ final class ClockLabel: UILabel {
     // MARK: - Setup
     
     func setup() {
-        font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
-        text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .MediumStyle)
-        textAlignment = .Center
+        font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.title1)
+        text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)
+        textAlignment = .center
         
         accessibilityIdentifier = AccessibilityIdentifiers.Clock.ClockLabel
     }
@@ -53,8 +53,8 @@ final class ClockLabel: UILabel {
     
     // MARK: - Clock
     
-    func updateClock(timer: NSTimer) {
-        text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .MediumStyle)
+    func updateClock(_ timer: Timer) {
+        text = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)
     }
     
 }

@@ -32,7 +32,11 @@ class SearchBaseResultsTableViewController<T: SearchableTableItem>: UITableViewC
         self.cellType = cellType
         self.reuseIdentifier = reuseIdentifier
         
-        super.init(style: .Plain)
+        super.init(style: .plain)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -41,7 +45,7 @@ class SearchBaseResultsTableViewController<T: SearchableTableItem>: UITableViewC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(cellType, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(cellType, forCellReuseIdentifier: reuseIdentifier)
         tableView.estimatedRowHeight = Constants.Sizes.EstimatedCellHeight
         tableView.rowHeight = UITableViewAutomaticDimension
     }

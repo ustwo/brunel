@@ -1,9 +1,9 @@
 use_frameworks!
 
 def common_pods
-  pod 'Moya', '~> 7.0.2'
-  pod 'SVProgressHUD', '~> 2.0'
-  pod 'SwiftyJSON', '~> 2.4'
+  pod 'Moya', '~> 8.0'
+  pod 'SVProgressHUD', '~> 2.1'
+  pod 'SwiftyJSON', '~> 3.1'
 end
 
 target 'Brunel iOS' do

@@ -19,24 +19,24 @@ import Moya
  - Status:     Fetches the status for an array of transport lines.
  */
 enum TFLLineAPI {
-    case ModeStatus(modes: [TFLModes], detail: Bool)
-    case Search(query: String)
-    case Status(lines: [String], detail: Bool)
+    case modeStatus(modes: [TFLModes], detail: Bool)
+    case search(query: String)
+    case status(lines: [String], detail: Bool)
 }
 
 
 extension TFLLineAPI: TargetType {
     
-    var baseURL: NSURL { return NSURL(string: "https://api.tfl.gov.uk")! }
+    var baseURL: URL { return URL(string: "https://api.tfl.gov.uk")! }
     
     var path: String {
         switch self {
-        case let .ModeStatus(modes, _):
+        case let .modeStatus(modes, _):
             let result = csvFromArray(modes.map { $0.rawValue })
             return "/line/mode/\(result)/status"
-        case let Search(query):
+        case let .search(query):
             return "/line/search/\(query)"
-        case let .Status(lines, _):
+        case let .status(lines, _):
             let result = csvFromArray(lines)
             return "/line/\(result)/status"
         }
@@ -44,42 +44,50 @@ extension TFLLineAPI: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .ModeStatus, .Search, .Status:
-            return .GET
+        case .modeStatus, .search, .status:
+            return .get
         }
-    }
-    
-    var parameters: [String: AnyObject]? {
-        switch self {
-        case let .ModeStatus(_, detail):
-            return ["detail" : encodeBool(detail)]
-        case let .Status(_, detail):
-            return ["detail" : encodeBool(detail)]
-            
-        case .Search:
-            return nil
-        }
-    }
-    
-    var sampleData: NSData {
-        let emptyStringData = "".dataUsingEncoding(NSUTF8StringEncoding)!
-        return emptyStringData
     }
     
     var multipartBody: [MultipartFormData]? {
         return nil
     }
     
+    var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+    
+    var parameters: [String: Any]? {
+        switch self {
+        case let .modeStatus(_, detail):
+            return ["detail": encodeBool(detail)]
+        case let .status(_, detail):
+            return ["detail": encodeBool(detail)]
+        case .search:
+            return nil
+        }
+    }
+    
+    var sampleData: Data {
+        let emptyStringData = "".data(using: String.Encoding.utf8)!
+        return emptyStringData
+    }
+    
+    var task: Task {
+        return .request
+    }
+    
+    
     // MARK: - Convenience
     
-    private func csvFromArray(value: [String]) -> String {
-        var result = value.reduce("", combine: { $0 + "," + $1})
+    private func csvFromArray(_ value: [String]) -> String {
+        var result = value.reduce("", { $0 + "," + $1})
         result = String(result.characters.dropFirst())
         
         return result
     }
     
-    private func encodeBool(value: Bool) -> String {
+    private func encodeBool(_ value: Bool) -> String {
         return value ? "True" : "False"
     }
     

@@ -30,9 +30,9 @@ struct TFLLineSearch {
     
     init?(jsonObject: JSON) {
         guard let jsonIdentifier = jsonObject[JSONKeys.identifier].string,
-            jsonModeName = jsonObject[JSONKeys.modeName].string,
-            jsonMode = TFLModes(rawValue: jsonModeName),
-            jsonName = jsonObject[JSONKeys.name].string else {
+            let jsonModeName = jsonObject[JSONKeys.modeName].string,
+            let jsonMode = TFLModes(rawValue: jsonModeName),
+            let jsonName = jsonObject[JSONKeys.name].string else {
                 
                 return nil
         }
@@ -43,13 +43,13 @@ struct TFLLineSearch {
         name = jsonName
         
         if mode == .Underground,
-            let undergroundIndex = TFLUnderground.allValues.indexOf({ $0.description.uppercaseString == jsonName.uppercaseString }) {
+            let undergroundIndex = TFLUnderground.allValues.index(where: { $0.description.uppercased() == jsonName.uppercased() }) {
                 
                 let undergroundLine = TFLUnderground.allValues[undergroundIndex]
                 
                 color = undergroundLine.color
         } else if mode == .NationalRail,
-            let railIndex = TFLNationalRail.allValues.indexOf({ $0.description.uppercaseString == jsonName.uppercaseString }) {
+            let railIndex = TFLNationalRail.allValues.index(where: { $0.description.uppercased() == jsonName.uppercased() }) {
                 
                 let railLine = TFLNationalRail.allValues[railIndex]
                 

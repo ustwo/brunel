@@ -16,11 +16,11 @@ extension LineDetailViewController {
     
     func setupTV() {
         guard let _ = lineWikipediaDetail(),
-            aboutButton = underlyingView.insertAboutButton() else {
+            let aboutButton = underlyingView.insertAboutButton() else {
                 return
         }
         
-        aboutButton.addTarget(self, action: #selector(LineDetailViewController.aboutButtonPressed(_:)), forControlEvents: .PrimaryActionTriggered)
+        aboutButton.addTarget(self, action: #selector(LineDetailViewController.aboutButtonPressed(_:)), for: .primaryActionTriggered)
     }
     
     
@@ -32,7 +32,7 @@ extension LineDetailViewController {
         let lineWikiDetail: WikipediaSearchable
         switch line.mode {
         case .Underground:
-            guard let undergroundIndex = TFLUnderground.allValues.indexOf({ $0.description.uppercaseString == line.name.uppercaseString }) else {
+            guard let undergroundIndex = TFLUnderground.allValues.index(where: { $0.description.uppercased() == line.name.uppercased() }) else {
                 return nil
             }
             

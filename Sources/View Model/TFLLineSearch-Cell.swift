@@ -11,15 +11,15 @@ import UIKit
 
 extension TFLLineSearch: SearchableTableItem {
     
-    func configureTableViewCell(cell: UITableViewCell) {
+    func configureTableViewCell(_ cell: UITableViewCell) {
         cell.textLabel?.text = name
         
         cell.contentView.backgroundColor = color
         
         if color.isLight() {
-            cell.textLabel?.textColor = UIColor.blackColor()
+            cell.textLabel?.textColor = UIColor.black
         } else {
-            cell.textLabel?.textColor = UIColor.whiteColor()
+            cell.textLabel?.textColor = UIColor.white
         }
         
         cell.accessibilityIdentifier = AccessibilityIdentifiers.Lines.LineCellPrefix + "_\(name)"

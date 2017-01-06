@@ -22,10 +22,10 @@ final class BannerView: BaseStackView {
         super.setup()
         
         #if os(iOS)
-            backgroundColor = UIColor.whiteColor()
+            backgroundColor = UIColor.white
         #endif
         
-        stackView.distribution = .Fill
+        stackView.distribution = .fill
         stackView.spacing = 0.0
         stackView.addArrangedSubview(banner)
     }
@@ -55,9 +55,9 @@ final class ClockBannerView: BaseView {
         
         backgroundColor = Constants.Colors.BlueColor
         
-        clock.setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: .Vertical)
-        clock.textAlignment = .Center
-        clock.textColor = UIColor.whiteColor()
+        clock.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
+        clock.textAlignment = .center
+        clock.textColor = UIColor.white
         addSubview(clock)
     }
     
@@ -71,14 +71,14 @@ final class ClockBannerView: BaseView {
         clock.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["clock" : clock]
+        let views = ["clock": clock]
         let metrics = Constants.Layout.Metrics
         
         // Vertical Constraints
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-HalfMargin-[clock]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-HalfMargin-[clock]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
         
         // Horizontal Constraints
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-HalfMargin-[clock]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-HalfMargin-[clock]-HalfMargin-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
     }
     
 }

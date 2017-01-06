@@ -20,7 +20,7 @@ struct TFLLineDisruption {
     let category: String
     let categoryDescription: String
     let closureText: String?
-    let created: NSDate?
+    let created: Date?
     
     private struct JSONKeys {
         static let additionalInfo = "additionalInfo"
@@ -32,7 +32,7 @@ struct TFLLineDisruption {
     
     init?(jsonObject: JSON) {
         guard let jsonCategory = jsonObject[JSONKeys.category].string,
-            jsonCategoryDescription = jsonObject[JSONKeys.categoryDescription].string else {
+            let jsonCategoryDescription = jsonObject[JSONKeys.categoryDescription].string else {
                 
                 return nil
         }
@@ -43,7 +43,7 @@ struct TFLLineDisruption {
         closureText = jsonObject[JSONKeys.closureText].string
         
         if let jsonCreatedString = jsonObject[JSONKeys.created].string,
-            jsonCreated = TFLDateFormatter.sharedInstance.dateFromString(jsonCreatedString) {
+            let jsonCreated = TFLDateFormatter.sharedInstance.dateFromString(jsonCreatedString) {
                 created = jsonCreated
         } else {
             created = nil

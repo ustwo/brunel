@@ -34,10 +34,10 @@ final class LineDetailTableViewCell: UITableViewCell {
     // MARK: - Setup
     
     func setup() {
-        contentView.backgroundColor = UIColor.whiteColor()
+        contentView.backgroundColor = UIColor.white
         
-        statusSection.setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, forAxis: .Vertical)
-        statusSection.setContentHuggingPriority(UILayoutPriorityDefaultHigh, forAxis: .Vertical)
+        statusSection.setContentCompressionResistancePriority(UILayoutPriorityDefaultHigh, for: .vertical)
+        statusSection.setContentHuggingPriority(UILayoutPriorityDefaultHigh, for: .vertical)
         contentView.addSubview(statusSection)
     }
     
@@ -49,14 +49,14 @@ final class LineDetailTableViewCell: UITableViewCell {
         statusSection.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["statusSection" : statusSection]
+        let views = ["statusSection": statusSection]
         let metrics = Constants.Layout.Metrics
         
         // Vertical Constraints
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[statusSection]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[statusSection]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
         
         // Horizontal Constraints
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[statusSection]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[statusSection]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
     }
     
 }
@@ -76,12 +76,12 @@ final class LineDetailStatusSectionView: BaseView {
     override func setup() {
         super.setup()
         
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
         
-        lineLabel.textLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        lineLabel.textLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         addSubview(lineLabel)
         
-        statusLabel.textLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        statusLabel.textLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         addSubview(statusLabel)
     }
     
@@ -96,17 +96,17 @@ final class LineDetailStatusSectionView: BaseView {
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // View Dictionary
-        let views = ["lineLabel" : lineLabel, "statusLabel" : statusLabel]
+        let views = ["lineLabel": lineLabel, "statusLabel": statusLabel]
         var metrics = Constants.Layout.Metrics
         metrics["statusLabelWidth"] = 100.0
         
         // Vertical Constraints
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[lineLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[statusLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[lineLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[statusLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
         
         // Horizontal Constraints
-        addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[lineLabel][statusLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
-        addConstraint(NSLayoutConstraint(item: statusLabel, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 0.5, constant: 0.0))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[lineLabel][statusLabel]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views))
+        addConstraint(NSLayoutConstraint(item: statusLabel, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.5, constant: 0.0))
     }
     
     

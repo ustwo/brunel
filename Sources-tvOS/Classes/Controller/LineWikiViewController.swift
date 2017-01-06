@@ -29,6 +29,10 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
         
         super.init()
     }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     // MARK: - View Lifecycle
@@ -44,10 +48,10 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     override func setupView() {
         super.setupView()
         
-        underlyingView.backButton.addTarget(self, action: #selector(LineWikiViewController.backButtonPressed(_:)), forControlEvents: .PrimaryActionTriggered)
+        underlyingView.backButton.addTarget(self, action: #selector(LineWikiViewController.backButtonPressed(_:)), for: .primaryActionTriggered)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         SVProgressHUD.dismiss()
@@ -58,10 +62,10 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     private func fetchWiki() {
         SVProgressHUD.show()
-        WikipediaRestAPI.sharedInstance.getQueryTitle(title: lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
+        WikipediaRestAPI.sharedInstance.getQueryTitle(lineWikiDetail.wikipediaPageName) { [weak self] wikiPage, error in
             if let wikiPage = wikiPage {
                 let wikiText = "Wikipedia:\n\n" + wikiPage
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self?.underlyingView.wikiLabel.text = wikiText
                 }
             } else if let error = error {
@@ -70,7 +74,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
                 print("Unknown Error")
             }
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 SVProgressHUD.dismiss()
             }
         }
@@ -79,8 +83,8 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     
     // MARK: - Control Actions
     
-    func backButtonPressed(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
+    func backButtonPressed(_ sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
     }
     
 }
