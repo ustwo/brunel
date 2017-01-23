@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 19/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -56,7 +56,9 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let mode = modes?[section] else { return 0 }
+        guard let mode = modes?[section] else {
+            return 0
+        }
         
         let array: [TFLLine]
         if tableView == self.tableView {
@@ -73,7 +75,9 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
     }
     
     override func itemForIndexPath(_ tableView: UITableView, indexPath: IndexPath) -> TFLLine? {
-        guard let mode = modes?[indexPath.section] else { return nil }
+        guard let mode = modes?[indexPath.section] else {
+            return nil
+        }
         
         let array: [TFLLine]
         if tableView == self.tableView {
@@ -98,7 +102,9 @@ class LinesBaseTableViewController: SearchTableViewController<TFLLine> {
     
     override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
         let cell = tableView.cellForRow(at: indexPath)
-        guard let line = itemForIndexPath(tableView, indexPath: indexPath) else { return indexPath }
+        guard let line = itemForIndexPath(tableView, indexPath: indexPath) else {
+            return indexPath
+        }
         
         if line.color.isLight() {
             cell?.textLabel?.textColor = UIColor.black

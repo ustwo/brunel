@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 18/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import Foundation
@@ -68,7 +68,7 @@ struct TFLRestAPI {
                 }
             }
             
-            let endpoint: Endpoint<T> = Endpoint<T>(url: url(target), sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, parameters: newParameters, parameterEncoding: URLEncoding.default, httpHeaderFields: nil)
+            let endpoint: Endpoint<T> = Endpoint<T>(url: url(target), sampleResponseClosure: { .networkResponse(200, target.sampleData) }, method: target.method, parameters: newParameters, parameterEncoding: URLEncoding.default, httpHeaderFields: nil)
             
             return endpoint
         }

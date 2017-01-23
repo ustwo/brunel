@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 18/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -49,23 +49,23 @@ enum TFLModes: String, CustomStringConvertible {
     var color: UIColor {
         switch self {
         case .Bus:
-            return UIColor(red: 220.0 / 255.0, green: 36.0 / 255.0, blue: 31.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.862745098, green: 0.1411764706, blue: 0.1215686275, alpha: 1)
         case .CableCar:
-            return UIColor(red: 217.0 / 255.0, green: 0.0, blue: 42.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.8509803922, green: 0, blue: 0.1647058824, alpha: 1)
         case .DLR:
-            return UIColor(red: 0.0, green: 175.0 / 255.0, blue: 173.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.6862745098, blue: 0.6784313725, alpha: 1)
         case .NationalRail:
-            return UIColor(red: 21.0 / 255.0, green: 91.0 / 255.0, blue: 149.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.08235294118, green: 0.3568627451, blue: 0.5843137255, alpha: 1)
         case .Overground:
-            return UIColor(red: 232.0 / 255.0, green: 119.0 / 255.0, blue: 34.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.9098039216, green: 0.4666666667, blue: 0.1333333333, alpha: 1)
         case .River:
-            return UIColor(red: 0.0, green: 160.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.6274509804, blue: 0.8862745098, alpha: 1)
         case .TFLRail:
-            return UIColor(red: 114.0 / 255.0, green: 86.0 / 255.0, blue: 165.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.4470588235, green: 0.337254902, blue: 0.6470588235, alpha: 1)
         case .Tram:
-            return UIColor(red: 0.0, green: 189.0 / 255.0, blue: 25.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.7411764706, blue: 0.09803921569, alpha: 1)
         case .Underground:
-            return UIColor(red: 0.0, green: 25.0 / 255.0, blue: 168.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.09803921569, blue: 0.6588235294, alpha: 1)
         }
     }
 }

@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 19/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -19,7 +19,7 @@ struct Constants {
     }
     
     struct Colors {
-        static let BlueColor = UIColor(red: 26.0 / 255.0, green: 90.0 / 255.0, blue: 146.0 / 255.0, alpha: 1.0)
+        static let BlueColor = #colorLiteral(red: 0.1019607843, green: 0.3529411765, blue: 0.5725490196, alpha: 1)
     }
     
     struct Layout {

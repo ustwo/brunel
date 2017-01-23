@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 18/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -73,7 +73,9 @@ final class LineDetailViewController: BaseViewController<DetailView> {
     // MARK: - Settings
     
     func updateSettings() {
-        guard let detailItem = detailItem else { return }
+        guard let detailItem = detailItem else {
+            return
+        }
         
         let identifier = detailItem.identifier
         

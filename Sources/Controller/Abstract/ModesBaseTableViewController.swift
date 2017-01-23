@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 19/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ class ModesBaseTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var detailViewController: LineDetailViewController? = nil
+    var detailViewController: LineDetailViewController?
     
     let modes = TFLModes.allValues
     
