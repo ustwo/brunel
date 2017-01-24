@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 19/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -97,7 +97,9 @@ final class DashboardTableViewController: LinesBaseTableViewController {
     func scrollingTimerFired(_ timer: Timer) {
         let allIndices = allIndexPaths()
         
-        guard !allIndices.isEmpty else { return }
+        guard !allIndices.isEmpty else {
+            return
+        }
         
         var newTopIndex: IndexPath
         if let topIndex = topIndex,

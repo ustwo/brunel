@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 21/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ final class LineSearchContainerTableViewController: UIViewController, LineSearch
     let searchResultsController = LineSearchTableViewController()
     
     
-    // MARK: View Life Cycle
+    // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

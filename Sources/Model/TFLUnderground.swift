@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 18/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -18,27 +18,27 @@ enum TFLUnderground: WikipediaSearchable {
     var color: UIColor {
         switch self {
         case .bakerloo:
-            return UIColor(red: 137.0 / 255.0, green: 78.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.537254902, green: 0.3058823529, blue: 0.1411764706, alpha: 1)
         case .central:
-            return UIColor(red: 220.0 / 255.0, green: 36.0 / 255.0, blue: 31.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.862745098, green: 0.1411764706, blue: 0.1215686275, alpha: 1)
         case .circle:
-            return UIColor(red: 255.0 / 255.0, green: 206.0 / 255.0, blue: 0.0, alpha: 1.0)
+            return #colorLiteral(red: 1, green: 0.8078431373, blue: 0, alpha: 1)
         case .district:
-            return UIColor(red: 0.0, green: 114.0 / 255.0, blue: 41.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.4470588235, blue: 0.1607843137, alpha: 1)
         case .hammersmith:
-            return UIColor(red: 215.0 / 255.0, green: 153.0 / 255.0, blue: 175.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.8431372549, green: 0.6, blue: 0.6862745098, alpha: 1)
         case .jubilee:
-            return UIColor(red: 134.0 / 255.0, green: 143.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.5254901961, green: 0.5607843137, blue: 0.5960784314, alpha: 1)
         case .metropolitan:
-            return UIColor(red: 117.0 / 255.0, green: 16.0 / 255.0, blue: 86.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.4588235294, green: 0.06274509804, blue: 0.337254902, alpha: 1)
         case .northern:
-            return UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         case .piccadilly:
-            return UIColor(red: 0.0, green: 25.0 / 255.0, blue: 168.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.09803921569, blue: 0.6588235294, alpha: 1)
         case .victoria:
-            return UIColor(red:0.0, green: 116.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0, green: 0.4549019608, blue: 0.8862745098, alpha: 1)
         case .waterloo:
-            return UIColor(red: 118.0 / 255.0, green: 208.0 / 255.0, blue: 189.0 / 255.0, alpha: 1.0)
+            return #colorLiteral(red: 0.462745098, green: 0.8156862745, blue: 0.7411764706, alpha: 1)
         }
     }
     

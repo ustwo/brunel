@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 21/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import UIKit
@@ -53,7 +53,9 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     private var filterString = "" {
         didSet {
-            guard filterString != oldValue else { return }
+            guard filterString != oldValue else {
+                return
+            }
             
             if filterString.isEmpty {
                 searchArray.removeAll()
@@ -188,7 +190,9 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = itemForIndexPath(indexPath) else { return }
+        guard let item = itemForIndexPath(indexPath) else {
+            return
+        }
         
         fetchLine(item.identifier) { [weak self] success, line in
             if success, let line = line, let strongSelf = self {
@@ -207,7 +211,9 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
     
     override func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
         let cell = tableView.cellForRow(at: indexPath)
-        guard let item = itemForIndexPath(indexPath) else { return indexPath }
+        guard let item = itemForIndexPath(indexPath) else {
+            return indexPath
+        }
         
         if item.color.isLight() {
             cell?.textLabel?.textColor = UIColor.black

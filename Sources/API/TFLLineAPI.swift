@@ -3,7 +3,7 @@
 //  Brunel
 //
 //  Created by Aaron McTavish on 18/01/2016.
-//  Copyright © 2016 ustwo. All rights reserved.
+//  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
 import Foundation
@@ -81,7 +81,7 @@ extension TFLLineAPI: TargetType {
     // MARK: - Convenience
     
     private func csvFromArray(_ value: [String]) -> String {
-        var result = value.reduce("", { $0 + "," + $1})
+        var result = value.reduce("", { $0 + "," + $1 })
         result = String(result.characters.dropFirst())
         
         return result
