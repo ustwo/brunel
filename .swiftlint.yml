@@ -1,21 +1,24 @@
 disabled_rules:
   - line_length
   - nesting
-  - variable_name
+  - identifier_name
 opt_in_rules:
   - attributes
   - closure_spacing
   - conditional_returns_on_newline
   - empty_count
   - explicit_init
+  - fatal_error_message
   - file_header
   - first_where
+  - implicitly_unwrapped_optional
   - number_separator
   - object_literal
   - overridden_super_call
   - private_outlet
   - prohibited_super_call
   - redundant_nil_coalescing
+  - sorted_imports
   - switch_case_on_newline
 
 excluded:
@@ -44,12 +47,6 @@ trailing_whitespace:
 type_body_length:
   - 300 # warning
   - 400 # error
-variable_name_max_length:
-  - 40 # warning
-  - 60 # error
-variable_name_min_length:
-  - 3 # warning
-  - 2 # error
 vertical_whitespace:
   max_empty_lines: 2
 

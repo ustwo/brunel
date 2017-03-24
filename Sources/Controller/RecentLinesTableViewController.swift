@@ -6,9 +6,9 @@
 //  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
-import UIKit
 
 import SVProgressHUD
+import UIKit
 
 
 /// Displays a table of the most recently viewed lines for quick access to their status.

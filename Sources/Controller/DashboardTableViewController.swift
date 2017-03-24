@@ -6,9 +6,9 @@
 //  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
-import UIKit
 
 import SVProgressHUD
+import UIKit
 
 
 /// Displays a table of `TFLLine` for a given mode and their statuses, scrolling through the list automatically.

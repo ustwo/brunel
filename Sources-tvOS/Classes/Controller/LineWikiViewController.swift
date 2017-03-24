@@ -6,9 +6,9 @@
 //  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
-import UIKit
 
 import SVProgressHUD
+import UIKit
 
 
 /// Displays the introduction to the Wikipedia page with details for a given `TFLLine`.
@@ -84,6 +84,7 @@ final class LineWikiViewController: BaseViewController<LineWikiView> {
     // MARK: - Control Actions
     
     func backButtonPressed(_ sender: UIButton) {
+        // swiftlint:disable:next redundant_discardable_let
         let _ = navigationController?.popViewController(animated: true)
     }
     
