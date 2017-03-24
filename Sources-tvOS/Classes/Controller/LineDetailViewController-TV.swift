@@ -15,7 +15,7 @@ extension LineDetailViewController {
     // MARK: - Setup
     
     func setupTV() {
-        guard let _ = lineWikipediaDetail(),
+        guard lineWikipediaDetail() != nil,
             let aboutButton = underlyingView.insertAboutButton() else {
                 return
         }

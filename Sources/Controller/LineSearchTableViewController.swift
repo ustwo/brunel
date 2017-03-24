@@ -6,9 +6,9 @@
 //  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
-import UIKit
 
 import SVProgressHUD
+import UIKit
 
 
 protocol LineSearchTableViewControllerDelegate: class {
@@ -254,8 +254,6 @@ final class LineSearchTableViewController: UITableViewController, UISearchResult
                 
                 return false
             }
-            
-            let _ = 1
         }
         
         tableView.reloadData()

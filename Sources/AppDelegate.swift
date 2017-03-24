@@ -6,9 +6,9 @@
 //  Copyright © 2016 ustwo Fampany Ltd. All rights reserved.
 //
 
-import UIKit
 
 import SVProgressHUD
+import UIKit
 
 
 @UIApplicationMain
