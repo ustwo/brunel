@@ -11,6 +11,7 @@ opt_in_rules:
   - fatal_error_message
   - file_header
   - first_where
+  - implicit_return
   - implicitly_unwrapped_optional
   - number_separator
   - object_literal
