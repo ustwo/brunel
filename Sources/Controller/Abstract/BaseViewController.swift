@@ -10,7 +10,7 @@ import UIKit
 
 
 /// Generic base view controller that automatically loads the underlying `BaseView` of type `T`.
-open class BaseViewController<T : UIView>: UIViewController {
+open class BaseViewController<T: UIView>: UIViewController {
     
     
     // MARK: - Properties
