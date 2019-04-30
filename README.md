@@ -1,5 +1,7 @@
 # Brunel
 
+⚠️ No longer maintained ⚠️
+
 [![Twitter](https://img.shields.io/badge/twitter-@ustwo-blue.svg?style=flat)](http://twitter.com/ustwo)
 
 This project is a demonstration of organisation for an app that runs on both iOS and tvOS platforms using a unified code base. It is built using Swift 3.0 by iOS developers at [ustwo](https://ustwo.com/).
